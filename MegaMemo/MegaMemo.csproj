@@ -163,12 +163,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Handlers\Manifest.ashx.cs">
+      <DependentUpon>Manifest.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Handlers\Manifest.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -227,6 +231,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\MegaMemo.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -242,6 +247,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Content\Manifest.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

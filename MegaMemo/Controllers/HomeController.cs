@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaMemo.Utils.Cache;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,18 +16,11 @@ namespace MegaMemo.Controllers
             return View();
         }
 
-        public ActionResult About()
+#if DEBUG
+        public void ClearCache()
         {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            CacheWrapper.Instance.ClearAllCache();
         }
     }
+#endif
 }

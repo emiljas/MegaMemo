@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaMemo", "MegaMemo\MegaMemo.csproj", "{318C154F-21FC-4BEF-9F3B-7D3DF56515DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaMemoTests", "MegaMemoTests\MegaMemoTests.csproj", "{9002699A-5E52-40CF-A1EF-2F6E13442082}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{318C154F-21FC-4BEF-9F3B-7D3DF56515DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318C154F-21FC-4BEF-9F3B-7D3DF56515DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318C154F-21FC-4BEF-9F3B-7D3DF56515DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9002699A-5E52-40CF-A1EF-2F6E13442082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9002699A-5E52-40CF-A1EF-2F6E13442082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9002699A-5E52-40CF-A1EF-2F6E13442082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9002699A-5E52-40CF-A1EF-2F6E13442082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

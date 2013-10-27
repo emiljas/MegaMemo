@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="Manifest.ashx.cs" Class="MegaMemo.Controllers.Manifest" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="Manifest.ashx.cs" Class="MegaMemo.Handlers.Manifest" %>

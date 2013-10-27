@@ -43,6 +43,11 @@
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
+
+        @{/* TODO: HtmlHelper dziedziczący po Scripts 
+        @BundleTable.Bundles.ResolveBundleUrl("~/bundles/jquery", false)
+        */}
+
         @RenderSection("scripts", required: false)
     </body>
 </html>

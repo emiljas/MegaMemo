@@ -21,6 +21,7 @@ namespace MegaMemo.Controllers
         {
             CacheWrapper.Instance.ClearAllCache();
         }
-    }
 #endif
+
+    }
 }

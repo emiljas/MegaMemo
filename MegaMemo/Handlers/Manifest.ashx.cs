@@ -16,6 +16,8 @@ namespace MegaMemo.Handlers
      */
     public class Manifest : IHttpHandler
     {
+        private const double ManifestVersion = 1.0;
+
         private static readonly string[] FoldersWithElementsToCache = new[]
             {
                 "/Images/",
@@ -40,6 +42,7 @@ namespace MegaMemo.Handlers
             var sb = new StringBuilder();
 
             sb.AppendLine("CACHE MANIFEST");
+            sb.AppendFormat("# version {0}", ManifestVersion);
 
             AppendFilesFromFolders(sb);
             AppendBundles(sb);

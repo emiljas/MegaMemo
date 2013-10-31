@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en" manifest="/Handlers/Manifest.ashx">
+@*<html lang="en" manifest="/Handlers/Manifest.ashx">*@
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
@@ -43,10 +44,6 @@
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
-
-        @{/* TODO: HtmlHelper dziedziczący po Scripts 
-        @BundleTable.Bundles.ResolveBundleUrl("~/bundles/jquery", false)
-        */}
 
         @RenderSection("scripts", required: false)
     </body>

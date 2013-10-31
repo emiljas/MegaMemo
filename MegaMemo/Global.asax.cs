@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MegaMemo.Models;
+using MegaMemo.Models.Context;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -16,6 +19,10 @@ namespace MegaMemo
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new DataInitializer());
+            MegaMemoDbContext db = new MegaMemoDbContext();
+            db.Database.Initialize(true);
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

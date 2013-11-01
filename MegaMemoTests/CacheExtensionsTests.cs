@@ -10,6 +10,8 @@ using Moq;
 using System.Web;
 using MegaMemo.Utils.Cache;
 using System.Threading;
+using MegaMemo;
+using Microsoft.QualityTools.Testing.Fakes;
 
 namespace MegaMemoTests
 {

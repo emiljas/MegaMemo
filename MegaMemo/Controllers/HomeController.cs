@@ -1,9 +1,16 @@
-﻿using MegaMemo.Utils.Cache;
+﻿using DotNetOpenAuth.AspNet;
+using MegaMemo.Models;
+using MegaMemo.Models.Context;
+using MegaMemo.Utils.Cache;
+using Microsoft.Web.WebPages.OAuth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using WebMatrix.WebData;
 
 namespace MegaMemo.Controllers
 {
@@ -11,17 +18,14 @@ namespace MegaMemo.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
             return View();
         }
 
-#if DEBUG
-        public void ClearCache()
+        [Authorize(Roles="Administrator")]
+        public ActionResult ClearCache()
         {
             CacheWrapper.Instance.ClearAllCache();
+            return RedirectToAction("Index");
         }
-#endif
-
     }
 }

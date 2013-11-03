@@ -25,7 +25,8 @@ namespace MegaMemo.Models.Context
                     }
                 }
 
-                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                WebSecurity.InitializeDatabaseConnection(MegaMemoDbContext.ConnectionStringName,
+                    "UserProfile", "UserId", "UserName", autoCreateTables: true);
             }
             catch (Exception ex)
             {

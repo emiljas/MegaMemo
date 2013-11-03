@@ -4,41 +4,45 @@ using System.Web.Optimization;
 
 namespace MegaMemo
 {
-    public class BundleConfig
+    public static class BundleConfig
     {
+        private static BundleCollection _bundles;
+
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/External/jquery-{version}.js"));
+            _bundles = bundles;
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/External/jquery-ui-{version}.js"));
+            RegisterExternalJs();
+            RegisterCustomJs();
+            RegisterExternalCss();
+            RegisterCustomCss();
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/External/jquery.unobtrusive*",
-                        "~/Scripts/External/jquery.validate*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/External/modernizr-*"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
-                        "~/Content/themes/base/jquery.ui.resizable.css",
-                        "~/Content/themes/base/jquery.ui.selectable.css",
-                        "~/Content/themes/base/jquery.ui.accordion.css",
-                        "~/Content/themes/base/jquery.ui.autocomplete.css",
-                        "~/Content/themes/base/jquery.ui.button.css",
-                        "~/Content/themes/base/jquery.ui.dialog.css",
-                        "~/Content/themes/base/jquery.ui.slider.css",
-                        "~/Content/themes/base/jquery.ui.tabs.css",
-                        "~/Content/themes/base/jquery.ui.datepicker.css",
-                        "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
-
-
+#if RELEASE
             BundleTable.EnableOptimizations = true;
+#endif
+        }
+
+        private static void RegisterExternalJs()
+        {
+            _bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/External/jquery/jquery-{version}.js",
+                        "~/Scripts/External/jqueryValidate/jquery.validate.js"
+                        ));
+        }
+
+        private static void RegisterCustomJs()
+        {
+            _bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                        "~/Scripts/Custom/app.js"
+                    ));
+        }
+        
+        private static void RegisterExternalCss()
+        {
+        }
+
+        private static void RegisterCustomCss()
+        {
         }
     }
 }

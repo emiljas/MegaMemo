@@ -31,6 +31,8 @@ namespace MegaMemo
             MegaMemoDbContext db = new MegaMemoDbContext();
             db.Database.Initialize(true);
 
+            LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -38,8 +40,6 @@ namespace MegaMemo
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-
-            LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
         }
     }
 }

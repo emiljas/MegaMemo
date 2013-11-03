@@ -7,13 +7,15 @@ using System.Web;
 namespace MegaMemo.Models.Context
 {
     public class MegaMemoDbContext : DbContext
-    {
-        public MegaMemoDbContext()
+    { 
 #if DEBUG
-            :base("DefaultConnectionLocal")
+        public const string ConnectionStringName = "DefaultConnectionLocal";
 #else
-            :base("DefaultConnection")
+        public const string ConnectionStringName = "DefaultConnection";
 #endif
+
+        public MegaMemoDbContext()
+            : base(ConnectionStringName)
         {
         }
 

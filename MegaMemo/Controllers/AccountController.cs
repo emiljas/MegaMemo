@@ -1,19 +1,18 @@
-﻿using System;
+﻿using DotNetOpenAuth.AspNet;
+using MegaMemo.Models;
+using MegaMemo.Models.Context;
+using Microsoft.Web.WebPages.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using DotNetOpenAuth.AspNet;
-using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using MegaMemo.Models;
-using MegaMemo.Models.Context;
 
 namespace MegaMemo.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
         //
@@ -403,5 +402,7 @@ namespace MegaMemo.Controllers
             }
         }
         #endregion
+
+
     }
 }

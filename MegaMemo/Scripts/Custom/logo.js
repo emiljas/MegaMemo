@@ -1,8 +1,4 @@
-﻿if (navigator.onLine) {
-    
-}
-
-var Logo = function() {
+﻿var Logo = function() {
     this.control = document.getElementById('logo');
     this.context =  this.control.getContext('2d'),
     this.width = this.control.width;

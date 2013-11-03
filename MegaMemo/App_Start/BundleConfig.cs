@@ -17,7 +17,9 @@ namespace MegaMemo
             RegisterExternalCss();
             RegisterCustomCss();
 
-#if RELEASE
+#if DEBUG
+            BundleTable.EnableOptimizations = true;
+#else
             BundleTable.EnableOptimizations = true;
 #endif
         }
@@ -28,6 +30,10 @@ namespace MegaMemo
                         "~/Scripts/External/jquery/jquery-{version}.js",
                         "~/Scripts/External/jqueryValidate/jquery.validate.js"
                         ));
+
+            _bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                        "~/Scripts/External/knockout/knockout-{version}.js"
+                ));
         }
 
         private static void RegisterCustomJs()

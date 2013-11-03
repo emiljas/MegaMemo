@@ -21,7 +21,6 @@ namespace MegaMemo.Controllers
             return View();
         }
 
-        [Authorize(Roles="Administrator")]
         public ActionResult ClearCache()
         {
             CacheWrapper.Instance.ClearAllCache();

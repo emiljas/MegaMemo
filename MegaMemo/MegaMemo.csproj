@@ -204,6 +204,8 @@
     <None Include="Scripts\External\jqueryValidate\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\External\jqueryValidate\jquery.validate.js" />
     <Content Include="Scripts\External\jqueryValidate\jquery.validate.min.js" />
+    <Content Include="Scripts\External\knockout\knockout-3.0.0.debug.js" />
+    <Content Include="Scripts\External\knockout\knockout-3.0.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -236,11 +238,13 @@
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Account\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_LoginInfo.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\External\jquery\jquery-2.0.3.min.map" />
-    <Content Include="Views\Account\_Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\_Login.cshtml" />
+    <Content Include="Views\Home\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

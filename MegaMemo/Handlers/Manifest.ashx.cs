@@ -7,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
+using System.Web.SessionState;
 
 namespace MegaMemo.Handlers
 {
@@ -14,8 +15,9 @@ namespace MegaMemo.Handlers
      * generate html5 cache manifest
      * add path to FoldersWithElementsToCache or to BundleConfig
      */
-    public class Manifest : IHttpHandler
+    public class Manifest : IHttpHandler, IRequiresSessionState
     {
+        private HttpContext _context;
         private const double ManifestVersion = 1.0;
 
         private static readonly string[] FoldersWithElementsToCache = new[]
@@ -26,9 +28,10 @@ namespace MegaMemo.Handlers
 
         public void ProcessRequest(HttpContext context)
         {
+            _context = context;
             context.Response.ContentType = "text/cache-manifest";
 
-            var html5CacheManifest = GetHtml5CacheManifest();
+            string html5CacheManifest = GetHtml5CacheManifest();
             context.Response.Write(html5CacheManifest);
         }
 
@@ -43,6 +46,7 @@ namespace MegaMemo.Handlers
 
             sb.AppendLine("CACHE MANIFEST");
             sb.AppendFormat("# version {0}", ManifestVersion);
+            sb.AppendLine();
 
             AppendFilesFromFolders(sb);
             AppendBundles(sb);

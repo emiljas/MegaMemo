@@ -188,15 +188,20 @@
     <Compile Include="Utils\Cache\CacheWrapper.cs" />
     <Compile Include="Utils\Cache\ICacheWrapper.cs" />
     <Compile Include="Utils\LogHelper.cs" />
+    <Content Include="Content\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
     <Content Include="Handlers\Manifest.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="log4net.config" />
+    <Content Include="Content\style.scss" />
     <None Include="Properties\PublishProfiles\MegaMemo.pubxml" />
     <None Include="Scripts\External\jquery\jquery-2.0.3.intellisense.js" />
-    <Content Include="Scripts\Custom\app.js" />
+    <Content Include="Scripts\Custom\logo.js" />
+    <Content Include="Scripts\Custom\login.js" />
     <Content Include="Scripts\External\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\External\jquery\jquery-2.0.3.min.js" />
     <Content Include="Scripts\External\jquery\jquery.unobtrusive-ajax.js" />
@@ -248,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
     <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>

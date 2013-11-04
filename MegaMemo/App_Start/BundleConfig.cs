@@ -29,18 +29,19 @@ namespace MegaMemo
             _bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/External/jquery/jquery-{version}.js",
                         "~/Scripts/External/jqueryValidate/jquery.validate.js"
-                        ));
+            ));
 
             _bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                         "~/Scripts/External/knockout/knockout-{version}.js"
-                ));
+            ));
         }
 
         private static void RegisterCustomJs()
         {
             _bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                        "~/Scripts/Custom/app.js"
-                    ));
+                        "~/Scripts/Custom/login.js",
+                        "~/Scripts/Custom/logo.js"
+            ));
         }
         
         private static void RegisterExternalCss()
@@ -49,6 +50,9 @@ namespace MegaMemo
 
         private static void RegisterCustomCss()
         {
+            _bundles.Add(new StyleBundle("~/bundles/style").Include(
+                        "~/Content/style.css"
+            ));
         }
     }
 }

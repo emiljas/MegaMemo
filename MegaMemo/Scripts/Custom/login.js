@@ -1,4 +1,6 @@
-﻿var loginModel = {
+﻿setDefaultButton('#loginContainer', '#loginBtn');
+
+var loginModel = {
 	userName: ko.observable(),
 	password: ko.observable(),
 	success: ko.observable(),
@@ -10,7 +12,6 @@
 	        contentType: "application/json; charset=utf-8",
 	        data: JSON.stringify({ model: ko.toJS(loginModel) }),
 	        success: function (data) {
-	            console.log('SUCCESS!');
 	            loginModel.success(data.success)
 	            console.log(data);
 
@@ -25,4 +26,4 @@
 	}
 };
 
-ko.applyBindings(loginModel);
+/*ko.applyBindings(loginModel);*/

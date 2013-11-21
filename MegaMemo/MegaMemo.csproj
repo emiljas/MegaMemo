@@ -188,18 +188,32 @@
     <Compile Include="Utils\Cache\CacheWrapper.cs" />
     <Compile Include="Utils\Cache\ICacheWrapper.cs" />
     <Compile Include="Utils\LogHelper.cs" />
-    <Content Include="Content\style.css">
+    <Content Include="Content\External\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\External\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\External\bootstrap\bootstrap.css" />
+    <Content Include="Content\External\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\Custom\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Handlers\Manifest.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="log4net.config" />
-    <Content Include="Content\style.scss" />
+    <Content Include="Content\Custom\style.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\MegaMemo.pubxml" />
     <None Include="Scripts\External\jquery\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\Custom\registration.js" />
+    <Content Include="Scripts\External\bootstrap\bootbox.js" />
+    <Content Include="Scripts\External\bootstrap\bootbox.min.js" />
+    <Content Include="Scripts\Custom\utils.js" />
+    <Content Include="Scripts\External\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\External\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\Custom\logo.js" />
     <Content Include="Scripts\Custom\login.js" />
     <Content Include="Scripts\External\jquery\jquery-2.0.3.js" />
@@ -211,7 +225,9 @@
     <Content Include="Scripts\External\jqueryValidate\jquery.validate.min.js" />
     <Content Include="Scripts\External\knockout\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\External\knockout\knockout-3.0.0.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -245,11 +261,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginInfo.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\External\jquery\jquery-2.0.3.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\_Login.cshtml" />
-    <Content Include="Views\Home\_Register.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,27 +2,40 @@
     ViewBag.Title = "Home Page";
 }
 
-@Html.Partial("_LoginInfo")
+<div id="loginInfoContrainer">
 
-<div class="formLayout">
+</div>
+
+<div id="loginContainer" class="formContainer">
     <label for="userName">username:</label>
-    <input type="text" id="userName" data-bind="value: userName" /><br />
+    <input type="text" id="userName" data-bind="value: userName, valueUpdate: 'afterkeydown'" />
+    <br />
     
     <label for="password">password:</label>
-    <input type="password" id="password" data-bind="value: password" /><br />
+    <input type="password" id="password" data-bind="value: password, valueUpdate: 'afterkeydown'" />
+    <br />
     
     <span data-bind="html: errors"></span><br />
         
-    <button data-bind="click: login">Login</button><br />
+    <button type="submit" id="loginBtn" data-bind="click: login">Login</button>
+    <br />
 </div>
 
+<!--<button id="registrationBtn">Register</button>-->
+
+<!--
+@foreach (var p in OAuthWebSecurity.RegisteredClientData)
+{
+    <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
+}
+-->
 
 @*@Html.Partial("_Login")
 
 @Html.Action("ExternalLoginsList", "Account", new { ReturnUrl = ViewBag.ReturnUrl });
 
 @Html.Partial("_Register")*@
-
+<!--
 <h3>We suggest the following:</h3>
 <ol class="round">
     <li class="one">
@@ -41,3 +54,4 @@
         sfkgjlk fsdlgk
     </li>
 </ol>
+-->

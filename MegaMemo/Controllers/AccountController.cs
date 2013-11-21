@@ -42,16 +42,21 @@ namespace MegaMemo.Controllers
         {
             WebSecurity.Logout();
 
-            Session["html5manifest-notlogged"] = "";
-
             return RedirectToAction("Index", "Home");
+        }
+
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
         }
 
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult JsonRegister(RegisterModel model, string returnUrl)
+        public ActionResult JsonRegister(RegisterModel model)
         {
+            string returnUrl = "";
+
             if (ModelState.IsValid)
             {
                 try

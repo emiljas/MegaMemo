@@ -36,3 +36,53 @@
 		clear: left;
 	}
 }
+
+.red
+{
+	color: red;
+}
+
+.white
+{
+	color: white;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.b
+{
+	font-weight: bold;
+}
+
+#loginInfo .userName
+{
+	line-height: 30px;
+	font-weight: bold;
+	color: white;
+}
+
+body
+{
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.navbar-brand
+{
+	padding: 0 0 0 0 !important;
+}
+
+#logoTitle
+{
+	float: left;
+	padding: 15px;
+}
+
+#logo
+{
+	display: block;
+	float: right;
+}

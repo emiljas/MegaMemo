@@ -1,8 +1,26 @@
-﻿var Logo = function() {
-    this.control = document.getElementById('logo');
+﻿var Logo = function (id, bgcolor, syncStatus) {
+    this.control = document.getElementById(id);
     this.context =  this.control.getContext('2d'),
     this.width = this.control.width;
     this.height = this.control.height;
+
+    if (!syncStatus) {
+        if (navigator.onLine) {
+            syncStatus = SyncStatus.online;
+        }
+        else {
+            syncStatus = SyncStatus.offline;
+        }
+    }
+
+    this.syncDiode = new SyncDiode(this.context,
+                                   this.width / 2,
+                                   this.height / 2,
+                                   (this.height / 2) * 0.9,
+                                   syncStatus,
+                                   bgcolor);
+
+    this.syncDiode.draw();
 };
 
 var SyncStatus = {
@@ -12,7 +30,7 @@ var SyncStatus = {
     notSync: 3 //czerwona pulsująca
 };
 
-function SyncDiode(context, x, y, r, status) {
+function SyncDiode(context, x, y, r, status, bgcolor) {
     this.context = context;
     this.x = x;
     this.y = y;
@@ -21,44 +39,82 @@ function SyncDiode(context, x, y, r, status) {
     this.rGradient2 = r;
 
     this.status = status;
+    this.color;
+    this.bgcolor = bgcolor;
+    this.pulseIntervalId = null;
+    this.pulseSign = -1;
 }
 
 SyncDiode.prototype.draw = function () {
-    var color;
-    var gradient = this.context.createRadialGradient(this.x, this.y, this.rGradient1, this.x, this.y, this.rGradient2);
-
     switch (this.status) {
         case SyncStatus.online:
-            color = '#12e345';
+            this.color = '#12e345';
+            this.disablePulse();
+            this.refresh();
             break;
         case SyncStatus.offline:
-            color = '#A00000';
+            this.color = '#A00000';
+            this.disablePulse();
+            this.refresh();
             break;
-        case Status.notSync:
+        case SyncStatus.syncInProgress:
+            this.color = '#12e345';
+            this.enablePulse();
+            break;
+        case SyncStatus.notSync:
+            this.color = '#A00000';
+            this.enablePulse();
             break;
     }
+}
 
-    gradient.addColorStop(0, color);
-    gradient.addColorStop(1, '#FFFFFF');
+SyncDiode.prototype.enablePulse = function () {
+    var self = this;
+
+    this.pulseIntervalId = setInterval(function () {
+        var diff = self.rGradient1 / 10;
+
+        if (self.rGradient1 < 0.1 * self.rGradient2) {
+            self.pulseSign = 1;
+        }
+        else if(self.rGradient1 > self.rGradient2 * 0.6) {
+            self.pulseSign = -1;
+        }
+
+        self.rGradient1 += (diff * self.pulseSign);
+
+        //console.log(diff);
+        //debugger;
+
+        self.refresh();
+    }, 10);
+}
+
+SyncDiode.prototype.disablePulse = function () {
+    clearInterval(this.pulseIntervalId);
+}
+
+SyncDiode.prototype.refresh = function () {
+    this.context.clearRect(0, 0, 500, 500);
+
+    var gradient = this.context.createRadialGradient(this.x,
+                                                 this.y,
+                                                 this.rGradient1,
+                                                 this.x,
+                                                 this.y,
+                                                 this.rGradient2);
+
+    gradient.addColorStop(0, this.color);
+    gradient.addColorStop(1, this.bgcolor);
     this.context.fillStyle = gradient;
-    this.context.fillRect(this.x - this.rGradient2, this.y - this.rGradient2, this.x + this.rGradient2, this.y + this.rGradient2);
+    this.context.fillRect(this.x - this.rGradient2,
+                          this.y - this.rGradient2,
+                          this.x + this.rGradient2,
+                          this.y + this.rGradient2);
 }
 
-
-
-var logo = new Logo();
-var syncStatus;
-
-if (navigator.onLine) {
-    syncStatus = SyncStatus.online;
-}
-else {
-    syncStatus = SyncStatus.offline;
-}
-
-var syncDiode = new SyncDiode(logo.context, logo.width / 2, logo.height / 2, (logo.height / 2) * 0.9, syncStatus);
-syncDiode.draw();
-
+var logo = new Logo('logo', 'rgba(10, 10, 10, 0)');
+var syncDiode = logo.syncDiode;
 
 window.addEventListener('online', online);
 window.addEventListener('offline', offline);

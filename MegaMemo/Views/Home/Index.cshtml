@@ -2,26 +2,24 @@
     ViewBag.Title = "Home Page";
 }
 
-<div id="loginInfoContrainer">
-
-</div>
-
-<div id="loginContainer" class="formContainer">
+<canvas id="onlineLogo" width="50" height="50"></canvas>
+<canvas id="offlineLogo" width="50" height="50"></canvas>
+<canvas id="syncInProgressLogo" width="50" height="50"></canvas>
+<canvas id="notSyncLogo" width="50" height="50"></canvas>
+<!--<div id="loginContainer" class="formContainer">
     <label for="userName">username:</label>
-    <input type="text" id="userName" data-bind="value: userName, valueUpdate: 'afterkeydown'" />
+    <input type="text" id="userName" />
     <br />
     
     <label for="password">password:</label>
-    <input type="password" id="password" data-bind="value: password, valueUpdate: 'afterkeydown'" />
+    <input type="password" id="password" />
     <br />
     
-    <span data-bind="html: errors"></span><br />
+    <span class="errors"></span><br />
         
-    <button type="submit" id="loginBtn" data-bind="click: login">Login</button>
+    <button type="submit" id="loginBtn">Login</button>
     <br />
-</div>
-
-<!--<button id="registrationBtn">Register</button>-->
+</div>-->
 
 <!--
 @foreach (var p in OAuthWebSecurity.RegisteredClientData)

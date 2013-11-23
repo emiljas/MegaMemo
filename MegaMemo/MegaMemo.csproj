@@ -208,9 +208,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\MegaMemo.pubxml" />
     <None Include="Scripts\External\jquery\jquery-2.0.3.intellisense.js" />
-    <Content Include="Scripts\Custom\registration.js" />
+    <Content Include="Scripts\Custom\appguide.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />
+    <Content Include="Scripts\Custom\registration.js" />
     <Content Include="Scripts\Custom\utils.js" />
     <Content Include="Scripts\External\bootstrap\bootstrap.js" />
     <Content Include="Scripts\External\bootstrap\bootstrap.min.js" />

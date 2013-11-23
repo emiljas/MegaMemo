@@ -5,3 +5,16 @@
 		}
 	});
 }
+
+function errorAlert(errors) {
+    errors = "<div class='center red'>" + errors + '</div>';
+    bootbox.alert(errors);
+}
+
+function sh(element) {
+    element.removeClass('hide');
+}
+
+function hi(element) {
+    element.addClass('hide');
+}

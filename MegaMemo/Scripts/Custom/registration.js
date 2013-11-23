@@ -1,5 +1,36 @@
-﻿setDefaultButton('#registrationContainer', '#registrationBtn');
+﻿setDefaultButton('#registerContainer', '#registerBtn');
 
+$('#registerBtn').click(register);
+
+function register() {
+    var registerModel = {
+        userName: $('#userName').val(),
+        password: $('#password').val(),
+        confirmPassword: $('#confirmPassword').val()
+    };
+
+    $.ajax({
+        url: '/Account/JsonRegister',
+        type: 'POST',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(registerModel),
+        success: function (data) {
+            //loginModel.success(data.success)
+            console.log(data);
+
+            if (data.errors) {
+                var errors = '';
+                for (var i = 0; i < data.errors.length; ++i) {
+                    errors += data.errors[i] + '<br />';
+                }
+
+                $('#registerContainer .errors').html(errors);
+            }
+        }
+    });
+}
+
+/*
 var registrationModel = {
     userName: ko.observable(),
     password: ko.observable(),
@@ -25,5 +56,4 @@ var registrationModel = {
         });
     }
 };
-
-ko.applyBindings(registrationModel);
+ko.applyBindings(registrationModel);*/

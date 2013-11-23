@@ -4,3 +4,4 @@
 /// <reference path="External/bootstrap/bootstrap.js" />
 /// <reference path="External/bootstrap/bootbox.js" />
 /// <reference path="Custom/utils.js" />
+/// <reference path="Custom/logo.js" />

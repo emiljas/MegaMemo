@@ -2,22 +2,22 @@
     <h2>Create a new account.</h2>
 </hgroup>
 
-<div id="registrationContainer" class="formContainer">
+<div id="registerContainer" class="formContainer">
     <label for="userName">username:</label>
     <input type="text" id="userName" data-bind="value: userName, valueUpdate: 'afterkeydown'" />
     <br />
 
     <label for="password">password:</label>
-    <input type="password" id="password" data-bind="value: password, valueUpdate: 'afterkeydown'" />
+    <input type="password" id="password" />
     <br />
 
     <label for="confirmPassword">confirm password:</label>
-    <input type="password" id="confirmPassword" data-bind="value: confirmPassword, valueUpdate: 'afterkeydown'" />
+    <input type="password" id="confirmPassword" />
     <br />
 
-    <span data-bind="html: errors"></span>
+    <span class="errors"></span>
     <br />
 
-    <button type="submit" id="registrationBtn" data-bind="click: register">Register</button>
+    <button type="submit" id="registerBtn">Register</button>
     <br />
 </div>

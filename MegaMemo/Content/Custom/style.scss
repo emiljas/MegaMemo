@@ -37,6 +37,23 @@
 	}
 }
 
+#logoDemoContainer
+{
+	margin-top: 15px;
+}
+
+#appGuideTable
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100%;
+
+	td
+	{
+		text-align: center;
+	}
+}
+
 .red
 {
 	color: red;
@@ -45,6 +62,17 @@
 .white
 {
 	color: white;
+}
+
+#helpContainer
+{
+	float: right;
+	color: white;
+	font-weight: bold;
+	margin-left: 10px;
+	padding: 14px;
+	cursor: pointer;
+	cursor: hand;
 }
 
 .center
@@ -66,7 +94,7 @@
 
 body
 {
-	padding-top: 50px;
+	padding-top: 70px;
 	padding-bottom: 20px;
 }
 
@@ -84,5 +112,40 @@ body
 #logo
 {
 	display: block;
-	float: right;
+	float: left;
+}
+
+.loader
+{
+	position: fixed;
+	z-index: 100000;
+	background-color: rgba(255, 255, 255, .85);
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.emptyMsg
+{
+	font-style: italic;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.btnFooter
+{
+	margin-top: 25px;
+	text-align: center;
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
+	body
+	{
+		padding-top: 120px;
+	}
+}
+
+.btnFooter .btn
+{
+	width: 100%;
 }

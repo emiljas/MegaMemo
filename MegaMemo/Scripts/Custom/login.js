@@ -8,6 +8,8 @@ function login() {
         password: $('#password').val()
     };
 
+    showLoader($('#loginContainer'), 'loginLoader');
+
     $.ajax({
         url: '/Account/JsonLogin',
         type: 'POST',
@@ -15,6 +17,8 @@ function login() {
         data: JSON.stringify(loginModel),
         success: function (data) {
             console.log(data.success);
+
+            hideLoader('loginLoader');
 
             console.log(data);
 
@@ -34,4 +38,6 @@ function login() {
             
         }
     });
+
+    //hideLoader('loginLoader');
 }

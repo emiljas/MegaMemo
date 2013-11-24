@@ -18,7 +18,7 @@ namespace MegaMemo
             RegisterCustomCss();
 
 #if DEBUG
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
 #else
             BundleTable.EnableOptimizations = true;
 #endif
@@ -48,7 +48,8 @@ namespace MegaMemo
                         "~/Scripts/Custom/logo.js",
                         "~/Scripts/Custom/login.js",
                         "~/Scripts/Custom/registration.js",
-                        "~/Scripts/Custom/appguide.js"
+                        "~/Scripts/Custom/appguide.js",
+                        "~/Scripts/Custom/offlinestorage.js"
             ));
         }
         
@@ -56,7 +57,8 @@ namespace MegaMemo
         {
             _bundles.Add(new StyleBundle("~/styleBundles/bootstrap").Include(
                         "~/Content/External/bootstrap/bootstrap.css",
-                        "~/Content/External/bootstrap/bootstrap-theme.css"
+                        "~/Content/External/bootstrap/bootstrap-theme.css",
+                        "~/Content/External/cssTableGenerator/style.css"
             ));
         }
 

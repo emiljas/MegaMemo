@@ -18,12 +18,16 @@ namespace MegaMemo.Handlers
     public class Manifest : IHttpHandler, IRequiresSessionState
     {
         private HttpContext _context;
-        private const double ManifestVersion = 1.0;
+        private const double ManifestVersion = 1.1;
+
+        private static readonly string[] Files = new[]
+            {
+                "/"
+            };
 
         private static readonly string[] FoldersWithElementsToCache = new[]
             {
                 "/Images/",
-                "/Content/"
             };
 
         public void ProcessRequest(HttpContext context)
@@ -37,7 +41,7 @@ namespace MegaMemo.Handlers
 
         private string GetHtml5CacheManifest()
         {
-            return CacheWrapper.Instance.GetOrStore("MegaMemo.Handlers.Html5CacheManifest", GenerateHtml5CacheManifest);
+            return GenerateHtml5CacheManifest(); //CacheWrapper.Instance.GetOrStore("MegaMemo.Handlers.Html5CacheManifest", GenerateHtml5CacheManifest);
         }
 
         private string GenerateHtml5CacheManifest()
@@ -45,13 +49,22 @@ namespace MegaMemo.Handlers
             var sb = new StringBuilder();
 
             sb.AppendLine("CACHE MANIFEST");
-            sb.AppendFormat("# version {0}", ManifestVersion);
+            sb.AppendFormat("# version {0}", ManifestVersion.ToString().Replace(',', '.'));
             sb.AppendLine();
 
+            AppendFiles(sb);
             AppendFilesFromFolders(sb);
             AppendBundles(sb);
 
             return sb.ToString();
+        }
+
+        private void AppendFiles(StringBuilder sb)
+        {
+            foreach (var file in Files)
+            {
+                sb.AppendLine(file);
+            }
         }
 
         private void AppendFilesFromFolders(StringBuilder sb)
@@ -62,7 +75,7 @@ namespace MegaMemo.Handlers
                 foreach (var path in paths)
                 {
                     var fileName = Path.GetFileName(path);
-                    if (!fileName.StartsWith("_"))
+                    if (!fileName.StartsWith("_") && fileName != "Thumbs.db")
                         sb.AppendLine(folderPath + fileName);
                 }
             }

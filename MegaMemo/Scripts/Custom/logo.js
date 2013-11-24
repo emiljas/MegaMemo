@@ -71,6 +71,7 @@ SyncDiode.prototype.draw = function () {
 SyncDiode.prototype.enablePulse = function () {
     var self = this;
 
+    clearInterval(this.pulseIntervalId);
     this.pulseIntervalId = setInterval(function () {
         var diff = self.rGradient1 / 10;
 
@@ -82,16 +83,13 @@ SyncDiode.prototype.enablePulse = function () {
         }
 
         self.rGradient1 += (diff * self.pulseSign);
-
-        //console.log(diff);
-        //debugger;
-
         self.refresh();
-    }, 10);
+    }, 18);
 }
 
 SyncDiode.prototype.disablePulse = function () {
     clearInterval(this.pulseIntervalId);
+    this.rGradient1 = this.rGradient2 * 0.6;
 }
 
 SyncDiode.prototype.refresh = function () {
@@ -116,15 +114,10 @@ SyncDiode.prototype.refresh = function () {
 var logo = new Logo('logo', 'rgba(10, 10, 10, 0)');
 var syncDiode = logo.syncDiode;
 
-window.addEventListener('online', online);
-window.addEventListener('offline', offline);
+//window.addEventListener('online', function () { changeStatus(SyncStatus.online) });
+//window.addEventListener('offline', function () { changeStatus(SyncStatus.offline) });
 
-function online() {
-    syncDiode.status = SyncStatus.online;
-    syncDiode.draw();
-}
-
-function offline() {
-    syncDiode.status = SyncStatus.offline;
+function changeStatus(status) {
+    syncDiode.status = status;
     syncDiode.draw();
 }

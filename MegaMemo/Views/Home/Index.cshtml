@@ -2,10 +2,47 @@
     ViewBag.Title = "Home Page";
 }
 
-<canvas id="onlineLogo" width="50" height="50"></canvas>
-<canvas id="offlineLogo" width="50" height="50"></canvas>
-<canvas id="syncInProgressLogo" width="50" height="50"></canvas>
-<canvas id="notSyncLogo" width="50" height="50"></canvas>
+<div id="decksSection">
+    <div class="container">
+        <div data-bind="visible: decks().length == 0">
+            <p class="emptyMsg">You have no decks yet</p>
+        </div>
+        <div class="datagrid" data-bind="visible: decks().length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Notes number
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: decks">
+                    <tr>
+                        <td>
+                            <span data-bind="text: title"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text: notesNumber"></span>
+                        </td>
+                        <td>
+                            <a href="#" data-bind="click: $parent.removeDeck" class="red b">✘</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="newDeckContainer" class="row btnFooter">
+            <div class="col-md-10"><input type="text" data-bind="value: newDeckTitle, valueUpdate: 'afterkeydown'" class="form-control" /></div>
+            <div class="col-md-2"><a class="btn btn-primary" data-bind="click: addDeck" href="#" role="button">Add deck</a></div>
+        </div>
+    </div>
+</div>
+
+
 <!--<div id="loginContainer" class="formContainer">
     <label for="userName">username:</label>
     <input type="text" id="userName" />

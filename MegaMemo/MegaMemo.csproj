@@ -183,6 +183,8 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Context\MegaMemoDbContext.cs" />
     <Compile Include="Models\Context\SimpleMembershipInitializer.cs" />
+    <Compile Include="Models\Deck.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Cache\CacheWrapperExtensions.cs" />
     <Compile Include="Utils\Cache\CacheWrapper.cs" />
@@ -195,12 +197,14 @@
     <Content Include="Content\Custom\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
+    <Content Include="Content\External\cssTableGenerator\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Handlers\Manifest.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\loader.gif" />
     <Content Include="log4net.config" />
     <Content Include="Content\Custom\style.scss" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -209,6 +213,7 @@
     <None Include="Properties\PublishProfiles\MegaMemo.pubxml" />
     <None Include="Scripts\External\jquery\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Custom\appguide.js" />
+    <Content Include="Scripts\Custom\offlinestorage.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />
     <Content Include="Scripts\Custom\registration.js" />
@@ -236,19 +241,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\_references.js" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 
-@*<html lang="en" manifest="/Handlers/Manifest.ashx">*@
-<html lang="en">
+<html lang="en" manifest="/Handlers/Manifest.ashx">
+@*<html lang="en">*@
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - MegaMemo</title>
@@ -23,9 +23,11 @@
             <div class="navbar-brand">
                 <div id="logoTitle">MegaMemo</div>
                 <canvas id="logo" width="50" height="50"></canvas>
+                <div id="helpContainer"><span>?</span></div>
             </div>
         </div>
         <div class="navbar-collapse collapse">
+
           <div id="loginContainer" class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" id="userName" placeholder="Username" class="form-control">
@@ -38,6 +40,15 @@
           <div id="loginInfo" class="hide white navbar-form navbar-right">
               Hello, <span class="b userName"></span>
           </div>
+
+
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Decks</a></li>
+            <!--<li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>-->
+          </ul>
+
+
         </div><!--/.navbar-collapse -->
       </div>
     </div>

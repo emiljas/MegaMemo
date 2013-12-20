@@ -31,13 +31,25 @@ function login() {
                 errorAlert(errors);
             }
             else {
-                hi($('#loginContainer'));
-                sh($('#loginInfo'));
-                $('#loginInfo .userName').text(loginModel.userName);
+                localStorage.login = loginModel.userName;
+                localStorage.password = loginModel.password;
+
+                showLoginInfo();
             }
             
         }
     });
 
     //hideLoader('loginLoader');
+}
+
+function showLoginInfo() {
+    hi($('#loginContainer'));
+    sh($('#loginInfo'));
+    $('#loginInfo .userName').text(localStorage.login);
+
+}
+
+if (localStorage.login != undefined && localStorage.password != undefined) {
+    showLoginInfo();
 }

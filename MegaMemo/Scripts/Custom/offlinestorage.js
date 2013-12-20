@@ -3,6 +3,8 @@
 var idbSupported = false;
 var db;
 
+var decksStore;
+
 document.addEventListener("DOMContentLoaded", function () {
 	if ("indexedDB" in window) {
 		idbSupported = true;
@@ -17,13 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
 			var thisDB = e.target.result;
 
 			if (!thisDB.objectStoreNames.contains("decks")) {
-				thisDB.createObjectStore("decks");
+			    thisDB.createObjectStore("decks", { keyPath: "id", autoIncrement: true });
 			}
 		}
 
 		openRequest.onsuccess = function (e) {
 			console.log("Success!");
 			db = e.target.result;
+
+			decksStore = db.obj
+
+			getDecks(loadDecks);
 		}
 
 		openRequest.onerror = function (e) {
@@ -32,6 +38,44 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 }, false);
+
+function addDeck(deck) {
+    var trans = db.transaction(["decks"], "readwrite");
+    var store = trans.objectStore("decks");
+    var request = store.add(deck);
+
+    request.onsuccess = function(e) {
+        console.log('dodano nowe deck');
+    };
+
+    request.onerror = function(e) {
+        console.log(e.value);
+    };
+};
+
+function getDecks(callback) {
+    var trans = db.transaction("decks", "readwrite");
+    var store = trans.objectStore("decks");
+    var items = [];
+
+    trans.oncomplete = function (evt) {
+        callback(items);
+    };
+
+    var cursorRequest = store.openCursor();
+
+    cursorRequest.onerror = function (error) {
+        console.log(error);
+    };
+
+    cursorRequest.onsuccess = function (evt) {
+        var cursor = evt.target.result;
+        if (cursor) {
+            items.push(cursor.value);
+            cursor.continue();
+        }
+    };
+}
 
 function Synchronizer() {
     var self = this;
@@ -81,13 +125,15 @@ function AppViewModel() {
     self.addDeck = function () {
         if (self.newDeckTitle() !== '') {
             var newDeck = {
-                id: -1,
                 title: self.newDeckTitle(),
-                notesNumber: 0
+                cardsNumber: 0,
+                sync: false
             };
 
             self.decks.push(newDeck);
             self.newDeckTitle('');
+
+            addDeck(newDeck);
 
             synchronizer.newDecks.push(newDeck);
         }
@@ -99,3 +145,7 @@ function AppViewModel() {
 
 var viewModel = new AppViewModel();
 ko.applyBindings(viewModel);
+
+function loadDecks(decks) {
+    viewModel.decks(decks);
+}

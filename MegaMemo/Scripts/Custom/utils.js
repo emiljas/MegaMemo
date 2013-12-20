@@ -24,7 +24,6 @@ function hi(element) {
 }
 
 function showLoader(container, id) {
-
     var pos = container.position();
     var width = container.outerWidth(true);
     var height = container.outerHeight(true);
@@ -47,4 +46,9 @@ function showLoader(container, id) {
 
 function hideLoader(id) {
     $('#' + id).remove()
+}
+
+function showSection(id) {
+    $('div.section').addClass('hide');
+    $('#' + id).removeClass('hide');
 }

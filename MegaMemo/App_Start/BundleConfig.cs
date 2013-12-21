@@ -28,7 +28,10 @@ namespace MegaMemo
         {
             _bundles.Add(new ScriptBundle("~/scriptBundles/jquery").Include(
                         "~/Scripts/External/jquery/jquery-{version}.js",
-                        "~/Scripts/External/jqueryValidate/jquery.validate.js"
+                        "~/Scripts/External/jquery/jquery.browser.js",
+                        "~/Scripts/External/jqueryValidate/jquery.validate.js",
+                        "~/Scripts/External/jHtmlArea/jHtmlArea-0.7.5.js",
+                        "~/Scripts/External/jHtmlArea.ColorPickerMenu-0.7.0.js"
             ));
 
             _bundles.Add(new ScriptBundle("~/scriptBundles/knockout").Include(
@@ -55,6 +58,11 @@ namespace MegaMemo
         
         private static void RegisterExternalCss()
         {
+            _bundles.Add(new StyleBundle("~/styleBundles/jquery").Include(
+                        "~/Content/External/jHtmlArea/jHtmlArea.css",
+                        "~/Content/External/jHtmlArea/jHtmlArea.ColorPickerMenu.css"
+                ));
+
             _bundles.Add(new StyleBundle("~/styleBundles/bootstrap").Include(
                         "~/Content/External/bootstrap/bootstrap.css",
                         "~/Content/External/bootstrap/bootstrap-theme.css",

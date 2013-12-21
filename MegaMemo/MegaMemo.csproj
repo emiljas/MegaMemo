@@ -198,6 +198,11 @@
       <DependentUpon>style.scss</DependentUpon>
     </Content>
     <Content Include="Content\External\cssTableGenerator\style.css" />
+    <Content Include="Content\External\jHtmlArea\jHtmlArea.ColorPickerMenu.css" />
+    <Content Include="Content\External\jHtmlArea\jHtmlArea.css" />
+    <Content Include="Images\jHtmlArea.png" />
+    <Content Include="Images\jHtmlArea_Toolbar_Group_BG.png" />
+    <Content Include="Images\jHtmlArea_Toolbar_Group__Btn_Select_BG.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Handlers\Manifest.ashx" />
   </ItemGroup>
@@ -213,6 +218,7 @@
     <None Include="Properties\PublishProfiles\MegaMemo.pubxml" />
     <None Include="Scripts\External\jquery\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Custom\appguide.js" />
+    <Content Include="Scripts\Custom\editDeck.js" />
     <Content Include="Scripts\Custom\offlinestorage.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />
@@ -224,6 +230,7 @@
     <Content Include="Scripts\Custom\login.js" />
     <Content Include="Scripts\External\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\External\jquery\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\External\jquery\jquery.browser.js" />
     <Content Include="Scripts\External\jquery\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\External\jquery\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\External\jqueryValidate\jquery.validate-vsdoc.js" />
@@ -231,6 +238,12 @@
     <Content Include="Scripts\External\jqueryValidate\jquery.validate.min.js" />
     <Content Include="Scripts\External\knockout\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\External\knockout\knockout-3.0.0.js" />
+    <None Include="Scripts\External\jHtmlArea\jHtmlArea-0.7.5-vsdoc.js" />
+    <None Include="Scripts\External\jHtmlArea\jHtmlArea-0.7.5.min-vsdoc.js" />
+    <Content Include="Scripts\External\jHtmlArea\jHtmlArea-0.7.5.js" />
+    <Content Include="Scripts\External\jHtmlArea\jHtmlArea-0.7.5.min.js" />
+    <Content Include="Scripts\External\jHtmlArea\jHtmlArea.ColorPickerMenu-0.7.0.js" />
+    <Content Include="Scripts\External\jHtmlArea\jHtmlArea.ColorPickerMenu-0.7.0.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

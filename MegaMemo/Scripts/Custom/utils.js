@@ -51,4 +51,36 @@ function hideLoader(id) {
 function showSection(id) {
     $('div.section').addClass('hide');
     $('#' + id).removeClass('hide');
+
+    resize();
+
+    switch (id) {
+        case 'decksSection':
+
+            break;
+        case 'editDeckSection':
+
+            break;
+    }
 }
+
+function resize() {
+    var htmlEditors = $('.htmlEditor');
+
+    htmlEditors.each(function (index) {
+        var htmlEditorContainer = $(this).closest('.htmlEditorContainer');
+        var width = htmlEditorContainer.width();
+        htmlEditorContainer.find('.jHtmlArea').width(width);
+        htmlEditorContainer.find('iframe').width(width);
+        htmlEditorContainer.find('.ToolBar').width(width);
+    });
+}
+
+$(document).ready(function () {
+    $('.htmlEditor').htmlarea();
+    resize();
+});
+
+$(window).resize(function () {
+    resize();
+});

@@ -3,7 +3,7 @@
 var idbSupported = false;
 var db;
 
-var decksStore;
+//var decksStore;
 
 document.addEventListener("DOMContentLoaded", function () {
 	if ("indexedDB" in window) {
@@ -21,13 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (!thisDB.objectStoreNames.contains("decks")) {
 			    thisDB.createObjectStore("decks", { keyPath: "id", autoIncrement: true });
 			}
+
+			if (!thisDB.objectStoreNames.contains("cards")) {
+			    thisDB.createObjectStore("cards", { keyPath: "id", autoIncrement: true });
+			}
 		}
 
 		openRequest.onsuccess = function (e) {
-			console.log("Success!");
 			db = e.target.result;
 
-			decksStore = db.obj
+			//decksStore = db.obj
 
 			getDecks(loadDecks);
 		}
@@ -38,20 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 }, false);
-
-function addDeck(deck) {
-    var trans = db.transaction(["decks"], "readwrite");
-    var store = trans.objectStore("decks");
-    var request = store.add(deck);
-
-    request.onsuccess = function(e) {
-        console.log('dodano nowe deck');
-    };
-
-    request.onerror = function(e) {
-        console.log(e.value);
-    };
-};
 
 function getDecks(callback) {
     var trans = db.transaction("decks", "readwrite");
@@ -75,6 +64,27 @@ function getDecks(callback) {
             cursor.continue();
         }
     };
+}
+
+function addDeck(deck) {
+    var trans = db.transaction(["decks"], "readwrite");
+    var store = trans.objectStore("decks");
+    var request = store.add(deck);
+    /*
+    request.onsuccess = function (e) {
+        console.log('dodano nowe deck');
+    };
+
+    request.onerror = function (e) {
+        console.log(e.value);
+    };*/
+};
+
+function addCard(card)
+{
+    var trans = db.transaction(["cards"], "readwrite");
+    var store = trans.objectStore("cards");
+    var request = store.add(card);
 }
 
 function Synchronizer() {
@@ -117,10 +127,11 @@ function Synchronizer() {
 
 var synchronizer = new Synchronizer();
 
-function AppViewModel() {
+function DecksModel() {
     var self = this;
 
     self.decks = ko.observableArray();
+
     self.newDeckTitle = ko.observable('');
     self.addDeck = function () {
         if (self.newDeckTitle() !== '') {
@@ -138,14 +149,15 @@ function AppViewModel() {
             synchronizer.newDecks.push(newDeck);
         }
     };
+
     self.removeDeck = function () {
         self.decks.remove(this);
     };
 };
 
-var viewModel = new AppViewModel();
-ko.applyBindings(viewModel);
+var decksModel = new DecksModel();
+ko.applyBindings(decksModel, $('#decksSection')[0]);
 
 function loadDecks(decks) {
-    viewModel.decks(decks);
+    decksModel.decks(decks);
 }

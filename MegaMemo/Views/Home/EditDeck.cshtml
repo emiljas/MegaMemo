@@ -1,4 +1,4 @@
-﻿<div id="editDeckSection" class="section hide">
+﻿<div id="editDeckSection"class="section hide">
     <div class="container">
 
         <div class="title2cols row center">
@@ -6,20 +6,29 @@
         </div>
 
         <div class="row">
-            <div class="htmlEditorContainer col-md-6">
+            <div id="frontContainer" class="htmlEditorContainer col-md-6">
                 <h4 class="b">Front:</h4>
-                <textarea class="htmlEditor" placeholder="dgkjdfgldjgf" style="height: 200px;"></textarea>
+                <textarea class="htmlEditor" style="height: 200px;"></textarea>
             </div>
-            <div class="htmlEditorContainer col-md-6">
+            <div id="backContainer" class="htmlEditorContainer col-md-6">
                 <h4 class="b">Back:</h4>
                 <textarea class="htmlEditor" style="height: 200px"></textarea>
             </div>
         </div>
 
+
         <div class="row right marTop10">
-            <button class="btn btn-primary">
-                Add card
-            </button>
+            <div class="col-md-6 center">
+                <div class="table">
+                    <label for="reverseCheckbox" class="checkbox cbl rightf">Reverse</label>
+                    <input id="reverseCheckbox" type="checkbox" class="form-control cb rightf" data-bind="checked: reverse" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" data-bind="click: addNewDeck">
+                    Add card
+                </button>
+            </div>
         </div>
 
     </div>

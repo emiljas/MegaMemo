@@ -18,7 +18,7 @@ namespace MegaMemo
             RegisterCustomCss();
 
 #if DEBUG
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 #else
             BundleTable.EnableOptimizations = true;
 #endif
@@ -53,7 +53,12 @@ namespace MegaMemo
                         "~/Scripts/Custom/registration.js",
                         "~/Scripts/Custom/appguide.js",
                         "~/Scripts/Custom/offlinestorage.js",
-                        "~/Scripts/Custom/editDeck.js"
+                        "~/Scripts/Custom/card.js"
+            ));
+
+            _bundles.Add(new ScriptBundle("~/scriptBundles/appSections").Include(
+                        "~/Scripts/Custom/Sections/decksList.js",
+                        "~/Scripts/Custom/Sections/editDeck.js"
             ));
         }
         

@@ -7,3 +7,6 @@
 /// <reference path="Custom/utils.js" />
 /// <reference path="Custom/logo.js" />
 /// <reference path="Custom/card.js" />
+/// <reference path="Custom/offlinestorage.js" />
+/// <reference path="Custom/Sections/decksList.js" />
+/// <reference path="Custom/Sections/editDeck.js" />

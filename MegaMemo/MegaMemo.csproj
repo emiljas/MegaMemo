@@ -219,7 +219,8 @@
     <None Include="Scripts\External\jquery\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Custom\appguide.js" />
     <Content Include="Scripts\Custom\card.js" />
-    <Content Include="Scripts\Custom\editDeck.js" />
+    <Content Include="Scripts\Custom\Sections\decksList.js" />
+    <Content Include="Scripts\Custom\Sections\editDeck.js" />
     <Content Include="Scripts\Custom\offlinestorage.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />

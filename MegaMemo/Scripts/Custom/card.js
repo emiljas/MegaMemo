@@ -1,12 +1,15 @@
-﻿var Card = function (front, back, reverse) {
-	this.deckId = deckId;
-	this.front = front;
-	this.back = back;
-	this.reverse = reverse;
+﻿var Card = function (deckId, front, back, reverse) {
+    var self = this;
+    self.data = {
+        deckId: deckId,
+        front: front,
+        back: back,
+        reverse: reverse,
 
-	this.sync = false;
-	this.repetitionCount = 0;
-	this.easinessFactor = 2.5;
-	this.nextRepetitionDate = Date.now;
-	this.daysToNextRepetition = 0;
+        sync: false,
+        repetitionCount: 0,
+        easinessFactor: 2.5,
+        nextRepetitionDate: new Date(Date.now()),
+        daysToNextRepetition: 0
+    };
 };

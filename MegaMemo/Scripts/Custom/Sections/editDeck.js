@@ -29,7 +29,9 @@
     self.reverse = ko.observable(false);
     self.addNewDeck = function () {
 
-        var newCard = new Card(self.front(), self.back(), self.reverse());
+        var newCard = new Card(self.deckId(), self.front(), self.back(), self.reverse());
+
+        repository.addCard(newCard.data);
 
         self.front('');
         self.back('');

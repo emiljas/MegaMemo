@@ -19,7 +19,7 @@
                 <tbody data-bind="foreach: decks">
                     <tr>
                         <td class="w6">
-                            <a class="btn btn-small btn-info" style="width: 100%;" href="#" data-bind="text: title" onclick="javascript: showSection('editDeckSection')"></a>
+                            <a class="btn btn-small btn-info" style="width: 100%;" href="#" data-bind="text: title, click: $parent.clickAction"></a>
                         </td>
                         <td>
                             <span data-bind="text: cardsNumber"></span>

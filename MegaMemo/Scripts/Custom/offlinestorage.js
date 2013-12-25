@@ -1,95 +1,126 @@
-﻿setDefaultButton('#newDeckContainer', '#newDeckContainer .btn');
+﻿var Repository = function () {
+    var self = this;
 
-var idbSupported = false;
-var db;
+    var idbSupported = false;
+    var db;
 
-//var decksStore;
-
-document.addEventListener("DOMContentLoaded", function () {
-	if ("indexedDB" in window) {
-		idbSupported = true;
-	}
-
-	if (idbSupported) {
-		var openRequest = indexedDB.open("mmdb", 1);
-
-		openRequest.onupgradeneeded = function (e) {
-			console.log("Upgrading...");
-
-			var thisDB = e.target.result;
-
-			if (!thisDB.objectStoreNames.contains("decks")) {
-			    thisDB.createObjectStore("decks", { keyPath: "id", autoIncrement: true });
-			}
-
-			if (!thisDB.objectStoreNames.contains("cards")) {
-			    thisDB.createObjectStore("cards", { keyPath: "id", autoIncrement: true });
-			}
-		}
-
-		openRequest.onsuccess = function (e) {
-			db = e.target.result;
-
-			//decksStore = db.obj
-
-			getDecks(loadDecks);
-		}
-
-		openRequest.onerror = function (e) {
-			console.log("Error");
-			console.dir(e);
-		}
-	}
-}, false);
-
-function getDecks(callback) {
-    var trans = db.transaction("decks", "readwrite");
-    var store = trans.objectStore("decks");
-    var items = [];
-
-    trans.oncomplete = function (evt) {
-        callback(items);
-    };
-
-    var cursorRequest = store.openCursor();
-
-    cursorRequest.onerror = function (error) {
-        console.log(error);
-    };
-
-    cursorRequest.onsuccess = function (evt) {
-        var cursor = evt.target.result;
-        if (cursor) {
-            items.push(cursor.value);
-            cursor.continue();
+    document.addEventListener("DOMContentLoaded", function () {
+        if ("indexedDB" in window) {
+            idbSupported = true;
         }
+
+        if (idbSupported) {
+            var openRequest = indexedDB.open("mmdb", 2);
+
+            openRequest.onupgradeneeded = function (e) {
+                console.log("Upgrading...");
+
+                var thisDB = e.target.result;
+
+                if (!thisDB.objectStoreNames.contains("decks")) {
+                    thisDB.createObjectStore("decks", { keyPath: "id", autoIncrement: true });
+                }
+
+                if (!thisDB.objectStoreNames.contains("cards")) {
+                    thisDB.createObjectStore("cards", { keyPath: "id", autoIncrement: true });
+                }
+            }
+
+            openRequest.onsuccess = function (e) {
+                db = e.target.result;
+
+                //decksStore = db.obj
+
+                self.getDecks(loadDecks);
+            }
+
+            openRequest.onerror = function (e) {
+                console.log("Error");
+                console.dir(e);
+            }
+        }
+    }, false);
+
+    self.getDecks = function (callback) {
+        var trans = db.transaction("decks", "readwrite");
+        var store = trans.objectStore("decks");
+        var items = [];
+
+        trans.oncomplete = function (evt) {
+            callback(items);
+        };
+
+        var cursorRequest = store.openCursor();
+
+        cursorRequest.onerror = function (error) {
+            console.log(error);
+        };
+
+        cursorRequest.onsuccess = function (evt) {
+            var cursor = evt.target.result;
+            if (cursor) {
+                items.push(cursor.value);
+                cursor.continue();
+            }
+        };
+    }
+
+    self.addDeck = function (deck) {
+        var trans = db.transaction(["decks"], "readwrite");
+        var store = trans.objectStore("decks");
+
+        var request = store.add(deck);
+
+        request.onsuccess = function (e) {
+            deck.id = e.srcElement.result;
+        };
+
+        request.onerror = function (e) {
+            console.log(e.value);
+        };
+    };
+
+    self.getCardByDeckId = function (deckId, callback) {
+        var trans = db.transaction(["cards"], "readwrite");
+        var store = trans.objectStore("cards");
+
+        var items = [];
+
+        trans.oncomplete = function (evt) {
+            callback(items);
+        };
+
+        var cursorRequest = store.openCursor();
+
+        cursorRequest.onerror = function (error) {
+            console.log(error);
+        };
+
+        cursorRequest.onsuccess = function (evt) {
+            var cursor = evt.target.result;
+            if (cursor && cursor.value.deckId == deckId) {
+                items.push(cursor.value);
+                cursor.continue();
+            }
+        };
+    };
+
+    self.addCard = function (card) {
+
+        var trans = db.transaction(["cards"], "readwrite");
+        var store = trans.objectStore("cards");
+
+        //console.log(card);
+
+        var request = store.add(card);
     };
 }
 
-function addDeck(deck) {
-    var trans = db.transaction(["decks"], "readwrite");
-    var store = trans.objectStore("decks");
-    var request = store.add(deck);
-    /*
-    request.onsuccess = function (e) {
-        console.log('dodano nowe deck');
-    };
-
-    request.onerror = function (e) {
-        console.log(e.value);
-    };*/
-};
-
-function addCard(card)
-{
-    var trans = db.transaction(["cards"], "readwrite");
-    var store = trans.objectStore("cards");
-    var request = store.add(card);
-}
+var repository = new Repository();
 
 function Synchronizer() {
     var self = this;
-    
+
     self.newDecks = [];
 
     self.lock = false;
@@ -126,38 +157,3 @@ function Synchronizer() {
 }
 
 var synchronizer = new Synchronizer();
-
-function DecksModel() {
-    var self = this;
-
-    self.decks = ko.observableArray();
-
-    self.newDeckTitle = ko.observable('');
-    self.addDeck = function () {
-        if (self.newDeckTitle() !== '') {
-            var newDeck = {
-                title: self.newDeckTitle(),
-                cardsNumber: 0,
-                sync: false
-            };
-
-            self.decks.push(newDeck);
-            self.newDeckTitle('');
-
-            addDeck(newDeck);
-
-            synchronizer.newDecks.push(newDeck);
-        }
-    };
-
-    self.removeDeck = function () {
-        self.decks.remove(this);
-    };
-};
-
-var decksModel = new DecksModel();
-ko.applyBindings(decksModel, $('#decksSection')[0]);
-
-function loadDecks(decks) {
-    decksModel.decks(decks);
-}

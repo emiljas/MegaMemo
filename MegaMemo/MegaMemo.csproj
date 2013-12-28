@@ -284,6 +284,7 @@
     <Content Include="Views\Home\DecksList.cshtml" />
     <Content Include="Views\Home\EditDeck.cshtml" />
     <Content Include="Views\Home\StudyList.cshtml" />
+    <Content Include="Views\Home\StudyDeck.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

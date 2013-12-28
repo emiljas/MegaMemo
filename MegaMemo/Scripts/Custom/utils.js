@@ -71,7 +71,8 @@ function showSection(id, args) {
         case 'editDeckSection':
             loadDeckToEdit(args);
             break;
-        case '':
+        case 'studyListSection':
+            repository.getDecks(loadDecksToReview);
             break;
     }
 }

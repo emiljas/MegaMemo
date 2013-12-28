@@ -12,10 +12,15 @@
                 </p>
             </div>
 
-            <div data-bind="visible: decksToReview().length > 0">
-                <div class="center">
-                    <a class="btn btn-small btn-info" style="width: 90%;" href="#">
-                        angielski (<span class="b red">12</span> cards to review)
+            <div data-bind="visible: decksToReview().length > 0, foreach: decksToReview">
+                <div class="center spaceBtn">
+                    <a class="btn btn-small btn-info row" style="width: 90%;" href="#">
+                        <div class="col-md-6" data-bind="text: title">
+                        </div>
+                        <div class="col-md-6">
+                            (<span class="b red" data-bind="text: cardsNumber">
+                             </span> cards to review)
+                        </div>
                     </a>
                 </div>
             </div>

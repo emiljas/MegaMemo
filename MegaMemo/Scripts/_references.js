@@ -4,6 +4,7 @@
 /// <reference path="External/bootstrap/bootstrap.js" />
 /// <reference path="External/bootstrap/bootbox.js" />
 /// <reference path="External/jHtmlArea/jHtmlArea-0.7.5.js" />
+/// <reference path="External/moment/moment.js
 /// <reference path="Custom/utils.js" />
 /// <reference path="Custom/logo.js" />
 /// <reference path="Custom/card.js" />

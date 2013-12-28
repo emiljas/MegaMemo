@@ -148,3 +148,9 @@ body {
   font-weight: bold;
   margin-right: 10px; }
 
+.spaceBtn {
+  padding-top: 5px;
+  padding-botttom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+

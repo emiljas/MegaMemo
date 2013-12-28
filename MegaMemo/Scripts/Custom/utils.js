@@ -48,8 +48,14 @@ function hideLoader(id) {
     $('#' + id).remove()
 }
 
+function closeMenu() {
+    $('.navbar-collapse').removeClass('in').addClass('collapse');
+}
+
 function showSection(id, args) {
-    console.log($('div.section'));
+    
+    closeMenu();
+
     $('div.section').addClass('hide');
     $('#' + id).removeClass('hide');
 
@@ -62,11 +68,13 @@ function showSection(id, args) {
         case 'editDeckSection':
             loadDeckToEdit(args);
             break;
+        case '':
+            break;
     }
 }
 
 function appStart() {
-    showSection('decksSection');
+    showSection('studyListSection');
 }
 
 /*ko.bindingHandlers.bindIframe = {

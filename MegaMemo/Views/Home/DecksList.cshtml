@@ -1,8 +1,10 @@
 ﻿<div id="decksSection" class="section hide">
     <div class="container">
+
         <div data-bind="visible: decks().length == 0">
             <p class="emptyMsg">You have no decks yet</p>
         </div>
+
         <div class="datagrid" data-bind="visible: decks().length > 0">
             <table>
                 <thead>
@@ -31,9 +33,11 @@
                 </tbody>
             </table>
         </div>
+
         <div id="newDeckContainer" class="row btnFooter">
             <div class="col-md-10"><input type="text" data-bind="value: newDeckTitle, valueUpdate: 'afterkeydown'" class="form-control" /></div>
             <div class="col-md-2"><a class="btn btn-primary" data-bind="click: addDeck" href="#" role="button">Add deck</a></div>
         </div>
+
     </div>
 </div>

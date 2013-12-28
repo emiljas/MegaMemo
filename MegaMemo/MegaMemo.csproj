@@ -278,6 +278,7 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\DecksList.cshtml" />
     <Content Include="Views\Home\EditDeck.cshtml" />
+    <Content Include="Views\Home\StudyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

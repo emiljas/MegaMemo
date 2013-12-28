@@ -29,9 +29,11 @@
             openRequest.onsuccess = function (e) {
                 db = e.target.result;
 
-                //decksStore = db.obj
+                db.onerror = function (event) {
+                    alert("Database error: " + event.currentTarget.target.errorCode);
+                }
 
-                self.getDecks(loadDecks);
+                appStart();
             }
 
             openRequest.onerror = function (e) {
@@ -42,7 +44,7 @@
     }, false);
 
     self.getDecks = function (callback) {
-        var trans = db.transaction("decks", "readwrite");
+        var trans = db.transaction("decks");
         var store = trans.objectStore("decks");
         var items = [];
 
@@ -51,10 +53,6 @@
         };
 
         var cursorRequest = store.openCursor();
-
-        cursorRequest.onerror = function (error) {
-            console.log(error);
-        };
 
         cursorRequest.onsuccess = function (evt) {
             var cursor = evt.target.result;
@@ -66,7 +64,7 @@
     }
 
     self.addDeck = function (deck) {
-        var trans = db.transaction(["decks"], "readwrite");
+        var trans = db.transaction("decks", "readwrite");
         var store = trans.objectStore("decks");
 
         var request = store.add(deck);
@@ -74,14 +72,10 @@
         request.onsuccess = function (e) {
             deck.id = e.srcElement.result;
         };
-
-        request.onerror = function (e) {
-            console.log(e.value);
-        };
     };
 
-    self.getCardByDeckId = function (deckId, callback) {
-        var trans = db.transaction(["cards"], "readwrite");
+    self.getCardsByDeckId = function (deckId, callback) {
+        var trans = db.transaction("cards");
         var store = trans.objectStore("cards");
 
         var items = [];
@@ -92,25 +86,21 @@
 
         var cursorRequest = store.openCursor();
 
-        cursorRequest.onerror = function (error) {
-            console.log(error);
-        };
-
         cursorRequest.onsuccess = function (evt) {
             var cursor = evt.target.result;
-            if (cursor && cursor.value.deckId == deckId) {
+
+            if (cursor && cursor.value.deckId == deckId)
                 items.push(cursor.value);
+
+            if(cursor)
                 cursor.continue();
-            }
         };
     };
 
     self.addCard = function (card) {
 
-        var trans = db.transaction(["cards"], "readwrite");
+        var trans = db.transaction("cards", "readwrite");
         var store = trans.objectStore("cards");
-
-        //console.log(card);
 
         var request = store.add(card);
     };

@@ -2,7 +2,8 @@
     var self = this;
 
     self.deckId = ko.observable(0);
-    self.cardsNumber = ko.observable(0);
+    self.title = ko.observable();
+    self.cardsNumber = ko.observable();
 
     self.front = function (val) {
         var frontBody = $("#frontContainer").find('iframe').contents().find('body');
@@ -35,12 +36,15 @@
 
         self.front('');
         self.back('');
+        self.cardsNumber(self.cardsNumber() + 1);
     };
 }
 
 var editDeckModel = new EditDeckModel();
 ko.applyBindings(editDeckModel, $('#editDeckSection')[0]);
 
-function loadDeckToEdit(deckId) {
-    editDeckModel.deckId(deckId);
+function loadDeckToEdit(deck) {
+    editDeckModel.deckId(deck.id);
+    editDeckModel.title(deck.title);
+    editDeckModel.cardsNumber(deck.cardsNumber);
 }

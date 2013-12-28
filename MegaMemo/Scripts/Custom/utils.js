@@ -33,7 +33,7 @@ function showLoader(container, id) {
         </div>";
     $('body').append(loaderHtml);
 
-    var loader = $('#' + id); console.log(loader);
+    var loader = $('#' + id);
     loader.offset({ top: pos.top, left: pos.left });
     loader.width(width);
     loader.height(height);
@@ -48,7 +48,8 @@ function hideLoader(id) {
     $('#' + id).remove()
 }
 
-function showSection(id) {
+function showSection(id, args) {
+    console.log($('div.section'));
     $('div.section').addClass('hide');
     $('#' + id).removeClass('hide');
 
@@ -56,15 +57,19 @@ function showSection(id) {
 
     switch (id) {
         case 'decksSection':
-
+            repository.getDecks(loadDecks);
             break;
         case 'editDeckSection':
-            loadDeckToEdit();
+            loadDeckToEdit(args);
             break;
     }
 }
 
-ko.bindingHandlers.bindIframe = {
+function appStart() {
+    showSection('decksSection');
+}
+
+/*ko.bindingHandlers.bindIframe = {
     init: function (element, valueAccessor) {
         function bindIframe() {
             try {
@@ -81,7 +86,7 @@ ko.bindingHandlers.bindIframe = {
         bindIframe();
         ko.utils.registerEventHandler(element, 'load', bindIframe);
     }
-};
+};*/
 
 function resize() {
     var htmlEditors = $('.htmlEditor');

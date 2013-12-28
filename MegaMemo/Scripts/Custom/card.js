@@ -9,7 +9,7 @@
         sync: false,
         repetitionCount: 0,
         easinessFactor: 2.5,
-        nextRepetitionDate: new Date(Date.now()),
+        nextRepetitionDate: Date.now(),
         daysToNextRepetition: 0
     };
 };

@@ -222,6 +222,7 @@
     <Content Include="Scripts\Custom\Sections\decksList.js" />
     <Content Include="Scripts\Custom\Sections\editDeck.js" />
     <Content Include="Scripts\Custom\offlinestorage.js" />
+    <Content Include="Scripts\Custom\Sections\studyList.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />
     <Content Include="Scripts\Custom\registration.js" />
@@ -246,6 +247,10 @@
     <Content Include="Scripts\External\jHtmlArea\jHtmlArea-0.7.5.min.js" />
     <Content Include="Scripts\External\jHtmlArea\jHtmlArea.ColorPickerMenu-0.7.0.js" />
     <Content Include="Scripts\External\jHtmlArea\jHtmlArea.ColorPickerMenu-0.7.0.min.js" />
+    <Content Include="Scripts\External\moment\moment-with-langs.js" />
+    <Content Include="Scripts\External\moment\moment-with-langs.min.js" />
+    <Content Include="Scripts\External\moment\moment.js" />
+    <Content Include="Scripts\External\moment\moment.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

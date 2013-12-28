@@ -24,11 +24,14 @@
   margin-top: 15px; }
 
 #appGuideTable {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 0px;
   width: 100%; }
   #appGuideTable td {
-    text-align: center; }
+    text-align: center;
+    border: 1px #b6adad solid;
+    padding-top: 5px;
+    padding-bottom: 5px; }
 
 .red {
   color: red; }
@@ -114,15 +117,34 @@ body {
 .emptyMsg {
   font-style: italic;
   text-align: center;
-  margin-top: 10px; }
+  margin-top: 10px;
+  font-weight: bold; }
 
 .btnFooter {
   margin-top: 25px;
   text-align: center; }
 
-@media (min-width: 768px) and (max-width: 960px) {
-  body {
-    padding-top: 120px; } }
+/*@media (min-width: 768px) and (max-width: 960px) {
+	body
+	{
+		padding-top: 120px;
+	}
+}*/
 .btnFooter .btn {
   width: 100%; }
+
+.note {
+  color: #616E14;
+  border: solid 1px #BFD62F;
+  background-color: #DAE691;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  padding: 14px 20px;
+  overflow: overlay; }
+
+.tip {
+  font-style: italic;
+  font-weight: bold;
+  margin-right: 10px; }
 

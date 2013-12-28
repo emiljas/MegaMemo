@@ -3,11 +3,16 @@
 
         <div class="row">
 
-            <div data-bind="visible: decks().length == 0">
-                <p class="emptyMsg">No cards to review</p>
+            <div data-bind="visible: decksToReview().length == 0">
+                <p class="emptyMsg">
+                    No cards to review
+                </p>
+                <p class="note center">
+                    <span class="tip">Tip: </span>Choose "Decks" from menu to add new <a class="helpLink" href="#">cards</a>.
+                </p>
             </div>
 
-            <div>
+            <div data-bind="visible: decksToReview().length > 0">
                 <div class="center">
                     <a class="btn btn-small btn-info" style="width: 90%;" href="#">
                         angielski (<span class="b red">12</span> cards to review)

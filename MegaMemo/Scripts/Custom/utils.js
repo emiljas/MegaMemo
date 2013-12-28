@@ -59,6 +59,9 @@ function showSection(id, args) {
     $('div.section').addClass('hide');
     $('#' + id).removeClass('hide');
 
+    $('.nav li').removeClass('active');
+    $('.nav #' + id + 'Link').addClass('active');
+
     resize();
 
     switch (id) {
@@ -76,25 +79,6 @@ function showSection(id, args) {
 function appStart() {
     showSection('studyListSection');
 }
-
-/*ko.bindingHandlers.bindIframe = {
-    init: function (element, valueAccessor) {
-        function bindIframe() {
-            try {
-                var iframeInit = element.contentWindow.initChildFrame,
-                    iframedoc = element.contentDocument.body;
-            } catch (e) {
-                // ignored
-            }
-            if (iframeInit)
-                iframeInit(ko, valueAccessor());
-            else if (iframedoc)
-                ko.applyBindings(valueAccessor(), iframedoc);
-        };
-        bindIframe();
-        ko.utils.registerEventHandler(element, 'load', bindIframe);
-    }
-};*/
 
 function resize() {
     var htmlEditors = $('.htmlEditor');

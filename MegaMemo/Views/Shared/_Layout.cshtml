@@ -24,7 +24,7 @@
             <div class="navbar-brand">
                 <div id="logoTitle">MegaMemo</div>
                 <canvas id="logo" width="50" height="50"></canvas>
-                <div id="helpContainer"><span>?</span></div>
+                <div id="helpContainer"><span class="helpLink">?</span></div>
             </div>
         </div>
         <div class="navbar-collapse collapse">
@@ -44,24 +44,13 @@
 
 
             <ul class="nav navbar-nav">
-            <li class="active"><a href="#" onclick="javascript: showSection('studyListSection')">Study</a></li>
-            <li class="active"><a href="#" onclick="javascript: showSection('decksSection')">Decks</a></li>
-            <!--<li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>-->
-          </ul>
+                <li id="studyListSectionLink"><a href="#" onclick="javascript: showSection('studyListSection')">Study</a></li>
+                <li id="decksSectionLink"><a href="#" onclick="javascript: showSection('decksSection')">Decks</a></li>
+            </ul>
 
 
-        </div><!--/.navbar-collapse -->
+        </div>
       </div>
-    </div>
-
-    <div class="container">
-
-      <!--<div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>-->
-
     </div>
 
         @RenderBody()
@@ -69,6 +58,7 @@
         @Scripts.Render("~/scriptBundles/jquery")
         @Scripts.Render("~/scriptBundles/knockout")
         @Scripts.Render("~/scriptBundles/bootstrap")
+        @Scripts.Render("~/scriptBundles/moment")
         @Scripts.Render("~/scriptBundles/app")
         @Scripts.Render("~/scriptBundles/appSections")
     </body>

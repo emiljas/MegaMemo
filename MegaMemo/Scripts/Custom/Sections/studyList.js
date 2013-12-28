@@ -4,6 +4,8 @@
     self.decksToReview = ko.observableArray();
 };
 
-function loadDecksToReview(decks) {
+ko.applyBindings(new StudyModel(), $('#studyListSection')[0]);
 
+function loadDecksToReview(decks) {
+    
 }

@@ -3,6 +3,15 @@
 
         <div data-bind="visible: decks().length == 0">
             <p class="emptyMsg">You have no decks yet</p>
+            <div class="note center">
+                <div class="table">
+                    <div class="tip leftf">Tip: </div>
+                    <div class="leftf">
+                    At first add new <a class="helpLink" href="#">deck</a>.<br />
+                    Then click button with deck's name to add new <a class="helpLink" href="#">cards</a>.
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="datagrid" data-bind="visible: decks().length > 0">
@@ -35,7 +44,7 @@
         </div>
 
         <div id="newDeckContainer" class="row btnFooter">
-            <div class="col-md-10"><input type="text" data-bind="value: newDeckTitle, valueUpdate: 'afterkeydown'" class="form-control" /></div>
+            <div class="col-md-10"><input type="text" data-bind="value: newDeckTitle, valueUpdate: 'afterkeydown'" placeholder="Name" class="form-control" /></div>
             <div class="col-md-2"><a class="btn btn-primary" data-bind="click: addDeck" href="#" role="button">Add deck</a></div>
         </div>
 

@@ -42,6 +42,10 @@ namespace MegaMemo
                         "~/Scripts/External/bootstrap/bootstrap.js",
                         "~/Scripts/External/bootstrap/bootbox.js"
             ));
+
+            _bundles.Add(new ScriptBundle("~/scriptBundles/moment").Include(
+                        "~/Scripts/External/moment/moment.js"
+            ));
         }
 
         private static void RegisterCustomJs()
@@ -58,7 +62,8 @@ namespace MegaMemo
 
             _bundles.Add(new ScriptBundle("~/scriptBundles/appSections").Include(
                         "~/Scripts/Custom/Sections/decksList.js",
-                        "~/Scripts/Custom/Sections/editDeck.js"
+                        "~/Scripts/Custom/Sections/editDeck.js",
+                        "~/Scripts/Custom/Sections/studyList.js"
             ));
         }
         

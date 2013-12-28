@@ -74,6 +74,28 @@
         };
     };
 
+    self.getCards = function (callback) {
+        var trans = db.transaction("cards");
+        var store = trans.objectStore("cards");
+
+        var items = [];
+
+        trans.oncomplete = function (evt) {
+            callback(items);
+        }
+
+        var cursorRequest = store.openCursor();
+
+        cursorRequest.onsuccess = function (evt) {
+            var cursor = evt.target.result;
+
+            if (cursor) {
+                items.push(cursor.value);
+                cursor.continue();
+            }
+        }
+    };
+
     self.getCardsByDeckId = function (deckId, callback) {
         var trans = db.transaction("cards");
         var store = trans.objectStore("cards");

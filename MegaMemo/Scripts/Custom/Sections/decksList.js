@@ -41,21 +41,26 @@ ko.applyBindings(decksModel, $('#decksSection')[0]);
 
 
 function loadDecks(decks) {
-    var i = 0;
+    var cardsNumbers = [];
 
     if (decks.length == 0)
         bindDecks([]);
     else {
-        $.each(decks, function (index, element) {
-            repository.getCardsByDeckId(element.id, function (cards) {
-                element.cardsNumber = cards.length;
-                
-                ++i;
+        for (var i = 0; i < decks.length; ++i) {
+            cardsNumbers[decks[i].id] = 0;
+        }
 
-                if (i == decks.length) {
-                    bindDecks(decks);
-                }
+        repository.getCards(function (cards) {
+            for (var i = 0; i < cards.length; ++i) {
+                ++cardsNumbers[cards[i].deckId];
+            }
+
+            $.each(decks, function (index, element) {
+                var deck = element;
+                deck.cardsNumber = cardsNumbers[deck.id];
             });
+
+            bindDecks(decks);
         });
     }
 }

@@ -44,13 +44,16 @@
 
 #appGuideTable
 {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 15px;
+	margin-bottom: 0px;
 	width: 100%;
 
 	td
 	{
 		text-align: center;
+		border: 1px rgb(182, 173, 173) solid;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 }
 
@@ -178,6 +181,7 @@ body
 	font-style: italic;
 	text-align: center;
 	margin-top: 10px;
+	font-weight: bold;
 }
 
 .btnFooter
@@ -186,14 +190,33 @@ body
 	text-align: center;
 }
 
-@media (min-width: 768px) and (max-width: 960px) {
+/*@media (min-width: 768px) and (max-width: 960px) {
 	body
 	{
 		padding-top: 120px;
 	}
-}
+}*/
 
 .btnFooter .btn
 {
 	width: 100%;
+}
+
+.note
+{
+     color: #616E14;
+     border: solid 1px #BFD62F;
+     background-color: #DAE691;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+     border-radius: 6px;
+     padding: 14px 20px;
+     overflow: overlay;
+}
+
+.tip
+{
+	font-style: italic;
+	font-weight: bold;
+	margin-right: 10px;
 }

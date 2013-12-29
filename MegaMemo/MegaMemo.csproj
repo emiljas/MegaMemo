@@ -222,6 +222,7 @@
     <Content Include="Scripts\Custom\Sections\decksList.js" />
     <Content Include="Scripts\Custom\Sections\editDeck.js" />
     <Content Include="Scripts\Custom\offlinestorage.js" />
+    <Content Include="Scripts\Custom\Sections\studyDeck.js" />
     <Content Include="Scripts\Custom\Sections\studyList.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />

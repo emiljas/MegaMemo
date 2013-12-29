@@ -74,6 +74,9 @@ function showSection(id, args) {
         case 'studyListSection':
             repository.getDecks(loadDecksToReview);
             break;
+        case 'studyDeckSection':
+            loadCardsToReview(args);
+            break;
     }
 }
 

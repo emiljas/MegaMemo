@@ -1,7 +1,40 @@
-﻿<div id="decksSection" class="section hide">
+﻿<div id="studyDeckSection" class="section hide">
     <div class="container">
 
+        <div data-bind="visible: status() == statusEnum.question">
+            <div class="row center textWord">
+                <span data-bind="html: front"></span>
+            </div>
+            <div class="row center">
+                    <button class="btn btn-large btn-primary" style="min-width: 300px;" data-bind="click: showAnswer">Show answer</button>
+            </div>
+        </div>
 
+        <div data-bind="visible: status() == statusEnum.answer">
+            <div class="row center textWord">
+                <span data-bind="html: back"></span>
+            </div>
+            <div class="row">
+                <div style="max-width: 500px; margin: 0 auto;">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button class="btn btn-small btn-success btn-review spaceBtn" style="background-color: rgba(92, 184, 92, 0.5)" data-bind="click: makeReview.bind(0)">no idea</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button class="btn btn-small btn-success btn-review spaceBtn" style="background-color: rgba(92, 184, 92, 0.65)" data-bind="click: makeReview.bind(2)">hard</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                        <button class="btn btn-small btn-success btn-review spaceBtn" style="background-color: rgba(92, 184, 92, 0.85)" data-bind="click: makeReview.bind(3)">good</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button class="btn btn-small btn-success btn-review spaceBtn" style="background-color: rgba(92, 184, 92, 1.0)" data-bind="click: makeReview.bind(5)">easy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

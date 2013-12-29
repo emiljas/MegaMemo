@@ -10,6 +10,9 @@ function StudyModel() {
     var self = this;
 
     self.decksToReview = ko.observableArray();
+    self.clickAction = function (studyDeck) {
+        showSection('studyDeckSection', studyDeck.cards);
+    };
 };
 
 var studyModel = new StudyModel();

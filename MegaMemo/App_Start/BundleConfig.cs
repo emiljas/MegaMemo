@@ -63,7 +63,8 @@ namespace MegaMemo
             _bundles.Add(new ScriptBundle("~/scriptBundles/appSections").Include(
                         "~/Scripts/Custom/Sections/decksList.js",
                         "~/Scripts/Custom/Sections/editDeck.js",
-                        "~/Scripts/Custom/Sections/studyList.js"
+                        "~/Scripts/Custom/Sections/studyList.js",
+                        "~/Scripts/Custom/Sections/studyDeck.js"
             ));
         }
         

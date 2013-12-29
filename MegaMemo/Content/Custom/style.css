@@ -124,12 +124,9 @@ body {
   margin-top: 25px;
   text-align: center; }
 
-/*@media (min-width: 768px) and (max-width: 960px) {
-	body
-	{
-		padding-top: 120px;
-	}
-}*/
+@media (min-width: 768px) and (max-width: 960px) {
+  body {
+    padding-top: 120px; } }
 .btnFooter .btn {
   width: 100%; }
 
@@ -153,4 +150,12 @@ body {
   padding-botttom: 5px;
   margin-top: 15px;
   margin-bottom: 15px; }
+
+.btn-review {
+  width: 100%;
+  background-image: none; }
+
+.textWord {
+  padding-top: 40px;
+  padding-bottom: 40px; }
 

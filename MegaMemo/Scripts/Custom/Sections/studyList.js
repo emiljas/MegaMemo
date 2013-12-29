@@ -28,7 +28,8 @@ function loadDecksToReview(decks) {
             var card = cards[i];
 
             var date = moment(card.nextRepetitionDate);
-            if (now.diff(date, 'days') <= 0) {
+
+            if (now.diff(date, 'days') >= 0) {
                 if (decksToReview[card.deckId] == undefined)
                     decksToReview[card.deckId] = new StudyDeck();
 

@@ -12,34 +12,30 @@
         nextRepetitionDate: Date.now(),
         daysToNextRepetition: 0
     };
+};
 
-    self.makeReview = function (grade) {
-        var easinessFactor = self.data.easinessFactor;
-        var nextRepetitionDate = self.data.nextRepetitionDate;
-        var daysToNextRepetition = self.data.daysToNextRepetition;
+Card.makeReview = function (data, grade) {
+    if (grade < 3) {
+        data.repetitionCount = 0;
+        data.nextRepetitionDate = Date.now();
+        data.daysToNextRepetition = 0;
+    }
+    else {
+        ++data.repetitionCount;
 
-        if (grade < 3) {
-            self.data.repetitionCount = 0;
-            self.data.nextRepetitionDate = Data.now();
-            self.data.daysToNextRepetition = 0;
-        }
-        else {
-            ++self.data.repetitionCount;
+        if (data.repetitionCount == 1)
+            data.daysToNextRepetition = 1;
+        else if (data.repetitionCount == 2)
+            data.daysToNextRepetition = 6;
+        else
+            data.daysToNextRepetition = parseInt(data.daysToNextRepetition * data.easinessFactor);
 
-            if (self.data.repetitionCount == 1)
-                self.data.daysToNextRepetition = 1;
-            else if (self.data.repetitionCount == 2)
-                self.data.daysToNextRepetition = 6;
-            else
-                self.data.daysToNextRepetition = parseInt(daysToNextRepetition * easinessFactor);
+        daysToNextRepetition = data.daysToNextRepetition;
+        data.nextRepetitionDate = moment(data.nextRepetitionDate).add('days', data.daysToNextRepetition).valueOf();
+    }
 
-            daysToNextRepetition = self.data.daysToNextRepetition;
-            self.data.nextRepetitionDate = moment(nextRepetitionDate).add('days', daysToNextRepetition);
-        }
-
-        self.data.easinessFactor = easinessFactor + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
-
-        if (self.data.easinessFactor < 1.3)
-            self.data.easinessFactor = 1.3;
-    };
+    data.easinessFactor = data.easinessFactor + (0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
+ 
+    if (data.easinessFactor < 1.3)
+        data.easinessFactor = 1.3;
 };

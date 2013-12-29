@@ -9,6 +9,8 @@ function register() {
         confirmPassword: $('#confirmPassword').val()
     };
 
+    console.log(userName);
+
     $.ajax({
         url: '/Account/JsonRegister',
         type: 'POST',

@@ -20,6 +20,10 @@ function StudyDeckModel() {
     self.makeReview = function (grade) {
         self.status(statusEnum.question);
 
+        var card = self.cards[self.i];
+
+        Card.makeReview(card, grade);
+        repository.updateCard(card);
 
         showNextCard();
     };

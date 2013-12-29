@@ -20,7 +20,7 @@ namespace MegaMemo
 #if DEBUG
             BundleTable.EnableOptimizations = false;
 #else
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 #endif
         }
 

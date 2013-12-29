@@ -126,6 +126,13 @@
 
         var request = store.add(card);
     };
+
+    self.updateCard = function (card) {
+        var trans = db.transaction("cards", "readwrite");
+        var store = trans.objectStore("cards");
+
+        var request = store.put(card);
+    }
 }
 
 var repository = new Repository();

@@ -1,61 +1,51 @@
-﻿setDefaultButton('#registerContainer', '#registerBtn');
+﻿setDefaultButton('#registrationSection', '#registerBtn');
 
-$('#registerBtn').click(register);
+function RegisterModel() {
+    var self = this;
 
-function register() {
-    var registerModel = {
-        userName: $('#userName').val(),
-        password: $('#password').val(),
-        confirmPassword: $('#confirmPassword').val()
-    };
+    self.userName = ko.observable();
+    self.password = ko.observable();
+    self.confirmPassword = ko.observable();
+    self.errors = ko.observable();
 
-    console.log(userName);
+    self.register = function () {
+        showLoader($('#registrationForm'), 'registrationLoader');
 
-    $.ajax({
-        url: '/Account/JsonRegister',
-        type: 'POST',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(registerModel),
-        success: function (data) {
-            //loginModel.success(data.success)
-            console.log(data);
-
-            if (data.errors) {
-                var errors = '';
-                for (var i = 0; i < data.errors.length; ++i) {
-                    errors += data.errors[i] + '<br />';
-                }
-
-                $('#registerContainer .errors').html(errors);
-            }
-        }
-    });
-}
-
-/*
-var registrationModel = {
-    userName: ko.observable(),
-    password: ko.observable(),
-    confirmPassword: ko.observable(),
-    errors: ko.observable(),
-    register: function () {
         $.ajax({
             url: '/Account/JsonRegister',
             type: 'POST',
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ model: ko.toJS(loginModel) }),
+            data: ko.toJSON(self),
             success: function (data) {
-                //loginModel.success(data.success)
-                console.log(data);
+                if (data.errors) {
+                    var errors = '';
+                    for (var i = 0; i < data.errors.length; ++i) {
+                        errors += data.errors[i] + '<br />';
+                    }
 
-                var errors = '';
-                for (var i = 0; i < data.errors.length; ++i) {
-                	errors += data.errors[i] + '<br />';
+                    self.errors(errors);
+                    hideLoader('registrationLoader');
                 }
+                else if (data.success) {
+                    self.errors('');
 
-                registrationModel.errors(errors);
+                    var autoLoginAlertFunction = function () {
+                        hideLoader('registrationLoader');
+                        appStart();
+                        bootbox.alert("\
+                            <div class='center'>\
+                                You are logged on as <b>" + self.userName()) + "</b>." +
+                            "</div>";
+                    };
+                    login({
+                        userName: self.userName(),
+                        password: self.password()
+                    }, autoLoginAlertFunction);
+                }
             }
         });
-    }
-};
-ko.applyBindings(registrationModel);*/
+    };
+}
+
+var registerModel = new RegisterModel();
+ko.applyBindings(registerModel, $('#registrationSection')[0]);

@@ -56,8 +56,8 @@ function showSection(id, args) {
     
     closeMenu();
 
-    $('div.section').addClass('hide');
-    $('#' + id).removeClass('hide');
+    hi($('div.section'));
+    sh($('#' + id));
 
     $('.nav li').removeClass('active');
     $('.nav #' + id + 'Link').addClass('active');
@@ -81,7 +81,16 @@ function showSection(id, args) {
 }
 
 function appStart() {
-    showSection('studyListSection');
+    if (isLogin()) {
+        showSection('studyListSection');
+        hi($('.nav li'));
+        sh($('.nav .registerOnly'));
+
+    }
+    else {
+        showSection('registrationSection');
+        showAppGuide();
+    }
 }
 
 function resize() {

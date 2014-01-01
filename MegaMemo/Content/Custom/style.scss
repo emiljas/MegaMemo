@@ -1,9 +1,32 @@
+.mmtable
+{
+	max-width: 800px;
+	margin: 0 auto;
+
+	td
+	{
+		width: 50%;
+		padding: 15px 0;
+	}
+
+	label, input, button
+	{
+		width: 100%;
+	}
+
+	.tdbtn
+	{
+		text-align: center;
+		max-width: 400px;
+	}
+}
+
 .formContainer
 {
-    background-color: #f3f3f3;
-    border: solid 1px #a1a1a1;
+    /*background-color: #f3f3f3;
+    border: solid 1px #a1a1a1;*/
     padding: 2.5%;
-    width: 300px;
+    max-width: 500px;
 
 	label, input
 	{

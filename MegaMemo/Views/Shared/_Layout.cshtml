@@ -44,8 +44,21 @@
 
 
             <ul class="nav navbar-nav">
-                <li id="studyListSectionLink"><a href="#" onclick="javascript: showSection('studyListSection')">Study</a></li>
-                <li id="decksSectionLink"><a href="#" onclick="javascript: showSection('decksSection')">Decks</a></li>
+                <li id="registrationSectionLink" class="hide">
+                    <a href="#" onclick="javascript: showSection('registrationSection')">
+                        Register
+                    </a>
+                </li>
+                <li id="studyListSectionLink" class="registerOnly hide">
+                    <a href="#" onclick="javascript: showSection('studyListSection')">
+                        Study
+                    </a>
+                </li>
+                <li id="decksSectionLink" class="registerOnly hide">
+                    <a href="#" onclick="javascript: showSection('decksSection')">
+                        Decks
+                    </a>
+                </li>
             </ul>
 
 

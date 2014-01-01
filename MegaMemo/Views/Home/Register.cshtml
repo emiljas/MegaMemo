@@ -1,28 +1,46 @@
-﻿@model MegaMemo.Models.RegisterModel
+﻿<div id="registrationSection" class="section hide">
+    <div class="container">
 
-@using (Html.BeginForm("JsonRegister", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "registrationForm" }))
-{
-    @Html.AntiForgeryToken()
+        <h2 class="center">Create a new account.</h2>
+    
+        <table id="registrationForm" class="mmtable">
+            <tr>
+                <td>
+                    <label for="registerUserName">username:</label>
+                </td>
+                <td>
+                    <input type="text" id="registerUserName" data-bind="value: userName, valueUpdate: 'afterkeydown'" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="registerPassword">password:</label>
+                </td>
+                <td>
+                    <input type="password" id="registerPassword" data-bind="value: password, valueUpdate: 'afterkeydown'" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="registerConfirmPassword">confirm password:</label>
+                </td>
+                <td>
+                    <input type="password" id="registerConfirmPassword" data-bind="value: confirmPassword, valueUpdate: 'afterkeydown'" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span data-bind="html: errors" class="errors red"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="tdbtn">
+                    <button type="submit" class="btn btn-large btn-success" id="registerBtn" data-bind="click: register">
+                        Register
+                    </button>
+                </td>
+            </tr>
+        </table>
 
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-            <li>
-                <input type="submit" value="Sign up" />
-            </li>
-        </ol>
-        @Html.ValidationSummary()
-    </fieldset>
-}
+    </div>
+</div>

@@ -3,7 +3,9 @@
 function showAppGuide() {
 	var logosDemo = "\
 		<div id='logoDemoContainer' class='center'>\
-		This offline web app will help you learn <b>new language</b> or <b>whatever you want</b>.\
+		    This offline web app will help you learn <b>new language</b> or <b>whatever you want</b><br />\
+            using <b>spaced repetition learning method</b>\
+            (<a href='http://en.wikipedia.org/wiki/Spaced_repetition' target='_blank'>wikipedia</a>).\
 			<table id='appGuideTable'>\
                 <tr>\
                     <td>deck</td>\

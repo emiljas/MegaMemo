@@ -2,11 +2,13 @@
 
 $('#loginBtn').click(login);
 
-function login() {
-    var loginModel = {
-        userName: $('#userName').val(),
-        password: $('#password').val()
-    };
+function login(loginModel, successCallback) {
+    if (!loginModel) {
+        loginModel = {
+            userName: $('#userName').val(),
+            password: $('#password').val()
+        };
+    }
 
     showLoader($('#loginContainer'), 'loginLoader');
 
@@ -35,12 +37,13 @@ function login() {
                 localStorage.password = loginModel.password;
 
                 showLoginInfo();
+
+                if (successCallback)
+                    successCallback();
             }
             
         }
     });
-
-    //hideLoader('loginLoader');
 }
 
 function showLoginInfo() {
@@ -48,8 +51,13 @@ function showLoginInfo() {
     sh($('#loginInfo'));
     $('#loginInfo .userName').text(localStorage.login);
 
+    $('.registerOnly').show();
 }
 
-if (localStorage.login != undefined && localStorage.password != undefined) {
+function isLogin() {
+    return localStorage.login != undefined && localStorage.password != undefined;
+}
+
+if (isLogin()) {
     showLoginInfo();
 }

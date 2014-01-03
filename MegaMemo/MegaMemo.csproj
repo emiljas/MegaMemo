@@ -184,7 +184,7 @@
     <Compile Include="Models\Context\MegaMemoDbContext.cs" />
     <Compile Include="Models\Context\SimpleMembershipInitializer.cs" />
     <Compile Include="Models\Deck.cs" />
-    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\Card.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Cache\CacheWrapperExtensions.cs" />
     <Compile Include="Utils\Cache\CacheWrapper.cs" />

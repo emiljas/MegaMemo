@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MegaMemo.Models
 {
-    public class Deck
+    public class Card
     {
         [JsonIgnore]
         public int UserId { get; set; }
@@ -14,7 +14,11 @@ namespace MegaMemo.Models
         [JsonProperty("id")]
         public int ClientId { get; set; }
 
-        [JsonProperty("title")]
-        public string Title { get; set; }
+        [JsonProperty("deckId")]
+        public int DeckId { get; set; }
+
+        public string Front { get; set; }
+
+        public string Back { get; set; }
     }
 }

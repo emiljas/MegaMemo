@@ -20,5 +20,6 @@ namespace MegaMemo.Models.Context
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Deck> Decks { get; set; }
     }
 }

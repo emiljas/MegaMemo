@@ -16,6 +16,8 @@ namespace MegaMemo.Controllers
 {
     public class HomeController : Controller
     {
+        private MegaMemoDbContext _db = new MegaMemoDbContext();
+
         public ActionResult Index()
         {
             return View();

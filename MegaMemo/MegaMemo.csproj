@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201310292317231_InitialCreate.Designer.cs">
       <DependentUpon>201310292317231_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201401031245212_2014.cs" />
+    <Compile Include="Migrations\201401031245212_2014.Designer.cs">
+      <DependentUpon>201401031245212_2014.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Context\MegaMemoDbContext.cs" />
@@ -296,6 +300,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201310292317231_InitialCreate.resx">
       <DependentUpon>201310292317231_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401031245212_2014.resx">
+      <DependentUpon>201401031245212_2014.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -140,16 +140,88 @@ var repository = new Repository();
 function Synchronizer() {
     var self = this;
 
-    self.newDecks = [];
+    self.rowsToSync = {
+        decks: [],
+        cards: []
+    };
+    self.isSync = function () {
+        for (var prop in self.rowsToSync) {
+            var rows = self.rowsToSync[prop];
+            if (rows.length != 0)
+                return false;
+        }
 
-    self.lock = false;
-    self.synchronize = setInterval(function () {
-        if (self.lock)
+        return true;
+    }
+
+    self.lockObject = false;
+    self.isLock = function () {
+        return self.lockObject;
+    };
+    self.lock = function () {
+        self.lockObject = true;
+    };
+    self.unlock = function (callback) {
+        if(callback)
+            callback();
+        else
+            self.lockObject = false;
+    };
+
+    self.isOnline = false;
+    self.setNetworkStatusIntervalId = setInterval(function () {
+        if (self.isLock())
             return;
 
-        self.lock = true;
+        self.lock();
 
-        if (self.newDecks.length !== 0) {
+        var isOnline = navigator.onLine;
+
+        if (isOnline) {
+            /* we must check this */
+
+            $.ajax({
+                type: "POST",
+                url: "/",
+                data: {},
+                cache: false,
+                success: function (a, b, c) {
+                    self.isOnline = true;
+                    self.unlock(self.synchronize);
+                },
+                error: function (a, b, c) {
+                    self.isOnline = false;
+                    self.unlock(self.synchronize);
+                },
+                timeout: 800
+            });
+        }
+        else {
+            self.isOnline = false;
+            self.unlock(self.synchronize);
+        }
+    }, 500);
+
+    self.synchronize = function () {
+        var sync = self.isSync();
+
+        if (self.isOnline) {
+            if (sync)
+                changeStatus(SyncStatus.online);
+            else {
+
+            }
+        }
+        else {
+            if (sync)
+                changeStatus(SyncStatus.offline);
+            else
+                changeStatus(SyncStatus.notSync);
+        }
+
+        self.unlock();
+
+        /*if (self.newDecks.length !== 0) {
             if (navigator.onLine)
                 changeStatus(SyncStatus.syncInProgress);
             else
@@ -170,9 +242,8 @@ function Synchronizer() {
 
         if (navigator.onLine) {
             self.newDecks = [];
-        }
-
-    }, 500);
+        }*/
+    };
 }
 
 var synchronizer = new Synchronizer();

@@ -4,9 +4,7 @@
         deckId: deckId,
         front: front,
         back: back,
-        reverse: reverse,
-
-        sync: false,
+        
         repetitionCount: 0,
         easinessFactor: 2.5,
         nextRepetitionDate: Date.now(),

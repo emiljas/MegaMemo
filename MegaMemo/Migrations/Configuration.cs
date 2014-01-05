@@ -5,7 +5,7 @@ namespace MegaMemo.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<MegaMemo.Models.Context.MegaMemoDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MegaMemo.Models.Context.MegaMemoDbContext>
     {
         public Configuration()
         {

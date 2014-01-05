@@ -15,7 +15,6 @@ function DecksModel() {
             };
 
             repository.addDeck(newDeck);
-            synchronizer.newDecks.push(newDeck);
 
             newDeck.cardsNumber = 0;
             self.decks.push(newDeck);

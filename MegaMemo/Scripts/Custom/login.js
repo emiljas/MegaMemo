@@ -3,7 +3,7 @@
 $('#loginBtn').click(login);
 
 function login(loginModel, successCallback) {
-    if (!loginModel) {
+    if (!loginModel.userName) {
         loginModel = {
             userName: $('#userName').val(),
             password: $('#password').val()
@@ -18,11 +18,7 @@ function login(loginModel, successCallback) {
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(loginModel),
         success: function (data) {
-            console.log(data.success);
-
             hideLoader('loginLoader');
-
-            console.log(data);
 
             if (data.errors) {
                 var errors = '';
@@ -40,6 +36,7 @@ function login(loginModel, successCallback) {
 
                 if (successCallback)
                     successCallback();
+                appStart();
             }
             
         }

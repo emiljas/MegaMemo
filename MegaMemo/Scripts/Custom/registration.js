@@ -31,7 +31,6 @@ function RegisterModel() {
 
                     var autoLoginAlertFunction = function () {
                         hideLoader('registrationLoader');
-                        appStart();
                         bootbox.alert("\
                             <div class='center'>\
                                 You are logged on as <b>" + self.userName()) + "</b>." +

@@ -19,6 +19,9 @@ namespace MegaMemo.Models
         [JsonProperty("id")]
         public int ClientId { get; set; }
 
+        [JsonProperty("lastUpdateDate")]
+        public long LastUpdateDate { get; set; }
+
         [JsonProperty("deckId")]
         public int DeckId { get; set; }
 

@@ -56,7 +56,8 @@ namespace MegaMemo
                         "~/Scripts/Custom/login.js",
                         "~/Scripts/Custom/registration.js",
                         "~/Scripts/Custom/appguide.js",
-                        "~/Scripts/Custom/offlinestorage.js",
+                        "~/Scripts/Custom/synchronizer.js",
+                        "~/Scripts/Custom/repository.js",
                         "~/Scripts/Custom/card.js"
             ));
 

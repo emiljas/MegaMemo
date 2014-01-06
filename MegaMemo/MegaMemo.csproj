@@ -169,6 +169,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SynchronizeController.cs" />
     <Compile Include="Handlers\Manifest.ashx.cs">
       <DependentUpon>Manifest.ashx</DependentUpon>
     </Compile>
@@ -225,9 +226,10 @@
     <Content Include="Scripts\Custom\card.js" />
     <Content Include="Scripts\Custom\Sections\decksList.js" />
     <Content Include="Scripts\Custom\Sections\editDeck.js" />
-    <Content Include="Scripts\Custom\offlinestorage.js" />
+    <Content Include="Scripts\Custom\repository.js" />
     <Content Include="Scripts\Custom\Sections\studyDeck.js" />
     <Content Include="Scripts\Custom\Sections\studyList.js" />
+    <Content Include="Scripts\Custom\synchronizer.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.js" />
     <Content Include="Scripts\External\bootstrap\bootbox.min.js" />
     <Content Include="Scripts\Custom\registration.js" />

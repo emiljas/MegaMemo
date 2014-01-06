@@ -16,6 +16,9 @@ namespace MegaMemo.Models
         [JsonIgnore]
         public int UserId { get; set; }
 
+        [JsonProperty("lastUpdateDate")]
+        public long LastUpdateDate { get; set; }
+
         [JsonProperty("id")]
         public int ClientId { get; set; }
 

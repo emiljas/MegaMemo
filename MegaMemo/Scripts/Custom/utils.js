@@ -23,13 +23,23 @@ function hi(element) {
     element.addClass('hide');
 }
 
-function showLoader(container, id) {
+function showLoader(container, id, message) {
     var pos = container.position();
     var width = container.outerWidth(true);
     var height = container.outerHeight(true);
     var loaderHtml = "\
         <div id='" + id + "' class='loader'>\
-            <img src='/Images/loader.gif'>\
+            <div class='img'>\
+                <img src='/Images/loader.gif' />" +
+                (
+                message
+                ?
+                ("<br /><br />" + message)
+                :
+                ''
+                )
+                +
+            "</div>\
         </div>";
     $('body').append(loaderHtml);
 
@@ -38,7 +48,7 @@ function showLoader(container, id) {
     loader.width(width);
     loader.height(height);
 
-    var loaderImg = loader.find('img');
+    var loaderImg = loader.find('.img');
     var imgPadding = (loader.height() - loaderImg.height()) / 2;
     loader.css('padding-top', imgPadding);
     loader.css('padding-bottom', imgPadding);
@@ -53,7 +63,6 @@ function closeMenu() {
 }
 
 function showSection(id, args) {
-    
     closeMenu();
 
     hi($('div.section'));
@@ -86,6 +95,10 @@ function appStart() {
         hi($('.nav li'));
         sh($('.nav .registerOnly'));
 
+        showLoader($('body'), 'synchronizeLoader', 'Synchronizing...');
+        synchronizer.sychronizeFromServer(function () {
+            hideLoader('synchronizeLoader');
+        });
     }
     else {
         showSection('registrationSection');

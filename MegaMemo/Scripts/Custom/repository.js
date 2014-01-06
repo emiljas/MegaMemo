@@ -18,11 +18,11 @@
                 var thisDB = e.target.result;
 
                 if (!thisDB.objectStoreNames.contains("decks")) {
-                    thisDB.createObjectStore("decks", { keyPath: "id", autoIncrement: true });
+                    thisDB.createObjectStore("decks", { keyPath: "id", autoIncrement: false });
                 }
 
                 if (!thisDB.objectStoreNames.contains("cards")) {
-                    thisDB.createObjectStore("cards", { keyPath: "id", autoIncrement: true });
+                    thisDB.createObjectStore("cards", { keyPath: "id", autoIncrement: false });
                 }
             }
 
@@ -42,6 +42,33 @@
             }
         }
     }, false);
+
+    self.getDeckLastUpdateDate = function () {
+        var date = localStorage.deckLastUpdateDate;
+
+        if(!date)
+            date = 0;
+
+        return date;
+    };
+
+    self.setDeckLastUpdateDate = function (date) {
+        localStorage.deckLastUpdateDate = date;
+    };
+
+    self.getNextDeckId = function () {
+        var nextDeckId = localStorage.nextDeckId;
+        if (!nextDeckId)
+            nextDeckId = 1;
+
+        nextDeckId = parseInt(nextDeckId);
+        self.setDeckId(nextDeckId + 1);
+        return nextDeckId;
+    };
+
+    self.setDeckId = function (deckId) {
+        localStorage.nextDeckId = deckId;
+    };
 
     self.getDecks = function (callback) {
         var trans = db.transaction("decks");
@@ -67,14 +94,42 @@
         var trans = db.transaction("decks", "readwrite");
         var store = trans.objectStore("decks");
 
+        deck.id = self.getNextDeckId();
         deck.lastUpdateDate = Date.now();
+
+        self.setDeckLastUpdateDate(deck.lastUpdateDate);
         var request = store.add(deck);
 
         request.onsuccess = function (e) {
-            deck.id = e.srcElement.result;
-
             synchronizer.rowsToSync.decks.push(deck);
         };
+    };
+
+    self.getCardLastUpdateDate = function () {
+        var date = localStorage.cardLastUpdateDate;
+
+        if (!date)
+            date = 0;
+
+        return date;
+    };
+
+    self.setCardLastUpdateDate = function (date) {
+        localStorage.cardLastUpdateDate = date;
+    };
+
+    self.getNextCardId = function () {
+        var nextCardId = localStorage.nextCardId;
+        if (!nextCardId)
+            nextCardId = 1;
+
+        nextCardId = parseInt(nextCardId);
+        self.setCardId(nextCardId + 1);
+        return nextCardId;
+    };
+
+    self.setCardId = function (cardId) {
+        localStorage.nextCardId = cardId;
     };
 
     self.getCards = function (callback) {
@@ -126,7 +181,10 @@
         var trans = db.transaction("cards", "readwrite");
         var store = trans.objectStore("cards");
 
+        card.id = self.getNextCardId();
         card.lastUpdateDate = Date.now();
+        
+        self.setCardLastUpdateDate(card.lastUpdateDate);
         var request = store.add(card);
 
         request.onsuccess = function () {
@@ -139,6 +197,8 @@
         var store = trans.objectStore("cards");
 
         card.lastUpdateDate = Date.now();
+
+        self.setCardLastUpdateDate(card.lastUpdateDate);
         var request = store.put(card);
 
         request.onsuccess = function () {

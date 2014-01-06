@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201401031245212_2014.Designer.cs">
       <DependentUpon>201401031245212_2014.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201401061708045_LastUpdateDate.cs" />
+    <Compile Include="Migrations\201401061708045_LastUpdateDate.Designer.cs">
+      <DependentUpon>201401061708045_LastUpdateDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Context\MegaMemoDbContext.cs" />
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201401031245212_2014.resx">
       <DependentUpon>201401031245212_2014.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401061708045_LastUpdateDate.resx">
+      <DependentUpon>201401061708045_LastUpdateDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

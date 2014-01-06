@@ -90,5 +90,44 @@ namespace MegaMemo.Controllers
             return Json(new { success = true });
         }
 
+        public JsonResult GetDecksToSync(FormCollection formCollection)
+        {
+            try
+            {
+                long lastUpdateDate = Convert.ToInt64(formCollection["lastUpdateDate"]);
+
+                var decks = _db.Decks.Where(d =>
+                    d.LastUpdateDate > lastUpdateDate);
+
+                return Json(new {
+                    success = true,
+                    decks = JsonConvert.SerializeObject(decks)
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false });
+            }
+        }
+
+        public JsonResult GetCardsToSync(FormCollection formCollection)
+        {
+            try
+            {
+                long lastUpdateDate = Convert.ToInt64(formCollection["lastUpdateDate"]);
+
+                var cards = _db.Cards.Where(c =>
+                    c.LastUpdateDate > lastUpdateDate);
+
+                return Json(new { 
+                    success = true,
+                    cards = JsonConvert.SerializeObject(cards)
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false });
+            }
+        }
     }
 }

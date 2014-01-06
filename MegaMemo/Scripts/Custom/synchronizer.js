@@ -82,8 +82,9 @@ function Synchronizer() {
     };
 
     self.synchronize = function (afterSyncCallback) {
-        self.synchronizeDecks(self.synchronizeCards);
-        self.synchronizeCards(afterSyncCallback);
+        self.synchronizeDecks(function () {
+            self.synchronizeCards(afterSyncCallback);
+        });
     };
 
     self.synchronizeDecks = function (successCallback) {
@@ -91,8 +92,10 @@ function Synchronizer() {
 
         var url = "/Synchronize/SynchronizeDecks";
         $.post(url, { json: JSON.stringify(decks) }, function (data, textStatus) {
-            if (data.success)
+            if (data.success) {
                 successCallback();
+                self.rowsToSync.decks = [];
+            }
             else
                 self.setNetworkStatus();
         });
@@ -101,12 +104,46 @@ function Synchronizer() {
     self.synchronizeCards = function (successCallback) {
         var cards = self.rowsToSync.cards;
 
-        url = "/Synchronize/SynchronizeCards";
+        var url = "/Synchronize/SynchronizeCards";
         $.post(url, { json: JSON.stringify(cards) }, function (data, textStatus) {
-            if (data.success)
+            if (data.success) {
                 successCallback();
+                self.rowsToSync.cards = [];
+            }
             else
                 self.setNetworkStatus();
+        });
+    };
+
+    self.sychronizeFromServer = function (successCallback) {
+        self.synchronizeDecksFromServer(function () {
+            self.synchronizeCardsFromServer(successCallback);
+        });
+    };
+
+    self.synchronizeDecksFromServer = function (successCallback) {
+        var url = "/Synchronize/GetDecksToSync";
+        var deckLastUpdateDate = repository.getDeckLastUpdateDate();
+        $.post(url, { lastUpdateDate: deckLastUpdateDate }, function (data, textStatus) {
+            if (data.success) {
+
+                console.log(data.decks);
+
+                successCallback();
+            }
+        });
+    };
+
+    self.synchronizeCardsFromServer = function (successCallback) {
+        var url = "/Synchronize/GetCardsToSync";
+        var cardLastUpdateDate = repository.getCardLastUpdateDate();
+        $.post(url, { lastUpdateDate: cardLastUpdateDate }, function (data, textStatus) {
+            if (data.success) {
+
+                console.log(data.cards);
+
+                successCallback();
+            }
         });
     };
 

@@ -101,7 +101,7 @@
         var request = store.add(deck);
 
         request.onsuccess = function (e) {
-            synchronizer.rowsToSync.decks.push(deck);
+            synchronizer.decksToSync.push(deck);
         };
     };
 
@@ -188,7 +188,8 @@
         var request = store.add(card);
 
         request.onsuccess = function () {
-            synchronizer.rowsToSync.cards.push(card);
+            var cards = localStorage.cardsToSync;
+            synchronizer.cardsToSync.push(card);
         };
     };
 
@@ -202,7 +203,7 @@
         var request = store.put(card);
 
         request.onsuccess = function () {
-            synchronizer.rowsToSync.cards.push(card);
+            synchronizer.cardsToSync.push(card);
         };
     }
 }

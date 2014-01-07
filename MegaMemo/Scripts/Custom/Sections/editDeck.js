@@ -29,14 +29,21 @@
     }
     self.reverse = ko.observable(false);
     self.addNewDeck = function () {
+        var i = 0;
 
-        var newCard = new Card(self.deckId(), self.front(), self.back(), self.reverse());
-
+        var newCard = new Card(self.deckId(), self.front(), self.back());
         repository.addCard(newCard.data);
+        ++i;
+
+        if (self.reverse()) {
+            newCard = new Card(self.deckId(), self.back(), self.front());
+            repository.addCard(newCard.data);
+            ++i;
+        }
 
         self.front('');
         self.back('');
-        self.cardsNumber(self.cardsNumber() + 1);
+        self.cardsNumber(self.cardsNumber() + i);
     };
 }
 

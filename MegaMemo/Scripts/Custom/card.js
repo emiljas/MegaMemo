@@ -1,4 +1,4 @@
-﻿var Card = function (deckId, front, back, reverse) {
+﻿var Card = function (deckId, front, back) {
     var self = this;
     self.data = {
         deckId: deckId,

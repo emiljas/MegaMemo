@@ -97,7 +97,8 @@ namespace MegaMemo.Controllers
                 long lastUpdateDate = Convert.ToInt64(formCollection["lastUpdateDate"]);
 
                 var decks = _db.Decks.Where(d =>
-                    d.LastUpdateDate > lastUpdateDate);
+                    d.UserId == WebSecurity.CurrentUserId
+                    && d.LastUpdateDate > lastUpdateDate);
 
                 return Json(new {
                     success = true,
@@ -117,7 +118,8 @@ namespace MegaMemo.Controllers
                 long lastUpdateDate = Convert.ToInt64(formCollection["lastUpdateDate"]);
 
                 var cards = _db.Cards.Where(c =>
-                    c.LastUpdateDate > lastUpdateDate);
+                    c.UserId == WebSecurity.CurrentUserId
+                    && c.LastUpdateDate > lastUpdateDate);
 
                 return Json(new { 
                     success = true,

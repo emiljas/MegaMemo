@@ -1,22 +1,39 @@
-﻿var Rows = function () {
+﻿function LocalStorageArray(id) {
     var self = this;
 
-    self.decks = [];
-    self.cards = [];
-}
+    self.clean = function () {
+        localStorage[id] = JSON.stringify([]);
+    };
+
+    self.push = function (o) {
+        var array = JSON.parse(localStorage[id]);
+        array.push(o);
+        localStorage[id] = JSON.stringify(array);
+    };
+
+    self.get = function () {
+        var array = JSON.parse(localStorage[id]);
+        console.log(array);
+        return array;
+    };
+
+    self.clean();
+};
 
 function Synchronizer() {
     var self = this;
 
     self.syncLock = false;
-    self.rowsToSync = new Rows();
+
+    self.decksToSync = new LocalStorageArray();
+    self.cardsToSync = new LocalStorageArray();
 
     self.isSync = function () {
-        for (var prop in self.rowsToSync) {
-            var rows = self.rowsToSync[prop];
-            if (rows.length != 0)
-                return false;
-        }
+        if (self.decksToSync.get().length != 0)
+            return false;
+
+        if (self.cardsToSync.get().length != 0)
+            return false;
 
         return true;
     };
@@ -88,13 +105,13 @@ function Synchronizer() {
     };
 
     self.synchronizeDecks = function (successCallback) {
-        var decks = self.rowsToSync.decks;
+        var decks = self.decksToSync.get();
 
         var url = "/Synchronize/SynchronizeDecks";
         $.post(url, { json: JSON.stringify(decks) }, function (data, textStatus) {
             if (data.success) {
                 successCallback();
-                self.rowsToSync.decks = [];
+                self.decksToSync.clean();
             }
             else
                 self.setNetworkStatus();
@@ -102,13 +119,13 @@ function Synchronizer() {
     };
 
     self.synchronizeCards = function (successCallback) {
-        var cards = self.rowsToSync.cards;
+        var cards = self.cardsToSync.get();
 
         var url = "/Synchronize/SynchronizeCards";
         $.post(url, { json: JSON.stringify(cards) }, function (data, textStatus) {
             if (data.success) {
                 successCallback();
-                self.rowsToSync.cards = [];
+                self.cardsToSync.clean();
             }
             else
                 self.setNetworkStatus();
@@ -133,7 +150,7 @@ function Synchronizer() {
                         return deck.lastUpdateDate > deckLastUpdateDate;
                     });
 
-                    self.updateDecksFromServer(decks, decksFromServer, successCallback);
+                    self.updateDecksFromServer(decksToUpdate, decksFromServer, successCallback);
                 });
             }
         });
@@ -151,7 +168,6 @@ function Synchronizer() {
                 }
             }
 
-            console.log(deckFromServer);
             repository.addDeck(deckFromServer);
         }
 
@@ -163,12 +179,35 @@ function Synchronizer() {
         var cardLastUpdateDate = repository.getCardLastUpdateDate();
         $.post(url, { lastUpdateDate: cardLastUpdateDate }, function (data, textStatus) {
             if (data.success) {
+                var cardsFromServer = JSON.parse(data.cards);
 
-                console.log(data.cards);
+                repository.getCards(function (cards) {
+                    var cardsToUpdate = cards.filter(function (card) {
+                        return card.lastUpdateDate > cardLastUpdateDate;
+                    });
 
-                successCallback();
+                    self.updateCardsFromServer(cardsToUpdate, cardsFromServer, successCallback);
+                });
             }
         });
+    };
+
+    self.updateCardsFromServer = function (cardsToUpdate, cardsFromServer, successCallback) {
+        for (var i = 0; i < cardsFromServer.length; ++i) {
+            var cardFromServer = cardsFromServer[i];
+            for (var j = 0; j < cardsToUpdate.length; ++j) {
+                var cardToUpdate = cardsToUpdate[j];
+
+                if (cardFromServer.id == cardToUpdate.id) {
+                    repository.updateCard(cardFromServer);
+                    break;
+                }
+            }
+
+            repository.addCard(cardFromServer);
+        }
+
+        successCallback();
     };
 
     self.setNetworkStatus();

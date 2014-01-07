@@ -91,12 +91,12 @@ function showSection(id, args) {
 
 function appStart() {
     if (isLogin()) {
-        showSection('studyListSection');
-        hi($('.nav li'));
-        sh($('.nav .registerOnly'));
-
         showLoader($('body'), 'synchronizeLoader', 'Synchronizing...');
         synchronizer.sychronizeFromServer(function () {
+            showSection('studyListSection');
+            hi($('.nav li'));
+            sh($('.nav .registerOnly'));
+
             hideLoader('synchronizeLoader');
         });
     }

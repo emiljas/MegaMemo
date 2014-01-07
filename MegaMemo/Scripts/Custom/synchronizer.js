@@ -126,12 +126,36 @@ function Synchronizer() {
         var deckLastUpdateDate = repository.getDeckLastUpdateDate();
         $.post(url, { lastUpdateDate: deckLastUpdateDate }, function (data, textStatus) {
             if (data.success) {
+                var decksFromServer = JSON.parse(data.decks);
 
-                console.log(data.decks);
+                repository.getDecks(function (decks) {
+                    var decksToUpdate = decks.filter(function (deck) {
+                        return deck.lastUpdateDate > deckLastUpdateDate;
+                    });
 
-                successCallback();
+                    self.updateDecksFromServer(decks, decksFromServer, successCallback);
+                });
             }
         });
+    };
+
+    self.updateDecksFromServer = function (decksToUpdate, decksFromServer, successCallback) {
+        for (var i = 0; i < decksFromServer.length; ++i) {
+            var deckFromServer = decksFromServer[i];
+            for (var j = 0; j < decksToUpdate.length; ++j) {
+                var deckToUpdate = decksToUpdate[j];
+
+                if (deckFromServer.id == deckToUpdate.id) {
+                    /* no reason to implement yet */
+                    break;
+                }
+            }
+
+            console.log(deckFromServer);
+            repository.addDeck(deckFromServer);
+        }
+
+        successCallback();
     };
 
     self.synchronizeCardsFromServer = function (successCallback) {

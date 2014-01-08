@@ -13,7 +13,6 @@
 
     self.get = function () {
         var array = JSON.parse(localStorage[id]);
-        console.log(array);
         return array;
     };
 
@@ -25,8 +24,8 @@ function Synchronizer() {
 
     self.syncLock = false;
 
-    self.decksToSync = new LocalStorageArray();
-    self.cardsToSync = new LocalStorageArray();
+    self.decksToSync = new LocalStorageArray("decksToSync");
+    self.cardsToSync = new LocalStorageArray("cardsToSync");
 
     self.isSync = function () {
         if (self.decksToSync.get().length != 0)

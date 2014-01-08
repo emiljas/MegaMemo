@@ -18,7 +18,7 @@ function StudyModel() {
 var studyModel = new StudyModel();
 ko.applyBindings(studyModel, $('#studyListSection')[0]);
 
-function loadDecksToReview(decks) {
+function loadDecksToReview(decks, afterLoadCallback) {
     var decksToReview = [];
 
     var now = moment();
@@ -41,6 +41,7 @@ function loadDecksToReview(decks) {
         for (var i = 0; i < decks.length; ++i) {
             var deck = decks[i];
             if (decksToReview[deck.id] != undefined) {
+                decksToReview[deck.id].id = deck.id;
                 decksToReview[deck.id].title = deck.title;
             }
         }
@@ -52,5 +53,9 @@ function loadDecksToReview(decks) {
         }
 
         studyModel.decksToReview(decksToReview);
+        
+        if (afterLoadCallback) {
+            afterLoadCallback();
+        }
     });
 };

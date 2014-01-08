@@ -13,3 +13,4 @@
 /// <reference path="Custom/synchronizer.js" />
 /// <reference path="Custom/Sections/decksList.js" />
 /// <reference path="Custom/Sections/editDeck.js" />
+/// <reference path="Custom/Sections/studyList.js" />

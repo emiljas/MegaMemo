@@ -1,0 +1,15 @@
+\contentsline {chapter}{Wst\k ep}{5}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 1\relax .\kern .5em Twierdzenie Rosenkrantza i\nobreakspace {}jego rola we wsp\'o\IeC {\l }czesnej nauce}{9}
+\contentsline {section}{\numberline {1.1\relax .\kern .5em }Podstawy teoretyczne}{10}
+\contentsline {section}{\numberline {1.2\relax .\kern .5em }Zastosowania twierdzenia}{14}
+\contentsline {subsection}{\numberline {1.2.1\relax .\kern .5em }Zastosowania w\nobreakspace {}promach kosmicznych}{15}
+\contentsline {subsection}{\numberline {1.2.2\relax .\kern .5em }Zastosowania w\nobreakspace {}kopalniach w\k egla kamiennego}{17}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Optymalizacja Guildensterna w\nobreakspace {}praktycznych rachunkach, kt\'ory to tytu\IeC {\l } jest na tyle d\IeC {\l }ugi, \.ze nie b\k edzie si\k e \IeC {\l }adnie mie\'sci\IeC {\l } w\nobreakspace {}paginie, wi\k ec w\nobreakspace {}paginie go skr\'ocimy}{21}
+\contentsline {section}{\numberline {2.1\relax .\kern .5em }Szokuj\k ace por\'ownanie}{21}
+\contentsline {section}{\numberline {2.2\relax .\kern .5em }A\nobreakspace {}nie, to ja si\k e pomyli\IeC {\l }em}{28}
+\contentsline {chapter}{Podsumowanie i\nobreakspace {}wnioski}{41}
+\contentsline {chapter}{Bibliografia}{45}
+\contentsline {chapter}{Spis rysunk\'ow}{47}
+\contentsline {chapter}{Spis tabel}{49}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{51}
+\contentsline {chapter}{Streszczenie (Summary)}{53}

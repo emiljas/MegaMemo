@@ -108,3 +108,18 @@ Backup*/
 UpgradeLog*.XML
 
 /MegaMemo/App_Start/AuthConfig.cs
+
+/.sass-cache/1813d0826424c2456becdc0a5c6c7b08a74b5140/style.scssc
+/.sass-cache/f25c4538017817ac13152e48e07a89a04f717a83/Scss1.scssc
+/.sass-cache/f25c4538017817ac13152e48e07a89a04f717a83/style.scssc
+/MegaMemo/Images/Thumbs.db
+/MegaMemoTests/Fakes/System.fakes
+/MegaMemoTests/Fakes/mscorlib.fakes
+/MegaMemoTests/FakesAssemblies/System.4.0.0.0.Fakes.dll
+/MegaMemoTests/FakesAssemblies/System.4.0.0.0.Fakes.fakesconfig
+/MegaMemoTests/FakesAssemblies/System.4.0.0.0.Fakes.messages
+/MegaMemoTests/FakesAssemblies/System.4.0.0.0.Fakes.xml
+/MegaMemoTests/FakesAssemblies/mscorlib.4.0.0.0.Fakes.dll
+/MegaMemoTests/FakesAssemblies/mscorlib.4.0.0.0.Fakes.fakesconfig
+/MegaMemoTests/FakesAssemblies/mscorlib.4.0.0.0.Fakes.messages
+/MegaMemoTests/FakesAssemblies/mscorlib.4.0.0.0.Fakes.xml

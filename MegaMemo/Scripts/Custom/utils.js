@@ -23,6 +23,14 @@ function hi(element) {
     element.addClass('hide');
 }
 
+function htmlEncode(value) {
+    return $('<div/>').text(value).html();
+}
+
+function htmlDecode(value) {
+    return $('<div/>').html(value).text();
+}
+
 function showLoader(container, id, message) {
     var pos = container.position();
     var width = container.outerWidth(true);

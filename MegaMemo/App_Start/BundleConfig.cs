@@ -18,9 +18,9 @@ namespace MegaMemo
             RegisterCustomCss();
 
 #if DEBUG
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
 #else
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
 #endif
         }
 

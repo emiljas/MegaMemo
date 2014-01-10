@@ -18,6 +18,8 @@ namespace MegaMemo.Controllers
         public JsonResult SynchronizeDecks(FormCollection formCollection)
         {
             string decksJson = formCollection["json"];
+            decksJson = HttpUtility.HtmlDecode(decksJson);
+
             var decks = JsonConvert.DeserializeObject<List<Deck>>(decksJson);
 
             try
@@ -54,6 +56,8 @@ namespace MegaMemo.Controllers
         public JsonResult SynchronizeCards(FormCollection formCollection)
         {
             string cardsJson = formCollection["json"];
+            cardsJson = HttpUtility.HtmlDecode(cardsJson);
+
             var cards = JsonConvert.DeserializeObject<List<Card>>(cardsJson);
 
             try

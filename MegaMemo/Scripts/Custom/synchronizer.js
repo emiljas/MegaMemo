@@ -16,7 +16,8 @@
         return array;
     };
 
-    self.clean();
+    if(!localStorage[id])
+        self.clean();
 };
 
 function Synchronizer() {
@@ -107,7 +108,7 @@ function Synchronizer() {
         var decks = self.decksToSync.get();
 
         var url = "/Synchronize/SynchronizeDecks";
-        $.post(url, { json: JSON.stringify(decks) }, function (data, textStatus) {
+        $.post(url, { json: htmlEncode(JSON.stringify(decks)) }, function (data, textStatus) {
             if (data.success) {
                 successCallback();
                 self.decksToSync.clean();
@@ -121,7 +122,7 @@ function Synchronizer() {
         var cards = self.cardsToSync.get();
 
         var url = "/Synchronize/SynchronizeCards";
-        $.post(url, { json: JSON.stringify(cards) }, function (data, textStatus) {
+        $.post(url, { json: htmlEncode(JSON.stringify(cards)) }, function (data, textStatus) {
             if (data.success) {
                 successCallback();
                 self.cardsToSync.clean();

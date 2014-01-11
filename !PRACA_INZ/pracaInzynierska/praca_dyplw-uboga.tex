@@ -5,7 +5,7 @@
 
 
 
-\documentclass[12pt]{mwbk}
+\documentclass[11pt]{mwbk}
 
 
 %%%%%%% marinesy, rozmiary, to warto dopasowaæ do drukarki
@@ -283,6 +283,10 @@
                 %%     stron do jednakowej wysokoœci
 
 \linespread{1.3}
+\hyphenpenalty=5000
+\tolerance=5000
+
+
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -365,716 +369,66 @@
 \chapter*{Wstêp}
 
 
+W obecnych czasach z ka¿dej strony do naszego mózgu dociera masa zbêdnych informacji. Czêœæ bez naszej woli jak na przyk³ad œwiec¹cy billboard reklamowy, na który mimowolnie spogl¹damy jad¹c samochodem, a na czeœæ decydujemy siê sami gdy nasz¹ pierwsz¹ decyzj¹ po przebudzeniu jest w³¹czenie telewizora lub komputera.
 
-Na pocz¹tku zwrócê uwagê na sposób cytowania
-literatury~\cite{Beth1984}, lub \cite{Gollmann1989,Meier1994}. A~teraz
-ubogaceni w~t¹ wiedzê -- czytajcie dalej.
 
+Coraz wiêcej informacji jest nam równie¿ potrzebne w ¿yciu zawodowym. Wpis o znajomoœci jednego jêzyka obcego w CV nie wyró¿nia nas ju¿ na tle innych ubiegaj¹cych siê o pracê. Niektóre profesje, jak na przyk³ad zawód programisty wymagaj¹ nieustannego podnoszenia swoich kwalifikacji.  Taki nadmiar informacji, którego nie jesteœmy w stanie przetworzyæ nazywa siê przeci¹¿eniem informacyjnym i mo¿e skutkowaæ pogorszeniem siê naszego samopoczucia i uczuciem przyt³oczenia.
 
 
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
+Rozwi¹zaniem na ten rosn¹cy problem spo³eczny jest wygospodarowanie ka¿dego dnia czasu na spacer czy s³uchanie muzyki, która nas odprê¿a. Ulgê naszemu organizmowi mo¿e te¿ przynieœæ skrócenie czasu poœwiêconego na naukê. Okazuje siê, ¿e istnieje wiele sposobów na u³atwienie zdobywania nowej wiedzy s¹ to miêdzy innymi:
+\begin{itemize}
 
+\item umiejêtnoœæ szybkiego czytania
+\item mnemotechnika
+\item metoda SuperMemo
 
+\end{itemize}
 
 
+Ostatnia z wymienionych metod oraz aplikacja implementuj¹ca algorytm o tej samej nazwie jest przedmiotem tej pracy.
 
 
+Projekt aplikacji przedstawionej w rozdziale "Projekt aplikacji wspomagaj¹cej zapamiêtywanie" powsta³ by w jak najwiêkszym stopniu spe³niæ wymagania potencjalnych u¿ytkowników. Za³o¿ono, ¿e u¿ytkownik mo¿e chcieæ korzystaæ z aplikacji na swoim smartphonie, tablecie czy komputerze, bez dostêpu do internetu gdy nie jest to niezbêdne. Przy dodatkowym za³o¿eniu, ¿e projekt nie wymaga du¿ej mocy obliczeniowej czy dostêpu do natywnych elementów systemu operacyjnego, zdecydowano siê na wykorzystanie zbioru standardów oferowanych przez HTML w wersji pi¹tej.
 
 
+%Na pocz¹tku zwrócê uwagê na sposób cytowania
+%literatury~\cite{Beth1984}, lub \cite{Gollmann1989,Meier1994}. A~teraz
+%ubogaceni w~t¹ wiedzê -- czytajcie dalej.
 
 
+\chapter{Cel i zakres pracy}
 
 
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
+Celem pracy jest zaprojektowanie aplikacji, której pierwsza czêœæ pozwoli u¿ytkownikowi utworzyæ bazê wiedzy w postaci pytanie - odpowiedŸ. Druga czêœæ s³u¿y do prezentowania odpowiedzi. U¿ytkownik ma na tym etapie zastanowiæ siê nad odpowiedzi¹. Gdy zna ju¿ odpowiedŸ lub uznaje, ¿e przypomnienie sobie odpowiedzi trwa zbyt d³ugo, przechodzi do czêœci prezentacji odpowiedzi z formularzem, w którym sami oceniamy swój poziom zapamiêtania tego pytania. Jest to sposób przyjêty w konkurencyjnych aplikacjach wykorzystuj¹cych algorytm SuperMemo. Zakres pracy przedstawia siê nastêpuj¹co:
+\begin{itemize}
+\item Test przegl¹darek internetowych pod k¹tem obs³ugi HTML5
+\item Opis u¿ytych technologii ze standardu HTML5
+\item Przegl¹d cech Visual Studio i Asp.Net, które u³atwiaj¹ pisanie nowoczesnych aplikacji webowych
+\item Historia algorytmu SuperMemo
+\item Implementacja algorytmu SuperMemo w wersji drugiej
+\item Zaprojektowanie aplikacji wykorzystuj¹cej algorytm
+\item Testy aplikacji 
+\end{itemize}
 
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
+% \section{Podstawy teoretyczne}
 
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
 
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-
-
-\chapter{Twierdzenie Rosenkrantza i~jego rola we wspó³czesnej nauce}
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-\section{Podstawy teoretyczne}
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-\begin{defi}
-	Kul¹ domkniêt¹ w przestrzeni metrycznej $(X,\rho)$ 
-	o~œrodku w punkcie $x_0\in X$ i~o~promieniu $r$
-	nazywamy zbiór $\{x\in X\colon \rho(x,x_0) \leq r\}$. 
-\end{defi}
-
-\textbf{
-A~przy okazji to zerknijcie na rysunek~\ref{fig:kule} na
-stronie~\pageref{fig:kule}.}
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-
-\begin{twier}[Pitagorasa i odwrotne do tw.
-	Pitagorasa]\label{Pitagoras}
-	Niech $\xx$ oraz $\yy$ bêd¹ elementami przestrzeni $\mathbb{L}$ z iloczynem
-	skalarnym. 
-	\[
-	\|\xx+\yy\|^2=\|\xx\|^2 + \|\yy\|^2\qquad\iff\qquad
-	\text{$\xx$ i $\yy$ s¹ ortogonalne.}
-	\]
-\end{twier}
-\begin{proof}
-	Za³ó¿my, ¿e zachodzi równoœæ podana w twierdzeniu. Wtedy
-	\[
-	\begin{aligned}
-	\|\xx+\yy\|^2&=\|\xx\|^2+\|\yy\|^2\\
-	\skalar{\xx+\yy}{\xx+\yy}
-	&=\skalar{\xx}{\xx}+\skalar{\yy}{\yy}\\
-	\skalar{\xx}{\xx}+2\skalar{\xx}{\yy}+\skalar{\yy}{\yy}
-	&=\skalar{\xx}{\xx}+\skalar{\yy}{\yy}\\
-	\skalar{\xx}{\yy}&=0
-	\end{aligned}
-	\]
-	a~wiêc $\xx$ oraz $\yy$ s¹ ortogonalne.
-
-	Za³ó¿my teraz, ¿e wektory te s¹ ortogonalne. Wtedy
-	\[
-	\|\xx+\yy\|^2=
-	\skalar{\xx}{\xx}+2\skalar{\xx}{\yy}+\skalar{\yy}{\yy}
-	=\skalar{\xx}{\xx}+\skalar{\yy}{\yy}=
-	\|\xx\|^2+\|\yy\|^2
-	\]
-	zatem równoœæ z powy¿szego twierdzenia oczywiœcie zachodzi.
-\end{proof}
-
-
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-\begin{table}
-	\centering
-	\caption{Opis podstawowego ataku}
-	\label{shgen-attack1-basic-idea1}
-	{\small
-	\begin{tabular}{|c|ccccccccccc|}
-\hline
-$A$ & $a_{1}$ & $a_{2}$ & $a_{3}$ & $a_{4}$ & $a_{5}$ & $a_{6}$ & $a_{7}$ & $a_{8}$ & $a_{9}$ & $a_{10}$ & $\ldots$ \\
-$S$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $\ldots$ \\ \cline{2-12}
-$Z^0$ & $a_{1}$ & $a_{2}$ & $a_{3}$ & $a_{4}$ & $a_{5}$ & $a_{6}$ & $a_{7}$ & $a_{8}$ & $a_{9}$ & $a_{10}$ & $\ldots$ \\
-$Z^1$ & $a_{2}$ & $a_{3}$ & $a_{4}$ & $a_{5}$ & $a_{6}$ & $a_{7}$ & $a_{8}$ & $a_{9}$ & $a_{10}$ & $a_{11}$ & $\ldots$ \\
-$Z^2$ & $a_{3}$ & $a_{4}$ & $a_{5}$ & $a_{6}$ & $a_{7}$ & $a_{8}$ & $a_{9}$ & $a_{10}$ & $a_{11}$ & $a_{12}$ & $\ldots$ \\
-$\ldots$ & \multicolumn{11}{c|}{$\ldots$} \\
-\hline
-\end{tabular}
-\zrodlotab{Opracowanie w³asne}
-}
-\end{table}
-
-
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-\section{Zastosowania twierdzenia}
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-\subsection{Zastosowania w~promach kosmicznych}
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-\subsection{Zastosowania w~kopalniach wêgla kamiennego}
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-
-\begin{twier}\label{podst_tw_unit}
-	Niech $\mathbb{V}$ przestrzeñ unitarna, $\mathbb{U}$ jej
-	podprzestrzeñ i niech $\ff$ bêdzie dowolnym elementem
-	z~$\mathbb{V}$. Element $\hh^*\in\mathbb{U}$ jest optymalny
-	dla $\ff$ wtedy i tylko wtedy, gdy $\ff-\hh^*$ jest ortogonalny do
-	do podprzestrzeni\footnote{Tzn. dla dowolnego $\hh\in\mathbb{U}$
-	wektor $\ff-\hh^*$ jest ortogonalny do $\hh$} $\mathbb{U}$
-\end{twier}
-
-W przestrzeniach euklidesowych ortogonalnoœæ elementów
-niezerowych oznacza zwyk³¹ prostopad³oœæ, twierdzenie ma ³atw¹ do
-zapamiêtania interpretacjê geometryczn¹, podan¹ na
-rysunku~\ref{fig:interp_prost}.
-
-\begin{proof}[Dowód twierdzenia~\ref{podst_tw_unit}]
-	Przypuœæmy, ¿e $\hh_0\in\mathbb{U}$ jest taki, ¿e $\ff-\hh_0$ nie
-	jest ortogonalny do $\mathbb{U}$. Poka¿ê istnienie elementu
-	$\hh_1\in\mathbb{U}$ który lepiej ni¿ $\hh_0$ aproksymuje $\ff$.
-	
-	Skoro $\ff-\hh_0$ nie jest ortogonalny do $\mathbb{U}$ to istnieje
-	$\hh\in\mathbb{U}$ dla którego
-	\[
-	\alpha=\skalar{\ff-\hh_0}{\hh}\ne0.
-	\]
-	Zdefiniujmy $\hh_1\in\mathbb{U}$ wzorem
-	\[
-	\hh_1=\hh_0+\frac{\alpha}{\|\hh\|^2}\cdot \hh.
-	\]
-	Wyliczamy
-	\[
-	\|\ff-\hh_1\|^2=
-	\|(\ff-\hh_0)-\frac{\alpha}{\|\hh\|^2}\cdot\hh\|^2=
-	\|\ff-\hh_0\|^2-\frac{\alpha^2}{\|\hh\|^2}<\|\ff-\hh_0\|^2.
-	\]
-	Oznacza to, ¿e jeœli $\hh^*\in\mathbb{U}$ mia³by byæ elementem
-	optymalnym dla $\ff$ to na pewno $\ff-\hh^*$ jest ortogonalny
-	do $\mathbb{U}$. Niech wiêc $\hh^*$ bêdzie taki, ¿e
-	$\ff-\hh^*$ jest ortogonalny do $\mathbb{U}$. Wyka¿ê teraz, ¿e
-	jest to element optymalny dla $\ff$. Niech bowiem
-	$\gggg\in\mathbb{U}$. Wtedy korzystaj¹c z tw.~\ref{Pitagoras}
-	\[
-	\|\ff-\gggg\|^2=\|(\ff-\hh^*)+(\hh^*-\gggg)\|^2=
-	\|\ff-\hh^*\|^2+\|\hh^*-\gggg\|^2\geq
-	\|\ff-\hh^*\|^2.
-\]
-\end{proof}
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics{rys/interpr.mps}
-	\caption{Interpretacja tw.~\ref{podst_tw_unit} przy
-	aproksymowaniu wektorów trójwymiarowych zaczepionych w~$O$
-	wektorami z dwuwymiarowej podprzestrzeni $O A B$}
-	\label{fig:interp_prost}
-	\zrodlo{Opracowanie w³asne}
-\end{figure}
-
-
-
-Poniewa¿ ortogonalnoœæ elementu do ca³ej podprzestrzeni $\mathbb{U}$
-jest równowa¿na jego ortogonalnoœci do ka¿dego elementu z dowolnie
-wybranej bazy przestrzeni $\mathbb{U}$, wiêc powy¿sze twierdzenie
-prowadzi do nastêpuj¹cego wniosku.
-
-\begin{wniosek}
-	Niech $\mathbb{U}$ bêdzie podprzestrzeni¹ przestrzeni
-	unitarnej $\mathbb{V}$ i niech uk³ad \[(\ff_1,\ff_2,
-	\ldots,\ff_n)\] bêdzie baz¹ $\mathbb{U}$. Niech
-	$\ff\in\mathbb{V}$ i niech 
-	\[
-	\hh^*=
-	\alpha_1\ff_1 +
-	\alpha_2\ff_2 +
-	\ldots
-	\alpha_n\ff_n
-	\]
-	bêdzie elementem optymalnym dla $\ff$. Wtedy wspó³czynniki
-	$\alpha_i$ spe³niaj¹ równanie
-	\begin{equation}
-		\left[
-		\begin{array}{cccc}
-			\skalar{\ff_1}{\ff_1} &
-			\skalar{\ff_1}{\ff_2} &
-			\ldots &
-			\skalar{\ff_1}{\ff_n} \\
-			\skalar{\ff_2}{\ff_1} &
-			\skalar{\ff_2}{\ff_2} &
-			\ldots &
-			\skalar{\ff_2}{\ff_n} \\
-			\multicolumn{4}{c}{\dotfill} \\
-			\skalar{\ff_n}{\ff_1} &
-			\skalar{\ff_n}{\ff_2} &
-			\ldots &
-			\skalar{\ff_n}{\ff_n} 
-		\end{array}
-		\right]
-		\cdot
-		\left[
-		\begin{array}{c}
-			\alpha_1 \\
-			\alpha_2 \\
-			\ldots \\
-			\alpha_n \\
-		\end{array}
-		\right]
-		=
-		\left[
-		\begin{array}{c}
-			\skalar{\ff}{\ff_1}\\
-			\skalar{\ff}{\ff_2}\\
-			\ldots \\
-			\skalar{\ff}{\ff_n}
-		\end{array}
-		\right].
-		\label{uklad_Grama}
-	\end{equation}
-\end{wniosek}
-
-
-Okazuje siê, ¿e macierz g³ówna uk³adu~(\ref{uklad_Grama}) -- zwana
-\emph{macierz¹ Grama} -- jest w przypadku liniowo niezale¿nego uk³adu
-$(\ff_1,\ff_2,\ldots,\ff_n)$ nieosobliwa. W interesuj¹cej nas sytuacji
-wektory te stanowi¹ bazê, wiêc s¹ liniowo niezale¿ne. Wynika st¹d, ¿e
-uk³ad ten ma jednoznaczne rozwi¹zanie, co daje nam wygodn¹ metodê
-rachunkow¹ i dodatkowo nastêpuj¹ce twierdzenie o istnieniu i
-jednoznacznoœci aproksymacji.
-
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
-
-\chapter[Optymalizacja Guildensterna w~praktycznych rachunkach\ldots]{Optymalizacja 
-Guildensterna w~praktycznych rachunkach, który to tytu³ jest na tyle d³ugi, 
-¿e nie bêdzie siê ³adnie mieœci³ w~paginie, wiêc w~paginie go skrócimy}
+% \chapter[Optymalizacja Guildensterna w~praktycznych 
+% rachunkach\ldots]{Optymalizacja 
+% Guildensterna w~praktycznych rachunkach, który to tytu³ jest na tyle d³ugi, 
+% ¿e nie bêdzie siê ³adnie mieœci³ w~paginie, wiêc w~paginie go skrócimy}
 %% opcjonalna wersja w~nawiasie kwadratowym bêdzie umieszczona
 %% w~paginie  - sztuczka stosowana, gdy pe³ny
 %% tytu³ jest nieco przyd³ugi i~w~pagince zajmuje coœ ponad jedn¹
 %% liniê
 
-Nie ma zatem takiego cz³owieka, który kocha cierpienie samo w sobie, 
-kto by do niego d¹¿y³ lub chcia³ go doœwiadczyæ, tylko dlatego, ¿e
-jest to cierpienie, a dlatego, ¿e czasami zdarzaj¹ siê takie 
-okolicznoœci, w których to cierpienie mo¿e doprowadziæ 
-go do jakiejœ wielkiej przyjemnoœci. 
-Daj¹c przyk³ad banalny: któ¿ z nas kiedyœ nie podejmowa³ 
-siê trudnego wysi³ku fizycznego maj¹c na wzglêdzie 
-uzyskanie z tego korzyœci? 
-Kto ma jakiekolwiek prawo obwiniaæ cz³owieka, 
-który wybiera przyjemnoœæ nie wi¹¿¹c¹ siê z~przykrymi 
-konsekwencjami, albo tego, kto unika takiego cierpienia, 
-które nie prowadzi do przyjemnoœci? 
-Jednoczeœnie potêpiamy ze s³usznym oburzeniem i czujemy 
-niechêæ do ludzi, którzy s¹ tak ow³adniêci urokami nietrwa³ej 
-przyjemnoœci, tak zaœlepieni jej pragnieniem, 
-¿e nie dostrzegaj¹, i¿ nastêpstwem ich 
-postêpowania bêd¹ z pewnoœci¹ cierpienie i trudnoœci.
+\chapter{Mobilne aplikacje webowe}
+
+\section{Historia specyfikacji HTML5}
+
+
+
+
 
 
 \section{Szokuj¹ce porównanie}

@@ -1,15 +1,10 @@
 \contentsline {chapter}{Wst\k ep}{5}
 \contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 1\relax .\kern .5em Cel i zakres pracy}{7}
-\contentsline {section}{\numberline {1.1\relax .\kern .5em }Podstawy teoretyczne}{7}
-\contentsline {section}{\numberline {1.2\relax .\kern .5em }Zastosowania twierdzenia}{10}
-\contentsline {subsection}{\numberline {1.2.1\relax .\kern .5em }Zastosowania w\nobreakspace {}promach kosmicznych}{11}
-\contentsline {subsection}{\numberline {1.2.2\relax .\kern .5em }Zastosowania w\nobreakspace {}kopalniach w\k egla kamiennego}{12}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Optymalizacja Guildensterna w\nobreakspace {}praktycznych rachunkach, kt\'ory to tytu\IeC {\l } jest na tyle d\IeC {\l }ugi, \.ze nie b\k edzie si\k e \IeC {\l }adnie mie\'sci\IeC {\l } w\nobreakspace {}paginie, wi\k ec w\nobreakspace {}paginie go skr\'ocimy}{15}
-\contentsline {section}{\numberline {2.1\relax .\kern .5em }Szokuj\k ace por\'ownanie}{15}
-\contentsline {section}{\numberline {2.2\relax .\kern .5em }A\nobreakspace {}nie, to ja si\k e pomyli\IeC {\l }em}{20}
-\contentsline {chapter}{Podsumowanie i\nobreakspace {}wnioski}{29}
-\contentsline {chapter}{Bibliografia}{31}
-\contentsline {chapter}{Spis rysunk\'ow}{33}
-\contentsline {chapter}{Spis tabel}{35}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{37}
-\contentsline {chapter}{Streszczenie (Summary)}{39}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{9}
+\contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{9}
+\contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{9}
+\contentsline {chapter}{Bibliografia}{13}
+\contentsline {chapter}{Spis rysunk\'ow}{15}
+\contentsline {chapter}{Spis tabel}{17}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{19}
+\contentsline {chapter}{Streszczenie (Summary)}{21}

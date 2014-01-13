@@ -3,8 +3,9 @@
 \contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{9}
 \contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{9}
 \contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{9}
-\contentsline {chapter}{Bibliografia}{13}
-\contentsline {chapter}{Spis rysunk\'ow}{15}
-\contentsline {chapter}{Spis tabel}{17}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{19}
-\contentsline {chapter}{Streszczenie (Summary)}{21}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }Visual Studio i Asp.Net jako \'srodowisko pracy}{13}
+\contentsline {chapter}{Bibliografia}{15}
+\contentsline {chapter}{Spis rysunk\'ow}{17}
+\contentsline {chapter}{Spis tabel}{19}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{21}
+\contentsline {chapter}{Streszczenie (Summary)}{23}

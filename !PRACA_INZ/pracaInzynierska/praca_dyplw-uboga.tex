@@ -391,11 +391,6 @@ Ostatnia z wymienionych metod oraz aplikacja implementuj¹ca algorytm o tej samej
 Projekt aplikacji przedstawionej w rozdziale "Projekt aplikacji wspomagaj¹cej zapamiêtywanie" powsta³ by w jak najwiêkszym stopniu spe³niæ wymagania potencjalnych u¿ytkowników. Za³o¿ono, ¿e u¿ytkownik mo¿e chcieæ korzystaæ z aplikacji na swoim smartphonie, tablecie czy komputerze, bez dostêpu do internetu gdy nie jest to niezbêdne. Przy dodatkowym za³o¿eniu, ¿e projekt nie wymaga du¿ej mocy obliczeniowej czy dostêpu do natywnych elementów systemu operacyjnego, zdecydowano siê na wykorzystanie zbioru standardów oferowanych przez HTML w wersji pi¹tej.
 
 
-%Na pocz¹tku zwrócê uwagê na sposób cytowania
-%literatury~\cite{Beth1984}, lub \cite{Gollmann1989,Meier1994}. A~teraz
-%ubogaceni w~t¹ wiedzê -- czytajcie dalej.
-
-
 \chapter{Cel i zakres pracy}
 
 
@@ -407,7 +402,7 @@ Celem pracy jest zaprojektowanie aplikacji, której pierwsza czêœæ pozwoli u¿ytko
 \item Historia algorytmu SuperMemo
 \item Implementacja algorytmu SuperMemo w wersji drugiej
 \item Zaprojektowanie aplikacji wykorzystuj¹cej algorytm
-\item Testy aplikacji 
+\item Testy aplikacji
 \end{itemize}
 
 % \section{Podstawy teoretyczne}
@@ -534,11 +529,10 @@ Powy¿sze cechy powoduj¹, ¿e warto przed rozpoczêciem pisania aplikacji na urz¹dz
   \zrodlo{www.forrester.com}
 \end{figure}
 
-
 \section{Visual Studio i Asp.Net jako œrodowisko pracy}
 
 
-Wybieraj¹c edytor lub zintegrowane œrodowisko programistyczne do budowy aplikacji webowej warto sprawdziæ czy posiada on zestaw pluginów Zen Coding. Znacz¹co przyspiesza to pisanie kodu html, a dziêki temu, ¿e silnik pluginów jest niezale¿ny od edytora powinniœmy znaleŸæ dodatek do ka¿dego popularnego IDE (ang. Integrated Development Environment). U¿ycie tego dodatku wi¹¿e siê z wpisaniem w edytor odpowiedniej komendy i naciœniêciu klawisza TAB.\\Przyk³ad dzia³ania:
+Wybieraj¹c edytor lub zintegrowane œrodowisko programistyczne do budowy aplikacji webowej warto sprawdziæ czy posiada on zestaw pluginów Zen Coding. Znacz¹co przyspiesza to pisanie kodu html, a dziêki temu, ¿e silnik pluginów jest niezale¿ny od edytora powinniœmy znaleŸæ dodatek do ka¿dego popularnego IDE (ang. Integrated Development Environment). U¿ycie tego dodatku wi¹¿e siê z wpisaniem w edytor odpowiedniej komendy i naciœniêciu klawisza TAB.\\\\Przyk³ad dzia³ania:
 \begin{lstlisting}
 html:5>div#page>div.logo+nav>ul#navigation>li*5>a
 \end{lstlisting}
@@ -567,7 +561,26 @@ Rezultat:
 </html>
 \end{lstlisting}
 
-co pozwala stwierdziæ ¿e Visual Studio jest dobrym wyborem jeœli szukamy œrodowiska do pisania nowoczesnych aplikacji webowych
+
+Odpowiedni dodatek do Visual Studio mo¿na pobraæ przez wbudowane narzêdzie do pobierania dodatków jak i bibliotek programistycznych - NuGet. Natomiast funkcjonalnoœci¹, której nie mo¿emy odtworzyæ w innych IDE jest IntelliSense. Dziêki niej podczas wpisywania kodu w jêzyku C\# czy java script widzimy podpowiedzi odnoœnie nazwy funkcji czy opis parametrów jak dana metoda przyjmuje. W przypadku tego drugiego jêzyka podpowiedzi w innych IDE s¹ rzadkoœci¹.\cite{ProVS2012}
+
+
+W nowoczesnych aplikacjach na znaczeniu zyska³a warstwa kliencka, a ca³y wygl¹d powinien byæ zdefiniowany poprzez kaskadowe arkusze stylów. Zasad¹, która pozwala na oddzielenie kodu html, css i js jest tworzenie dla nich osobnych plików. Powinny byæ u³o¿one w logiczny sposób np. ka¿da klasa napisana w jêzyku java script w osobnym pliku. Wi¹¿e siê z tym zwiêkszenie liczby ¿¹dañ do serwera. Istnieje cecha Asp.Net dziêki której mo¿emy zachowaæ logiczn¹ strukturê naszych plików warstwy klienckiej i jednoczeœnie zwiêkszyæ optymalizacjê naszej witryny. Bundles, bo tak nazywa siê ta funkcjonalnoœæ, pozwala nam utworzyæ grupê plików, która zostanie po³¹czona w jeden plik o podanej przez nas nazwie. Dodatkowo plik wynikowy zostanie zminimalizowany, co mo¿e znacz¹co obni¿yæ jego rozmiar. Minimalizacjê plików mo¿e wy³¹czyæ w trybie DEBUG.\cite{ProAspNetMvc4}
+
+
+Przegl¹darki internetowe posiadaj¹ pamiêæ podrêczn¹ tzw. cache, który przechowuje pliki z wczeœniej odwiedzonej strony. W ten sposób ³¹cze internetowe klienta i zasoby serwerowe s¹ odci¹¿one, a strona ³aduje siê szybciej. Jest jednak istotna wada tego rozwi¹zania. Bundles oferuj¹ rozwi¹zanie dziêki do³¹czaniu do adresy z plikiem argument tzw. Content Hash. Jest on generowany na podstawie treœci pliku. Gdy treœæ ulegnie zmianie zmieni siê te¿ hash. W ten sposób klient pobierze zawsze najnowszy plik. Jest to wa¿ne gdy w naszych plikach znajduje siê rozwi¹zanie krytycznego b³êdu naszej aplikacji.\cite{ProAspNetMvc4}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{rys/VisualStudioToHtml.png}
+  \caption{Widok plików w IDE oraz kod html po³¹czonych plików}
+  \label{fig:visualStudioToHtml}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
+
+
+Powy¿sze cechy sprawiaj¹, ¿e Visual Studio i Asp.Net jest dobrym wyborem jeœli szukamy œrodowiska do pisania nowoczesnych aplikacji webowych.
 
 
 % Na rysunku~\ref{fig:kwadracik} mo¿emy zauwa¿yæ dwa trójk¹ty równoboczne. Wielkie mi odkrycie.
@@ -575,12 +588,11 @@ co pozwala stwierdziæ ¿e Visual Studio jest dobrym wyborem jeœli szukamy œrodowi
 \begin{thebibliography}{99}
 
 
-\bibitem{Beth1984}
-T. Beth, F. C. Piper, \emph{The Stop-and-Go Generator} Advances in Cryptology -- EUROCRYPT '84, LNCS vol.~209, pp.~88--92, Springer-Verlag, 1985
+\bibitem{ProVS2012}
+Bruce Johnson, \emph{Professional Visual Studio 2012} -- Wrox, 2012
 
-\bibitem{Gollmann1989}
-W. Chambers, D. Gollmann, \emph{Clock-Controlled Shift Registers: A~Review} IEEE J. Selected Areas Comm., 7(4):~525--533, May 1989
-P. R. Geffe, \emph{How to Protect Data with Ciphers That Are Really Hard to Break} Electronics, Jan. 4, pp.~99--10, 1973
+\bibitem{ProAspNetMvc4}
+Adam Freeman, \emph{Pro ASP.NET MVC 4} -- Apress, 2012, rozdzia³ 24
 
 
 \bibitem{Golic1994}

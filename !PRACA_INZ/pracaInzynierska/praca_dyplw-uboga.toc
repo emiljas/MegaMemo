@@ -4,8 +4,12 @@
 \contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{9}
 \contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{9}
 \contentsline {section}{\numberline {2.3\relax .\kern .5em }Visual Studio i Asp.Net jako \'srodowisko pracy}{13}
-\contentsline {chapter}{Bibliografia}{15}
-\contentsline {chapter}{Spis rysunk\'ow}{17}
-\contentsline {chapter}{Spis tabel}{19}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{21}
-\contentsline {chapter}{Streszczenie (Summary)}{23}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{15}
+\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{15}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Historia}{15}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Implementacja}{15}
+\contentsline {chapter}{Bibliografia}{17}
+\contentsline {chapter}{Spis rysunk\'ow}{19}
+\contentsline {chapter}{Spis tabel}{21}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{23}
+\contentsline {chapter}{Streszczenie (Summary)}{25}

@@ -583,10 +583,31 @@ Przegl¹darki internetowe posiadaj¹ pamiêæ podrêczn¹ tzw. cache, który przechowuj
 Powy¿sze cechy sprawiaj¹, ¿e Visual Studio i Asp.Net jest dobrym wyborem jeœli szukamy œrodowiska do pisania nowoczesnych aplikacji webowych.
 
 
+\chapter{Algorytm SuperMemo}
+
+\section{Krzywa zapominania}
+
+Inaczej zwana krzyw¹ Ebbinghausa, od nazwiska Hermanna Ebbinghausa. Ten niemiecki psycholog zaproponowa³ w swojej pracy "O pamiêci" zale¿noœæ iloœci pamiêtanego materia³u od czasu. Typowy wykres krzywej zapominania pokazuje, ¿e ludzie zapominaj¹ po³owê nowo nabytej wiedzy w ci¹gu kilku dni lub tygodni jeœli materia³ nie by³ regularnie powtarzany. W 1885 Ebbinghaus wysnu³ teoriê o wyk³adniczej naturze zapominania i opisa³ j¹ wzorem:
+
+
+$$
+R = e^{\frac{-t}{s}},
+$$
+gdzie R  - zachowanie wiedzy, S - wzglêdna si³a pamiêci, t - czas\\
+
+Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy. Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo.
+
+
+
+
+\section{Historia}
+
+
+\section{Implementacja}
+
 % Na rysunku~\ref{fig:kwadracik} mo¿emy zauwa¿yæ dwa trójk¹ty równoboczne. Wielkie mi odkrycie.
 
 \begin{thebibliography}{99}
-
 
 \bibitem{ProVS2012}
 Bruce Johnson, \emph{Professional Visual Studio 2012} -- Wrox, 2012
@@ -594,50 +615,16 @@ Bruce Johnson, \emph{Professional Visual Studio 2012} -- Wrox, 2012
 \bibitem{ProAspNetMvc4}
 Adam Freeman, \emph{Pro ASP.NET MVC 4} -- Apress, 2012, rozdzia³ 24
 
+\bibitem{SuperMemoBook}
+Piotr A. Wozniak, \emph{Optimization of learning} -- Master's Thesis
 
-\bibitem{Golic1994}
-Jovan Dj. Goli\v{c}, Luke O'Connor, \emph{Embedding and Probabilistic Correlation Attacks on Clock-Controlled Shift Registers} Advances in Cryptology -- EUROCRYPT '94, LNCS vol.~950, pp.~230--243, Springer-Verlag, 1995
+\bibitem{SuperMemoHistory}
+http://www.supermemo.com/english/history.htm
 
-\bibitem{Zenner2001}
-Matthias Krause, Stefan Lucks, Erik Zenner, \emph{Improved
-Cryptanalysis of the Self-Shrinking Generator} Information Security
-and Privacy -- ACISP 2001, LNCS vol.~2119, pp.~21--35,
-Springer-Verlag, 2001.
-
-\bibitem{Meier1994}
-W. Meier, O. Staffelbach, \emph{The Self-shrinking Generator} Advances
-in Cryptology -- EUROCRYPT '94, LNCS vol.~950, pp.~205--214,
-Springer\dywiz Verlag, 1995.
-
-\bibitem{Mihaljevic1996}
-Miodrag Mihaljevic, \emph{A Faster Cryptanalysis of the Self-shrinking
-Generator} Information Security and Privacy -- ACISP '96, LNCS
-vol.~1172, pp.~182--188, Springer\dywiz Verlag, 1996.
-
-\bibitem{Otto04}
-W.~Otto, \emph{Ubezpieczenia maj¹tkowe. Czêœæ I Teoria ryzyka},
-Wydawnictwo Naukowo-Techniczne, Warszawa 2004.
-
-\bibitem{Zeng1991}
-T. R. N. Rao, Chung-Huang Yang, Kencheng Zeng, \emph{An Improved
-Linear Syndrome Algorithm in Cryptanalysis With Applications} Advances
-in Cryptology -- CRYPTO '90, LNCS vol.~537, pp.~34--47,
-Springer\dywiz Verlag, 1991.
-
-
-\bibitem{Zenner2002}
-Erik Zenner, \emph{On the Efficiency of the Clock Control Guessing
-Attack} Information Security and Cryptology -- ICISC 2002, LNCS
-vol.~2587, pp.~200--212, Springer\dywiz Verlag, 2003.
-
-\bibitem{Szekli11}
-R.~Dutak, W.~Wzekly, \emph{Matematyka ubezpieczeñ maj¹tkowych},
-Uniwersytet Paragwajski,
-\url{http://www.math.uni.up/gracias/seniores}, \emph{stan w~dniu
-5.03.2012~r.}
+\bibitem{KrzywaZapominania}
+http://zajaczkowski.org/2008/11/01/powtarzaj-i-odtwarzaj/
 
 \end{thebibliography}
-
 
 
 \listoffigures

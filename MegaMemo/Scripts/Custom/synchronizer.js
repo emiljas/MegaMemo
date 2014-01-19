@@ -133,9 +133,14 @@ function Synchronizer() {
     };
 
     self.sychronizeFromServer = function (successCallback) {
-        self.synchronizeDecksFromServer(function () {
-            self.synchronizeCardsFromServer(successCallback);
-        });
+
+        if (self.isOnline) {
+            self.synchronizeDecksFromServer(function () {
+                self.synchronizeCardsFromServer(successCallback);
+            });
+        }
+        else
+            successCallback();
     };
 
     self.synchronizeDecksFromServer = function (successCallback) {

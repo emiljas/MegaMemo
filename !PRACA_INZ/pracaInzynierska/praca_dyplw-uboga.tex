@@ -438,7 +438,7 @@ W roku 2014 HTML 5 stanie siê rekomendacj¹ W3C. Na rok 2016 planowane jest opubl
 
 \section{Ró¿nice w stosunku do HTML4}
 
-HTML 5 jest stale rozwijaj¹cym siê standardem. Projektuj¹c stronê u¿ywaj¹c HTML 4 nie musimy martwiæ siê o aktualizowanie strony, o ile oczywiœcie nie chcemy dodaæ nowych funkcjonalnoœci. Strona zbudowana w oparciu o niego, która przesz³a proces walidacji powinna wyœwietlaæ siê identycznie na wszystkich przegl¹darkach niezale¿nie od daty powstania. Jeœli przejdziemy na HTML 5 mo¿e dojœæ do sytuacje, ¿e wykorzystany przez nas element lub atrybut zmieni³ siê. Dotyczy to szczególnie elementów wprowadzonych w HTML 5 (np. znaczniki audio, video). W zwi¹zku z tym uproszczeniu mog³a ulec deklaracja typu dokumentu. \\
+HTML 5 jest stale rozwijaj¹cym siê standardem. Projektuj¹c stronê u¿ywaj¹c HTML 4 nie musimy martwiæ siê o aktualizowanie strony, o ile oczywiœcie nie chcemy dodaæ nowych funkcjonalnoœci. Strona zbudowana w oparciu o niego, która przesz³a proces walidacji powinna wyœwietlaæ siê identycznie na wszystkich przegl¹darkach niezale¿nie od daty powstania. Jeœli przejdziemy na HTML 5 mo¿e dojœæ do sytuacji, ¿e wykorzystany przez nas kilka miesiêcy wczeœniej element lub atrybut zmieni³ siê. Dotyczy to szczególnie elementów wprowadzonych w HTML 5 (np. znaczniki audio, video). W zwi¹zku z tym uproszczeniu mog³a ulec deklaracja typu dokumentu. \\
 Zamiast
 \begin{lstlisting}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML
@@ -568,7 +568,7 @@ Odpowiedni dodatek do Visual Studio mo¿na pobraæ przez wbudowane narzêdzie do po
 W nowoczesnych aplikacjach na znaczeniu zyska³a warstwa kliencka, a ca³y wygl¹d powinien byæ zdefiniowany poprzez kaskadowe arkusze stylów. Zasad¹, która pozwala na oddzielenie kodu html, css i js jest tworzenie dla nich osobnych plików. Powinny byæ u³o¿one w logiczny sposób np. ka¿da klasa napisana w jêzyku java script w osobnym pliku. Wi¹¿e siê z tym zwiêkszenie liczby ¿¹dañ do serwera. Istnieje cecha Asp.Net dziêki której mo¿emy zachowaæ logiczn¹ strukturê naszych plików warstwy klienckiej i jednoczeœnie zwiêkszyæ optymalizacjê naszej witryny. Bundles, bo tak nazywa siê ta funkcjonalnoœæ, pozwala nam utworzyæ grupê plików, która zostanie po³¹czona w jeden plik o podanej przez nas nazwie. Dodatkowo plik wynikowy zostanie zminimalizowany, co mo¿e znacz¹co obni¿yæ jego rozmiar. Minimalizacjê plików mo¿e wy³¹czyæ w trybie DEBUG.\cite{ProAspNetMvc4}
 
 
-Przegl¹darki internetowe posiadaj¹ pamiêæ podrêczn¹ tzw. cache, który przechowuje pliki z wczeœniej odwiedzonej strony. W ten sposób ³¹cze internetowe klienta i zasoby serwerowe s¹ odci¹¿one, a strona ³aduje siê szybciej. Jest jednak istotna wada tego rozwi¹zania. Bundles oferuj¹ rozwi¹zanie dziêki do³¹czaniu do adresy z plikiem argument tzw. Content Hash. Jest on generowany na podstawie treœci pliku. Gdy treœæ ulegnie zmianie zmieni siê te¿ hash. W ten sposób klient pobierze zawsze najnowszy plik. Jest to wa¿ne gdy w naszych plikach znajduje siê rozwi¹zanie krytycznego b³êdu naszej aplikacji.\cite{ProAspNetMvc4}
+Przegl¹darki internetowe posiadaj¹ pamiêæ podrêczn¹ tzw. cache, który przechowuje pliki z wczeœniej odwiedzonej strony. W ten sposób ³¹cze internetowe klienta i zasoby serwerowe s¹ odci¹¿one, a strona ³aduje siê szybciej. Jest jednak istotna wada tego rozwi¹zania - klient mo¿e posiadaæ nieaktualny plik. Bundles oferuj¹ rozwi¹zanie dziêki do³¹czaniu do adresu z plikiem argument tzw. Content Hash. Jest on generowany na podstawie treœci pliku. Gdy treœæ ulegnie zmianie zmieni siê te¿ hash. W ten sposób klient pobierze zawsze najnowszy plik. Jest to wa¿ne gdy w naszych plikach znajduje siê rozwi¹zanie krytycznego b³êdu naszej aplikacji.\cite{ProAspNetMvc4}
 
 
 \begin{figure}
@@ -600,7 +600,15 @@ Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych
 
 
 
-\section{Historia}
+\section{Opis}
+
+
+Dr Piotr Wo¿niak prowadzi badania nas teori¹ metod nauczania, które zaowocowa³y powstaniem algorytmu SuperMemo i programu o tej samej nazwie. Jest on te¿ osob¹ odpowiedzialn¹ za komercyjne wykorzystanie tej metody. Pierwsza wersja programu powsta³a w 1987 roku. Napisana zosta³a w œrodowisku Turbo Pascal 3.0, IBM PC i powsta³a by zaprezentowaæ metodê na dwa podstawowe sposoby:
+\begin{itemize}
+\item{zastosowanie procedur optymalizacji na najmniejszych mo¿liwych przedmiotach}
+\item{zró¿nicowanie elementów na postawie poziomu trudnoœci}
+\end{itemize}
+
 
 
 \section{Implementacja}

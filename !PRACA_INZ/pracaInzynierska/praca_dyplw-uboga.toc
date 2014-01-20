@@ -1,15 +1,17 @@
-\contentsline {chapter}{Wst\k ep}{5}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 1\relax .\kern .5em Cel i zakres pracy}{7}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{9}
-\contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{9}
-\contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{9}
-\contentsline {section}{\numberline {2.3\relax .\kern .5em }Visual Studio i Asp.Net jako \'srodowisko pracy}{13}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{15}
-\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{15}
-\contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{15}
-\contentsline {section}{\numberline {3.3\relax .\kern .5em }Implementacja}{15}
-\contentsline {chapter}{Bibliografia}{17}
-\contentsline {chapter}{Spis rysunk\'ow}{19}
-\contentsline {chapter}{Spis tabel}{21}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{23}
-\contentsline {chapter}{Streszczenie (Summary)}{25}
+\contentsline {chapter}{Wst\k ep}{3}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 1\relax .\kern .5em Cel i zakres pracy}{4}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{5}
+\contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{5}
+\contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{5}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }Visual Studio i Asp.Net jako \'srodowisko pracy}{8}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{11}
+\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{11}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{11}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{12}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{14}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Opis}{14}
+\contentsline {chapter}{Bibliografia}{15}
+\contentsline {chapter}{Spis rysunk\'ow}{16}
+\contentsline {chapter}{Spis tabel}{17}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{18}
+\contentsline {chapter}{Streszczenie (Summary)}{19}

@@ -5,7 +5,7 @@
 
 
 
-\documentclass[11pt]{mwbk}
+\documentclass[11pt, openany]{mwbk}
 
 
 %%%%%%% marinesy, rozmiary, to warto dopasowaæ do drukarki
@@ -523,7 +523,7 @@ Powy¿sze cechy powoduj¹, ¿e warto przed rozpoczêciem pisania aplikacji na urz¹dz
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\linewidth]{rys/NativeVsWebDevelopment.png}
+  \includegraphics[width=0.6\linewidth]{rys/NativeVsWebDevelopment.png}
   \caption{Popularnoœæ sposóbów budowy aplikacji mobilnych}
   \label{fig:html5VsNative}
   \zrodlo{www.forrester.com}
@@ -593,9 +593,12 @@ Inaczej zwana krzyw¹ Ebbinghausa, od nazwiska Hermanna Ebbinghausa. Ten niemieck
 $$
 R = e^{\frac{-t}{s}},
 $$
-gdzie R  - zachowanie wiedzy, S - wzglêdna si³a pamiêci, t - czas\\
+gdzie:\\
+R  - zachowanie wiedzy\\
+S - wzglêdna si³a pamiêci\\
+t - czas
 
-Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy. Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo.
+Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy. Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo. \cite{ForgettingCurves}
 
 
 
@@ -610,10 +613,72 @@ Dr Piotr Wo¿niak prowadzi badania nas teori¹ metod nauczania, które zaowocowa³y 
 \end{itemize}
 
 
+Zaproponowano w niej nastêpuj¹cy wzór na obliczenie kolejnych przerw miêdzy powtórzeniami:
 
-\section{Implementacja}
+\[
+\begin{array}{lcr} I(1) = & 1 \\ I(2) = & 6 \\I(n) = & I(n-1) * EF & \mbox{, dla }n>2\end{array}
+\]
+gdzie:\\
+I(n) - przerwa bez powtórzenia po n-tym powtórzeniu (wyra¿ona w dniach)\\
+EF - ang. easiness factor - odzwierciedla poziom trudnoœci w zapamiêtaniu i przypomnieniu danego faktu
 
-% Na rysunku~\ref{fig:kwadracik} mo¿emy zauwa¿yæ dwa trójk¹ty równoboczne. Wielkie mi odkrycie.
+
+Wartoœæ EF mo¿e wynosiæ od 1,1 dla najtrudniejszego faktu do 3,5 dla najprostszego. W momencie wprowadzenia faktu do bazy SuperMemo wartoœæ EF jest równa 2,5. Je¿eli w procesie powtarzania materia³u istniej¹ problemu z przypomnienim sobie odpowiedzi na dane pytanie wartoœæ ta maleje.\cite{SuperMemoImplementation}
+
+Wkrótce po utworzeniu pierwszej wersji SuperMemo, autor zauwa¿y³, ¿e wartoœæ EF nie powinna spadaæ ponizej 1,3, gdy¿ powodowa³o to, ¿e pytania wyœwietla³y siê zbyt czêsto.
+
+
+By obliczyæ now¹ wartoœæ EF, uczeñ musi po ka¿dej odpowiedzi na pytania oceniæ swój poziom przyswojenia danego faktu. Program SuperMemo u¿ywa skali od 0 do 5. Ogólna forma u¿ytego wzoru wygl¹da nastêpuj¹co:
+
+$$
+EF' - f(EF, q)
+$$
+gdzie:\\
+EF' - nowa wartoœæ EF\\
+EF - stara wartoœæ EF\\
+q - jakoœæ odpowiedzi\\
+f - funkcja u¿yta do obliczenia EF'\\\\
+Funkcja obliczania EF':
+$$
+EF' = EF+(0.1-(5-q)*(0.08+(5-q)*0.02))
+$$
+Warto zauwa¿yæ, ¿e dla q równego 4 wartoœæ EF nie ulega zmianie.
+
+\section{Algorytm SuperMemo w wersji drugiej}
+
+Algorytm SuperMemo w wersji drugiej wersji programu przedstawia siê nastêpuj¹co:
+
+
+\begin{enumerate}
+\item Podziel wiedzê którê chcesz przyswoiæ w jak najmniejsze fakty(pytanie i odpowiedŸ).
+\item Przypisz dla wszystkich faktów wartoœæ EF równ¹ 2,5.
+\item Powtarzaj fakty robi¹c nastêpuj¹ce przerwy:
+\[
+\begin{array}{lcr} I(1) = & 1 \\ I(2) = & 6 \\I(n) = & I(n-1) * EF & \mbox{, dla }n>2\end{array}
+\]
+\item Po ka¿dym powtórzeniu oceñ jakoœæ odpowiedzi w skali od 0 do 5, gdzie\\
+5 - doskona³a odpowiedŸ\\
+4 - poprawna odpowiedŸ po zastanowieniu\\
+3 - poprawna odpowiedŸ po d³ugim zastanowieniu\\
+2 - niepoprawna odpowiedŸ, gdy poprawna wydaje siê ³atwa do przypomnienia\\
+1 - niepoprawna odpowiedŸ, poprawna zosta³a przypomniana\\
+0 - brak odpowiedzi\\
+\item Po ka¿dej odpowiedzi zmodyfikuj wartoœæ EF przypisan¹ do danego faktu wed³ug wzoru:
+$$
+EF' = EF+(0.1-(5-q)*(0.08+(5-q)*0.02))
+$$
+Jeœli ocena odpowiedzi jest mniejsza ni¿ 1.3 to ustaw now¹ wartoœæ EF na 1,3.
+\item Jeœli ocena odpowiedzi jest ni¿sza ni¿ 3 to zacznij powtórkê dla faktu bez zmiany wartoœci EF.
+\item Po ka¿dym powtórzeniu w danym dniu powtarzaj elementy ocenione poni¿ej 4. Kontynuuj dopóki wszystkie fakty bêd¹ ocenione przynajmniej na 4.
+\end{enumerate}
+
+
+\chapter{Projekt aplikacji wspomagaj¹cej zapamiêtywanie}
+
+\section{Instrukcja dla u¿ytkownika}
+
+
+
 
 \begin{thebibliography}{99}
 
@@ -623,11 +688,17 @@ Bruce Johnson, \emph{Professional Visual Studio 2012} -- Wrox, 2012
 \bibitem{ProAspNetMvc4}
 Adam Freeman, \emph{Pro ASP.NET MVC 4} -- Apress, 2012, rozdzia³ 24
 
+\bibitem{ForgettingCurves}
+Andrew Thomassen, \emph{Learning and Forgetting Curves : A Practical Study} -- University of Waikato
+
 \bibitem{SuperMemoBook}
 Piotr A. Wozniak, \emph{Optimization of learning} -- Master's Thesis
 
 \bibitem{SuperMemoHistory}
 http://www.supermemo.com/english/history.htm
+
+\bibitem{SuperMemoImplementation}
+http://www.supermemo.com/english/ol/sm2.htm
 
 \bibitem{KrzywaZapominania}
 http://zajaczkowski.org/2008/11/01/powtarzaj-i-odtwarzaj/

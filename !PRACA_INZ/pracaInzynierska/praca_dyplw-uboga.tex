@@ -598,10 +598,18 @@ R  - zachowanie wiedzy\\
 S - wzglêdna si³a pamiêci\\
 t - czas
 
-Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy. Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo. \cite{ForgettingCurves}
+Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy(rys. \ref{fig:forgettingCurves}). Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo. \cite{ForgettingCurves}
 
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\linewidth]{rys/ForgettingCurve.png}
+  \caption{Wykres krzywych zapominania dla kolejnych powtórzeñ}
+  \label{fig:forgettingCurves}
+  \zrodlo{Wikipedia}
+\end{figure}
 
+\ref{fig:html5Nowosci}
 
 \section{Opis}
 
@@ -677,8 +685,21 @@ Jeœli ocena odpowiedzi jest mniejsza ni¿ 1.3 to ustaw now¹ wartoœæ EF na 1,3.
 
 \section{Instrukcja dla u¿ytkownika}
 
+Przy pierwszym uruchomieniu aplikacji u¿ytkownikowi wyœwietla siê okno z instrukcj¹ dotycz¹c¹ aplikacji(rys. \ref{fig:appHelp}). Informuje ono u¿ytkownika, ¿e ma doczynienia z aplikacj¹ webow¹ dzia³aj¹c¹ w trybie offline, która ma za zadanie pomóc w nauce nowego jêzyka, ale równie¿ w przyswojeniu innej wiedzy u¿ywaj¹c metody inteligentnego planowania nastêpnych powtórek materia³u. Wiêcej informacji o tej metodzie u¿ytkownik mo¿e zdobyæ klikaj¹c na link do artyku³u na wikipedii. Pomoc zawiera tak¿e tabelê z wyjaœnieniem pojêæ i symboli u¿ywanych w aplikacji. Dowiaduje siê z niej, ¿e deck(ang. biurko) powienien traktowaæ jako grupê pytañ i odpowiedzi, któr¹ pragnie przyswoiæ. Mog¹ byæ to na przyk³ad  hiszpañskie s³owa z ich t³umaczeniem w jêzyku angielskim. Card(ang. karta) stanowi pojedyñcze pytania i odpowiedŸ(np. przód karty - dog, ty³ karty - perro). Przedstawiony jest równie¿ symbol, który reprezentuje statusy w jakich mo¿e pracowaæ aplikacja:
+\begin{itemize}
+\item zielony - jesteœmy pod³¹czeni do internetu, dane s¹ zsynchronizowane z serwerem 
+\item czerwony - nie mamy po³¹czenia z internetem, dane s¹ zsynchronizowane z serwerem
+\item zielony, pulsuj¹cy - trwa synchronizacj¹ danych z serwerem
+\item czerwony pulsuj¹cy - po pod³¹czeniu do intenetu rozpocznie siê synchronizacja danych
+\end{itemize}
 
-
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\linewidth]{rys/AppHelp.png}
+  \caption{Instrukcja obs³ugi aplikacji}
+  \label{fig:appHelp}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
 
 \begin{thebibliography}{99}
 

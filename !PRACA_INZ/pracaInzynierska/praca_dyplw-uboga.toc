@@ -7,11 +7,11 @@
 \contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{11}
 \contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{11}
 \contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{11}
-\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{12}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{14}
-\contentsline {section}{\numberline {4.1\relax .\kern .5em }Opis}{14}
-\contentsline {chapter}{Bibliografia}{15}
-\contentsline {chapter}{Spis rysunk\'ow}{16}
-\contentsline {chapter}{Spis tabel}{17}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{18}
-\contentsline {chapter}{Streszczenie (Summary)}{19}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{13}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{15}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Instrukcja dla u\.zytkownika}{15}
+\contentsline {chapter}{Bibliografia}{16}
+\contentsline {chapter}{Spis rysunk\'ow}{17}
+\contentsline {chapter}{Spis tabel}{18}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{19}
+\contentsline {chapter}{Streszczenie (Summary)}{20}

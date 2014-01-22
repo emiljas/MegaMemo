@@ -3,6 +3,7 @@
 
     self.title = '';
     self.cardsNumber = 0;
+    self.allCardsNumber = 0;
     self.cards = [];
 };
 
@@ -29,17 +30,23 @@ function loadDecksToReview(decks, afterLoadCallback) {
 
             var date = moment(card.nextRepetitionDate);
 
-            if (now.diff(date, 'days') >= 0) {
-                if (decksToReview[card.deckId] == undefined)
-                    decksToReview[card.deckId] = new StudyDeck();
+            if (decksToReview[card.deckId] == undefined)
+                decksToReview[card.deckId] = new StudyDeck();
 
+            if (now.diff(date, 'days') >= 0) {
                 decksToReview[card.deckId].cards.push(card);
                 ++decksToReview[card.deckId].cardsNumber;
             }
+
+            ++decksToReview[card.deckId].allCardsNumber;
         }
 
         for (var i = 0; i < decks.length; ++i) {
             var deck = decks[i];
+
+            if (decksToReview[deck.id].cardsNumber == 0)
+                decksToReview[deck.id] = undefined;
+
             if (decksToReview[deck.id] != undefined) {
                 decksToReview[deck.id].id = deck.id;
                 decksToReview[deck.id].title = deck.title;

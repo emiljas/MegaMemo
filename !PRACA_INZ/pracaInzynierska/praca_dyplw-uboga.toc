@@ -3,15 +3,18 @@
 \contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{5}
 \contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{5}
 \contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{5}
-\contentsline {section}{\numberline {2.3\relax .\kern .5em }Visual Studio i Asp.Net jako \'srodowisko pracy}{8}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{11}
-\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{11}
-\contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{11}
-\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{13}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{15}
-\contentsline {section}{\numberline {4.1\relax .\kern .5em }Instrukcja dla u\.zytkownika}{15}
-\contentsline {chapter}{Bibliografia}{16}
-\contentsline {chapter}{Spis rysunk\'ow}{17}
-\contentsline {chapter}{Spis tabel}{18}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{19}
-\contentsline {chapter}{Streszczenie (Summary)}{20}
+\contentsline {section}{\numberline {2.3\relax .\kern .5em }RWD (Responsywny wygl\k ad)}{8}
+\contentsline {section}{\numberline {2.4\relax .\kern .5em }Visual Studio i Asp.Net jako \'srodowisko pracy}{9}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{12}
+\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{12}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{12}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{14}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{16}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Za\IeC {\l }o\.zenia}{16}
+\contentsline {section}{\numberline {4.2\relax .\kern .5em }Wymagania}{16}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Instrukcja dla u\.zytkownika}{17}
+\contentsline {chapter}{Bibliografia}{19}
+\contentsline {chapter}{Spis rysunk\'ow}{20}
+\contentsline {chapter}{Spis tabel}{21}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{22}
+\contentsline {chapter}{Streszczenie (Summary)}{23}

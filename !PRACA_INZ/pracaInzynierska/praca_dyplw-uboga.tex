@@ -529,6 +529,33 @@ Powy¿sze cechy powoduj¹, ¿e warto przed rozpoczêciem pisania aplikacji na urz¹dz
   \zrodlo{www.forrester.com}
 \end{figure}
 
+
+\section{RWD (Responsywny wygl¹d)}
+
+RWD(ang. Responsive web design) - responsywny wygl¹d - jest to podejœcie w projektowaniu witryn internetowych, którego celem jest u¿yskanie jak najlepszych doœwiadczeñ dla odwiedzaj¹cego stronê. Strony napisane w oparciu o tê technikê s¹ ³atwe do nawigacji, czytania oraz obs³uguj¹ wiêkszoœæ urz¹dzeñ z dostêpem do internetu(od urz¹dzeñ mobilnych do komputerów PC).
+
+Strona zaprojektowana w RWD przystosowuje szablon do œrodowiska, w którym jest ogl¹dana poprzez u¿ycie p³ynnych, bazuj¹cych na proporcjach kontenerach, grafikach o zmiennych rozmiarach oraz funkcjonalnoœci kaskadowych arkuszy stylów(CSS3) - media queries.
+
+
+Gdy projektujemy now¹ aplikacjê webow¹ warto przyj¹æ podejœcie o nazwie "mobile first". Zak³ada ono, ¿e pierwszym szablonem, który zostanie zaprojektowany jest ten na urz¹dzenia mobilne. Na tym widoku powinno znaleŸæ siê najbardziej potrzebne elementy. Taki szablon powinien byæ czytelny i wyraŸny, by mo¿na go by³o obs³ugiwaæ bez problemów palcami na ekranie urz¹dzenia mobilnego o ma³ej rozdzielczoœci ekranu. Nastêpnie powinniœmy siê zastanowiæ jakie elementy chcielibyœmy pokazywaæ dodatkowowo w miarê zwiêkszania rozdzielczoœci ekranu. Na wiêkszych rozdzielczoœciach mo¿emy te¿ za³o¿yæ, ¿e u¿ytkownik bêdzie u¿ywa³ myszy komputerowej, a wiêc bêdzie móg³ obs³ugiwaæ nawet ma³e elementy na stronie.
+
+
+By wykorzystaæ zalety tego podejœcia nale¿y dodaæ dodatkowy znacznik w sekcji HEAD naszej aplikacji:
+\begin{lstlisting}
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+\end{lstlisting}
+Jest to wskazówka dla przegl¹darki internetowej, ¿e nie powinna ona skalowaæ danej strony.
+
+
+W zale¿noœci od rozdzielcznoœci ekranu projektant witryny internetowej mo¿e zdecydowaæ o wczytywaniu innych styli. Gdy chcemy wczytaæ style dla rozdzielcznoœci powy¿ej 900 pikseli szerokoœci, ale mniejszej ni¿ 1024 powinniœmy u¿yæ:
+
+\begin{lstlisting}
+@media screen and (min-width: 900px) and (max-width: 1024px)
+{
+	/* style tylko dla tej rozdzielczosci */
+}
+\end{lstlisting}
+
 \section{Visual Studio i Asp.Net jako œrodowisko pracy}
 
 
@@ -683,6 +710,27 @@ Jeœli ocena odpowiedzi jest mniejsza ni¿ 1.3 to ustaw now¹ wartoœæ EF na 1,3.
 
 \chapter{Projekt aplikacji wspomagaj¹cej zapamiêtywanie}
 
+\section{Za³o¿enia}
+
+Aplikacja ma stanowiæ alternatywê dla innych programów wspomagaj¹cych proces nauki poprzez inteligentne planowanie powtórek. Zaletami w stosunku do programu autora algorytmu SuperMemo jest prostota obs³ugi i darmowe korzystanie. Cechami przewa¿aj¹cymi nad wyborem aplikacji opisanej w tej pracy nad programem Anki jest intuicyjna obs³uga oraz fakt, ¿e mo¿na j¹ odpaliæ na ka¿dej platformie mobilnej jak i komputerze PC.
+
+
+Multiplatformowoœæ jest zapewniono poprzez napisanie aplikacji przegl¹darkowej. W ten sposób aplikacja mo¿e byæ odpalona na platformach mobilnych, takich jak Windows Phone, Android, iPhone, ma³o popularnych platform takich jak Selfish, Tizen, FirefoxOS, ale te¿ na systemach, które powstan¹ w przysz³oœci o ile bêd¹ posiada³y nowoczesn¹ przegl¹darkê internetow¹, co jest standardowym wyposa¿eniem ka¿dej platformy.
+
+Interfejs graficzny napisany jest tak, by dopasowaæ siê do rozdzielczoœci ka¿dego urz¹dzenia dostêpnego na rynku.
+
+\section{Wymagania}
+
+Do korzystania z aplikacji wymagana jest przegl¹darka internetowa obs³uguj¹ca nastêpuj¹ce funkcjonalnoœci HTML 5:
+\begin{itemize}
+\item Local Storage
+\item Canvas
+\item IndexedDB
+\end{itemize}
+S¹ to najpopularniejsze przegl¹darki na komputery PC: Google Chrome, Internet Explorer, Mozilla Firefox i Opera w wersjach najœwie¿szych oraz ich odpowiedniki na urz¹dzenia mobilne.
+
+Aby synchronizowaæ dane z serwerem konieczne jest posiadanie konta.
+
 \section{Instrukcja dla u¿ytkownika}
 
 Przy pierwszym uruchomieniu aplikacji u¿ytkownikowi wyœwietla siê okno z instrukcj¹ dotycz¹c¹ aplikacji(rys. \ref{fig:appHelp}). Informuje ono u¿ytkownika, ¿e ma doczynienia z aplikacj¹ webow¹ dzia³aj¹c¹ w trybie offline, która ma za zadanie pomóc w nauce nowego jêzyka, ale równie¿ w przyswojeniu innej wiedzy u¿ywaj¹c metody inteligentnego planowania nastêpnych powtórek materia³u. Wiêcej informacji o tej metodzie u¿ytkownik mo¿e zdobyæ klikaj¹c na link do artyku³u na wikipedii. Pomoc zawiera tak¿e tabelê z wyjaœnieniem pojêæ i symboli u¿ywanych w aplikacji. Dowiaduje siê z niej, ¿e deck(ang. biurko) powienien traktowaæ jako grupê pytañ i odpowiedzi, któr¹ pragnie przyswoiæ. Mog¹ byæ to na przyk³ad  hiszpañskie s³owa z ich t³umaczeniem w jêzyku angielskim. Card(ang. karta) stanowi pojedyñcze pytania i odpowiedŸ(np. przód karty - dog, ty³ karty - perro). Przedstawiony jest równie¿ symbol, który reprezentuje statusy w jakich mo¿e pracowaæ aplikacja:
@@ -693,6 +741,9 @@ Przy pierwszym uruchomieniu aplikacji u¿ytkownikowi wyœwietla siê okno z instruk
 \item czerwony pulsuj¹cy - po pod³¹czeniu do intenetu rozpocznie siê synchronizacja danych
 \end{itemize}
 
+
+Identyczne okno pojawia siê po klikniêniu na wyrazy "deck" i "card" w reszcie aplikacji.
+
 \begin{figure}
   \centering
   \includegraphics[width=0.6\linewidth]{rys/AppHelp.png}
@@ -701,7 +752,22 @@ Przy pierwszym uruchomieniu aplikacji u¿ytkownikowi wyœwietla siê okno z instruk
   \zrodlo{Opracowanie w³asne}
 \end{figure}
 
+
+Po zamkniêciu okno z informacj¹ czym jest aplikacja i wyjaœnieni¹cym podstawowe pojêcia u¿ytkownik widzi formularz do za³o¿enia nowego konta na stronie lub w przypadku gdy ju¿ posiada konto mo¿e siê zalogowaæ poprzez formularz dostêpny, w przypadku  urz¹dzenia mobilnego, po klikniêciu w przycisk umieszczony w prawym górnym rogu ekranu. W przypadku urz¹dzeñ z wiêksz¹ rozdzielczoœci¹ ekranu pola formularza potrzebne do zalogowania s¹ widoczne w tym miejscu(rys. \ref{fig:appRegistration}).
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{rys/AppRegistration2.png}
+  \caption{Zrzut ekranu z formularzem zak³adania nowego konta. W wersji komputerowej po lewej stronie i mobilnej po prawej.}
+  \label{fig:appRegistration}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
+
+
 \begin{thebibliography}{99}
+
+\bibitem{RWD}
+Benjamin LaGrone, \emph{HTML5 and CSS3 Responsive Web Design Cookbook} -- PACKT Publishing, 2013
 
 \bibitem{ProVS2012}
 Bruce Johnson, \emph{Professional Visual Studio 2012} -- Wrox, 2012

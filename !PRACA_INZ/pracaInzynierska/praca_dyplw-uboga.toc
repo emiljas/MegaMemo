@@ -13,9 +13,9 @@
 \contentsline {section}{\numberline {4.1\relax .\kern .5em }Za\IeC {\l }o\.zenia}{16}
 \contentsline {section}{\numberline {4.2\relax .\kern .5em }Wymagania}{16}
 \contentsline {section}{\numberline {4.3\relax .\kern .5em }Instrukcja dla u\.zytkownika}{17}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 5\relax .\kern .5em Podsumowanie}{19}
-\contentsline {chapter}{Bibliografia}{20}
-\contentsline {chapter}{Spis rysunk\'ow}{21}
-\contentsline {chapter}{Spis tabel}{22}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{23}
-\contentsline {chapter}{Streszczenie (Summary)}{24}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 5\relax .\kern .5em Podsumowanie}{20}
+\contentsline {chapter}{Bibliografia}{21}
+\contentsline {chapter}{Spis rysunk\'ow}{22}
+\contentsline {chapter}{Spis tabel}{23}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{24}
+\contentsline {chapter}{Streszczenie (Summary)}{25}

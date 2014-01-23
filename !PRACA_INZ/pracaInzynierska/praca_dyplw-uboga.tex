@@ -764,9 +764,33 @@ Po zamkniêciu okno z informacj¹ czym jest aplikacja i wyjaœnieni¹cym podstawowe 
 \end{figure}
 
 
-Gdy wype³nimy pola formularza rejestracji i nie otrzymamy komunikatu o b³êdzie informuj¹cym o zajêtej nazwie u¿ytkownika lub niezgodnoœci wprowadzonych hase³, zostaniemy automatycznie zalogowani na nowo utworzone konto. Domyœlnym ekranem startowym jest lista grup faktów do nauki na obecny dzieñ. W przypadku gdy nie ma nic do powtarzania na dany dzieñ u¿ytkownikowi wyœwietla siê komunikat z odpowiedni¹ informacj¹ oraz wskazówka, by klikn¹³ odnoœnik "Decks" aby dodaæ nowe grupy do nauki i karty.
+Gdy wype³nimy pola formularza rejestracji i nie otrzymamy komunikatu o b³êdzie informuj¹cym o zajêtej nazwie u¿ytkownika lub niezgodnoœci wprowadzonych hase³, zostaniemy automatycznie zalogowani na nowo utworzone konto. Domyœlnym ekranem startowym jest lista grup faktów do nauki na obecny dzieñ(rys. \ref{fig:screenStudyList}). W przypadku gdy nie ma nic do powtarzania na dany dzieñ u¿ytkownikowi wyœwietla siê komunikat z odpowiedni¹ informacj¹ oraz wskazówka, by klikn¹³ odnoœnik "Decks" aby dodaæ nowe grupy do nauki i karty. Po klikniêciu na nazwê danej grupy przechodzimy do trybu powtarzania zawartych w niej faktów. Gdy algorytm dojdzie do miejsca, w którym nie ma ju¿ faktów do nauki przechodzimy z powrotem do listy.
 
-ScreenStudyList.png
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{rys/ScreenStudyList.png}
+  \caption{Zrzut ekranu z widokiem listy grup faktów do nauki. Wersja mobilna.}
+  \label{fig:screenStudyList}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
+
+Jeœli u¿ytkownik chce dodaæ nowe fakty do swojej bazy wiedzy powinien przejœæ do pozycji "Decks" w menu. Tam wyœwietli siê lista z ju¿ istniej¹cymi grupami lub informacja jak dodaæ nowe. Po klikniêciu w nazwê grupy dodajemy do niej nowe karty, aby to zrobiæ nale¿y uzupe³niæ pola front - przednia czêœæ karty i back - tylnia czêœæ. Front to pytanie, back - odpowiedŸ na nie. Jeœli chcemy jednoczeœnie dodaæ dwie karty, jedn¹  z pytaniem w polu front oraz odpowiedzi¹ w back i drug¹ z pytaniem w polu back oraz odpowiedzi¹ w polu front, nale¿y zaznaczyæ opcjê o nazwie "reverse".
+
+
+Ostatnim ekranem, na którym u¿ytkownik spêdzi najwiêcej czasu i który jest g³ówn¹ funkcjonalnoœci¹ aplikacji jest formularz powtarzania wiedzy. Schemat powtarzania wygl¹da nastêpuj¹co:
+\begin{itemize}
+\item Wyœwietlono zostaje pytanie.
+\item U¿ytkownik zastanawia siê nad odpowiedzi¹.
+\item Gdy przypomina sobie odpowiedŸ lub dochodzi do wniosku, ¿e nie jest w stanie sobie przypomnieæ wybiera przycisk z napisem "Show answer" - "Poka¿ odpowiedŸ". Nastêpnie ma za zadanie oceniæ jakoœæ udzielonej odpowiedzi lub jej brak. Robi to przez klikniêcie odpowiedniego przycisku(rys. \ref{fig:screenReview}).
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{rys/ScreenReview.png}
+  \caption{Zrzut ekranu formularza do powtarzania bazy wiedzy. Wersja mobilna.}
+  \label{fig:screenReview}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
 
 \chapter{Podsumowanie}
 

@@ -9,13 +9,15 @@
 \contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{12}
 \contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{12}
 \contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{14}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{16}
-\contentsline {section}{\numberline {4.1\relax .\kern .5em }Za\IeC {\l }o\.zenia}{16}
-\contentsline {section}{\numberline {4.2\relax .\kern .5em }Wymagania}{16}
-\contentsline {section}{\numberline {4.3\relax .\kern .5em }Instrukcja dla u\.zytkownika}{17}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 5\relax .\kern .5em Podsumowanie}{20}
-\contentsline {chapter}{Bibliografia}{21}
-\contentsline {chapter}{Spis rysunk\'ow}{22}
-\contentsline {chapter}{Spis tabel}{23}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{24}
-\contentsline {chapter}{Streszczenie (Summary)}{25}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{15}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Za\IeC {\l }o\.zenia}{15}
+\contentsline {section}{\numberline {4.2\relax .\kern .5em }Wymagania}{15}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Instrukcja dla u\.zytkownika}{16}
+\contentsline {section}{\numberline {4.4\relax .\kern .5em }Zapis i synchronizacja danych}{18}
+\contentsline {section}{\numberline {4.5\relax .\kern .5em }Generowanie manifestu AppCache}{23}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 5\relax .\kern .5em Podsumowanie}{25}
+\contentsline {chapter}{Bibliografia}{26}
+\contentsline {chapter}{Spis rysunk\'ow}{27}
+\contentsline {chapter}{Spis tabel}{28}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{29}
+\contentsline {chapter}{Streszczenie (Summary)}{30}

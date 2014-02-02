@@ -282,7 +282,7 @@
 \raggedbottom   %%% to znaczy, ¿e nie bêdzie si³owego wyrównywania typowych
                 %%     stron do jednakowej wysokoœci
 
-\linespread{1.3}
+\linespread{1.4}
 \hyphenpenalty=5000
 \tolerance=5000
 
@@ -303,7 +303,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\tytul{Aplikacja webowa wspomagaj¹ca proces zapamiêtywania}
 
-\newcommand\tytulangielski{TYTU£ ANGIELSKI}
+\newcommand\tytulangielski{The web application supporting the learning process.}
 
 \begin{center}
 \Large
@@ -390,8 +390,7 @@ Informatyki i Automatyki}
   \textbf{\tytul}
 \end{center}
 
-
-Streszczenie po polsku.
+Celem pracy by³o opracowanie aplikacji wspomagaj¹cej proces nauki poprzez inteligentne planowanie powtórek. Zaimplementowano dobrze znany algorytm SuperMemo w nowoczesnej formie aplikacji webowej dzia³aj¹cej w trybie offline.
 
 \bigskip
 
@@ -401,7 +400,7 @@ Streszczenie po polsku.
 
 
 {\it
-Streszczenie po angielsku.
+The thesis aimed at developing the application supporting the learning process through intelligent planning repetitions. It was implemented well-known SuperMemo algorithm in a modern form of web application running in offline mode.
 }
 
 \chapter*{Wstêp}
@@ -517,7 +516,7 @@ Nowe znaczniki to miêdzy innymi:
 \vspace{10 mm}
 
 
-API (ang. Application Programming Interface) HTML 5 udostêpnia programiœcie wiele nowoœci (rys. \ref{fig:html5Nowosci}).
+API (ang. Application Programming Interface) HTML 5 udostêpnia programiœcie wiele nowoœci (rys. \ref{fig:html5Nowosci}). Czêœæ z nich ma za zadanie zast¹piæ przestarza³e rozwi¹zania, inne wprowadzaj¹ zupe³nie nowe mo¿liwoœci dla programisty.
 
 
 \begin{figure}
@@ -529,7 +528,7 @@ API (ang. Application Programming Interface) HTML 5 udostêpnia programiœcie wiel
 \end{figure}
 
 
-Ciasteczka (ang. cookies) to porcja danych wysy³ana z przegl¹darki internetowej i przechowywana jako ma³y plik tekstowy na dysku twardym u¿ytkownika strony. Wykorzystywane s¹ do przechowywania informacji o aktywnoœci u¿ytkownika (np. czy u¿ytkownik jest zalogowany).\\
+Jednym z mechanizmów, które HTML 5 stara siê zdeprecjonowaæ s¹ ciasteczka. Ciasteczka (ang. cookies) to porcja danych wysy³ana z przegl¹darki internetowej i przechowywana jako ma³y plik tekstowy na dysku twardym u¿ytkownika strony. Wykorzystywane s¹ do przechowywania informacji o aktywnoœci u¿ytkownika (np. czy u¿ytkownik jest zalogowany).\\
 Zalety:
 \begin{itemize}
 \item nie wymagaj¹ zasobów serwera,
@@ -553,8 +552,8 @@ IndexedDB jest bardziej zaawansowanym rozwi¹zaniem. Jest to interfejs lokalnej b
 Zupe³n¹ nowoœci¹ jest natomiast mo¿liwoœæ pisania aplikacji dzia³aj¹cych w trybie offline. AppCache pozwala twórcy witryn zdefiniowaæ, które pliki powinny zostaæ zapisane na dysku u¿ytkownika, a nastêpnie byæ dostêpne w trybie offline. Aplikacja napisana w ten sposób za³aduje siê i bêdzie dzia³aæ poprawnie nawet gdy u¿ytkownik jest poza zasiêgiem sieci pod warunkiem, ¿e ju¿ kiedyœ odwiedzi³ dan¹ witrynê. Mo¿na wiêc przyrównaæ pierwsze w³adowanie strony w przegl¹darce do instalacji natywnych aplikacji (np. w sklepie Google Play w systemie Android). By nastêpnie zaktualizowaæ zapisane na dysku pliki nale¿y zmieniæ manifest (plik tekstowy, który zawiera miêdzy innymi spis plików).\\
 Zalety:
 \begin{itemize}
-\item u¿ytkownicy mog¹ nawigowaæ po stronie bez dostêpu do internetu
-\item zysk na szybkoœci - zasoby naszej aplikacji ³adowane s¹ bezpoœrednio z dysku
+\item u¿ytkownicy mog¹ nawigowaæ po stronie bez dostêpu do internetu,
+\item zysk na szybkoœci - zasoby naszej aplikacji ³adowane s¹ bezpoœrednio z dysku.
 \end{itemize}
 
 
@@ -573,7 +572,7 @@ Powy¿sze cechy powoduj¹, ¿e warto przed rozpoczêciem pisania aplikacji na urz¹dz
 
 \section{RWD (Responsywny wygl¹d)}
 
-RWD (ang. Responsive web design) - responsywny wygl¹d - jest to podejœcie w projektowaniu witryn internetowych, którego celem jest uzyskanie jak najlepszych doœwiadczeñ dla odwiedzaj¹cego stronê. Strony napisane w oparciu o tê technikê s¹ ³atwe do nawigacji, czytania oraz obs³uguj¹ wiêkszoœæ urz¹dzeñ z dostêpem do internetu(od urz¹dzeñ mobilnych do komputerów PC).
+RWD (ang. Responsive web design) - responsywny wygl¹d - jest to podejœcie w projektowaniu witryn internetowych, którego celem jest uzyskanie jak najlepszych doœwiadczeñ dla odwiedzaj¹cego stronê. Strony napisane w oparciu o tê technikê s¹ ³atwe do nawigacji, czytania oraz obs³uguj¹ wiêkszoœæ urz¹dzeñ z dostêpem do Internetu (od urz¹dzeñ mobilnych do komputerów PC).
 
 Strona zaprojektowana w RWD przystosowuje szablon do œrodowiska, w którym jest ogl¹dana poprzez u¿ycie p³ynnych, bazuj¹cych na proporcjach kontenerach, grafikach o zmiennych rozmiarach oraz funkcjonalnoœci kaskadowych arkuszy stylów(CSS3) - media queries .
 
@@ -642,13 +641,59 @@ Przegl¹darki internetowe posiadaj¹ pamiêæ podrêczn¹ tzw. cache, który przechowuj
 \begin{figure}
   \centering
   \includegraphics[width=0.9\linewidth]{rys/VisualStudioToHtml.png}
-  \caption{Widok plików w IDE oraz kod html po³¹czonych plików}
+  \caption{Widok plików w IDE oraz kod HTML po³¹czonych plików}
   \label{fig:visualStudioToHtml}
   \zrodlo{Opracowanie w³asne}
 \end{figure}
 
 
 Powy¿sze cechy sprawiaj¹, ¿e Visual Studio i ASP.NET jest dobrym wyborem jeœli szukamy œrodowiska do pisania nowoczesnych aplikacji webowych.
+
+
+\section{HTML5 jako platforma mobilna}
+
+W 2007 firma Apple zaprezentowa³a smartphone o nazwie iPhone. Wprowadzi³a w ten sposób now¹ jakoœæ do œwiata urz¹dzeñ mobilnych i spowodowa³a, ¿e dotychczasowe smartphony wydawa³y siê przestarza³e. Konkurencja próbuj¹c sprostaæ nowo zdefiniowanym wymaganiom u¿ytkowników zaczê³a opracowywaæ nowe systemy operacyjne i urz¹dzenia. Wp³yw firmy Steava Jobsa na system Android mo¿emy zaobserwowaæ na rys. \ref{fig:androidBeforeAfter}. Podobny interfejs graficzny i wra¿enia z u¿ytkowania mo¿emy równie¿ zobaczyæ w systemie mobilnym Windows czy FirefoxOS.
+
+W 2008 Steve Jobs pragn¹³ rozpocz¹æ jeszcze jedn¹ rewolucjê. Og³osi³ wtedy, ¿e iPhone bêdzie posiada³ wiele aplikacji, wszystkie dzia³aj¹ce po stronie przegl¹darki. Wkrótce jednak zrezwidowa³ swój pomys³ i og³osi³ otwarcie internetowego sklepu z natywnymi aplikacjami.
+
+Nie oznacza to, ¿e nie powstaj¹ aplikacje webowe na urz¹dzenia mobilne, lecz dominuj¹cym sposobem dalej pozostaj¹ aplikacje natywne. Potencja³ rozwi¹zañ webowych pokazuje fakt, i¿ 2 miliardy ludzi korzysta ze stron www, podczas gdy z systemu iOS korzysta 50 milionów u¿ytkowników.
+
+Nie mo¿na wiêc udzieliæ jednoznacznej odpowiedzi, które podejœcie do pisania aplikacji mobilnych nale¿y wybraæ. Warto podj¹æ dycyzjê w zale¿noœci od typu projektu.
+\\\\
+\noindent
+Zalety HTML5 jako platformy mobilnej:
+\begin{itemize}
+\item Raz napisana aplikacja mo¿e byæ uruchomiona na wielu platformach.
+\item U¿ytkownik zawsze u¿ywa najnowszej wersji aplikacji.
+\item Przyjazna dla programistów webowych. By napisaæ aplikacje natywne na g³ówne platformy mobilne potrzebna jest znajomoœæ jêzyków: Objective-C, Java oraz C\#.
+\end{itemize}
+
+
+\noindent
+\\
+Wady:
+\begin{itemize}
+\item Ograniczony dostêp do zasobów sprzêtowych (np. odczyt stanu baterii).
+\item Mniejsza wydajnoœæ graficzna.
+\item Brak wbudowanego systemu p³atnoœci za aplikacjê.
+\end{itemize}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{rys/AndroidBeforeAfter.jpg}
+  \caption{Po lewej prototyp z systemem Android z 2007 roku. Po prawej docelowe urz¹dzenie wyprodukowane przez HTC w 2008.}
+  \label{fig:androidBeforeAfter}
+  \zrodlo{www.idownloadblog.com}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{rys/SmartphoneMarket.png}
+  \caption{Udzia³ systemów mobilnych na rynku urz¹dzeñ mobilnych.}
+  \label{fig:smartphoneMarket.png}
+  \zrodlo{www.collaborative.com}
+\end{figure}
 
 
 \chapter{Algorytm SuperMemo}
@@ -669,7 +714,7 @@ R  - zachowanie wiedzy\\
 S - wzglêdna si³a pamiêci\\
 t - czas
 
-Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy(rys. \ref{fig:forgettingCurves}). Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo.
+Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych okresach czasu.  Ustali³ w ten sposób, ¿e spadek zapamiêtanych informacji staje siê coraz mniejszy (rys. \ref{fig:forgettingCurves}). Krzywa zapominania sta³a siê fundamentem do dalszych badañ i w rezultacie opracowanie algorytmu SuperMemo.
 
 
 \begin{figure}
@@ -685,8 +730,8 @@ Ebbinghaus uczy³ siê sylab pozbawionych znaczenia poprzez powtarzanie po ró¿nych
 
 Dr Piotr WoŸniak prowadzi badania nas teori¹ metod nauczania, które zaowocowa³y powstaniem algorytmu SuperMemo i programu o tej samej nazwie. Jest on te¿ osob¹ odpowiedzialn¹ za komercyjne wykorzystanie tej metody. Pierwsza wersja programu powsta³a w 1987 roku. Napisana zosta³a w œrodowisku Turbo Pascal 3.0, IBM PC i powsta³a by zaprezentowaæ metodê na dwa podstawowe sposoby:
 \begin{itemize}
-\item{zastosowanie procedur optymalizacji na najmniejszych mo¿liwych przedmiotach}
-\item{zró¿nicowanie elementów na postawie poziomu trudnoœci}
+\item{zastosowanie procedur optymalizacji na najmniejszych mo¿liwych przedmiotach},
+\item{zró¿nicowanie elementów na postawie poziomu trudnoœci}.
 \end{itemize}
 
 
@@ -700,12 +745,12 @@ I(n) - przerwa bez powtórzenia po n-tym powtórzeniu (wyra¿ona w dniach)\\
 EF - ang. easiness factor - odzwierciedla poziom trudnoœci w zapamiêtaniu i przypomnieniu danego faktu
 
 
-Wartoœæ EF mo¿e wynosiæ od 1,1 dla najtrudniejszego faktu do 3,5 dla najprostszego. W momencie wprowadzenia faktu do bazy SuperMemo wartoœæ EF jest równa 2,5. Je¿eli w procesie powtarzania materia³u istniej¹ problemu z przypomnienim sobie odpowiedzi na dane pytanie wartoœæ ta maleje.
+Wartoœæ EF mo¿e wynosiæ od 1,1 dla najtrudniejszego faktu do 3,5 dla najprostszego. W momencie wprowadzenia faktu do bazy SuperMemo wartoœæ EF jest równa 2,5. Je¿eli w procesie powtarzania materia³u istniej¹ problemy z przypomnieniem sobie odpowiedzi na dane pytanie wartoœæ ta maleje.
 
 Wkrótce po utworzeniu pierwszej wersji SuperMemo, autor zauwa¿y³, ¿e wartoœæ EF nie powinna spadaæ ponizej 1,3, gdy¿ powodowa³o to, ¿e pytania wyœwietla³y siê zbyt czêsto.
 
 
-By obliczyæ now¹ wartoœæ EF, uczeñ musi po ka¿dej odpowiedzi na pytania oceniæ swój poziom przyswojenia danego faktu. Program SuperMemo u¿ywa skali od 0 do 5. Ogólna forma u¿ytego wzoru wygl¹da nastêpuj¹co:
+By obliczyæ now¹ wartoœæ EF, uczeñ musi po ka¿dej odpowiedzi na pytanie oceniæ swój poziom przyswojenia danego faktu. Program SuperMemo u¿ywa skali od 0 do 5. Ogólna forma u¿ytego wzoru wygl¹da nastêpuj¹co:
 
 $$
 EF' = f(EF, q)
@@ -728,7 +773,7 @@ Algorytm SuperMemo w wersji drugiej programu przedstawia siê nastêpuj¹co:
 
 
 \begin{enumerate}
-\item Podziel wiedzê, któr¹ chcesz przyswoiæ w jak najmniejsze fakty(pytanie i odpowiedŸ).
+\item Podziel wiedzê, któr¹ chcesz przyswoiæ w jak najmniejsze fakty (pytanie i odpowiedŸ).
 \item Przypisz dla wszystkich faktów wartoœæ EF równ¹ 2,5.
 \item Powtarzaj fakty robi¹c nastêpuj¹ce przerwy:
 \[
@@ -821,7 +866,7 @@ Anki reprezentuje odmienne podejœcie. Program ten jest w pe³ni darmowy i oferuje
 Aplikacja ma stanowiæ alternatywê dla innych programów wspomagaj¹cych proces nauki poprzez inteligentne planowanie powtórek. Zaletami w stosunku do programu autora algorytmu SuperMemo jest prostota obs³ugi i darmowe korzystanie. Cechami pozwalaj¹cymi konkurowaæ z programem Anki s¹ intuicyjna obs³uga oraz fakt, ¿e mo¿na j¹ odpaliæ na ka¿dej platformie mobilnej jak i komputerze PC.
 
 
-Multiplatformowoœæ jest zapewniona poprzez napisanie aplikacji przegl¹darkowej. W ten sposób aplikacja mo¿e byæ odpalona na platformach mobilnych, takich jak Windows Phone, Android, iPhone, ma³o popularnych platform takich jak Sailfish, Tizen, FirefoxOS, ale te¿ na systemach, które powstan¹ w przysz³oœci o ile bêd¹ posiada³y nowoczesn¹ przegl¹darkê internetow¹, co jest standardowym wyposa¿eniem ka¿dej platformy.
+Multiplatformowoœæ jest zapewniona poprzez napisanie aplikacji przegl¹darkowej. W ten sposób aplikacja mo¿e byæ odpalona na platformach mobilnych, takich jak Windows Phone, Android, iPhone, ma³o popularnych platformach takich jak Sailfish, Tizen, FirefoxOS, ale te¿ na systemach, które powstan¹ w przysz³oœci o ile bêd¹ posiada³y nowoczesn¹ przegl¹darkê internetow¹, co jest standardowym wyposa¿eniem ka¿dej platformy.
 
 Interfejs graficzny napisany jest tak, by dopasowaæ siê do rozdzielczoœci ka¿dego urz¹dzenia dostêpnego na rynku.
 
@@ -839,27 +884,27 @@ Aby synchronizowaæ dane z serwerem konieczne jest posiadanie konta.
 
 \section{Instrukcja dla u¿ytkownika}
 
-Przy pierwszym uruchomieniu aplikacji u¿ytkownikowi wyœwietla siê okno z instrukcj¹ dotycz¹c¹ aplikacji(rys. \ref{fig:appHelp}). Informuje ono u¿ytkownika, ¿e ma do czynienia z aplikacj¹ webow¹ dzia³aj¹c¹ w trybie offline, która ma za zadanie pomóc w nauce nowego jêzyka, ale równie¿ w przyswojeniu innej wiedzy u¿ywaj¹c metody inteligentnego planowania nastêpnych powtórek materia³u. Wiêcej informacji o tej metodzie u¿ytkownik mo¿e zdobyæ klikaj¹c na link do artyku³u na wikipedii. Pomoc zawiera tak¿e tabelê z wyjaœnieniem pojêæ i symboli u¿ywanych w aplikacji. Dowiaduje siê z niej, ¿e deck(ang. talia) powinien traktowaæ jako grupê pytañ i odpowiedzi, któr¹ pragnie przyswoiæ. Mog¹ byæ to na przyk³ad  hiszpañskie s³owa z ich t³umaczeniem w jêzyku angielskim. Card(ang. karta) stanowi pojedyñcze pytanie i odpowiedŸ(np. przód karty - dog, ty³ karty - perro). Przedstawiony jest równie¿ symbol, który reprezentuje statusy w jakich mo¿e pracowaæ aplikacja:
+Przy pierwszym uruchomieniu aplikacji u¿ytkownikowi wyœwietla siê okno z instrukcj¹ dotycz¹c¹ aplikacji (rys. \ref{fig:appHelp}). Informuje ono u¿ytkownika, ¿e ma do czynienia z aplikacj¹ webow¹ dzia³aj¹c¹ w trybie offline, która ma za zadanie pomóc w nauce nowego jêzyka, ale równie¿ w przyswojeniu innej wiedzy u¿ywaj¹c metody inteligentnego planowania nastêpnych powtórek materia³u. Wiêcej informacji o tej metodzie u¿ytkownik mo¿e zdobyæ klikaj¹c na link do artyku³u na wikipedii. Pomoc zawiera tak¿e tabelê z wyjaœnieniem pojêæ i symboli u¿ywanych w aplikacji. Dowiaduje siê z niej, ¿e deck (ang. talia) powinien traktowaæ jako grupê pytañ i odpowiedzi, któr¹ pragnie przyswoiæ. Mog¹ byæ to na przyk³ad  hiszpañskie s³owa z ich t³umaczeniem w jêzyku angielskim. Card (ang. karta) stanowi pojedyñcze pytanie i odpowiedŸ(np. przód karty - dog, ty³ karty - perro). Przedstawiony jest równie¿ symbol, który reprezentuje statusy w jakich mo¿e pracowaæ aplikacja:
 \begin{itemize}
 \item zielony - jesteœmy pod³¹czeni do internetu, dane s¹ zsynchronizowane z serwerem 
 \item czerwony - nie mamy po³¹czenia z internetem, dane s¹ zsynchronizowane z serwerem
 \item zielony, pulsuj¹cy - trwa synchronizacj¹ danych z serwerem
-\item czerwony pulsuj¹cy - po pod³¹czeniu do intenetu rozpocznie siê synchronizacja danych
+\item czerwony, pulsuj¹cy - po pod³¹czeniu do intenetu rozpocznie siê synchronizacja danych
 \end{itemize}
 
-
+\noindent
 Identyczne okno pojawia siê po klikniêniu na wyrazy "deck" i "card" w reszcie aplikacji.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\linewidth]{rys/AppHelp.png}
+  \includegraphics[width=0.8\linewidth]{rys/AppHelp.png}
   \caption{Instrukcja obs³ugi aplikacji}
   \label{fig:appHelp}
   \zrodlo{Opracowanie w³asne}
 \end{figure}
 
 
-Po zamkniêciu okna u¿ytkownik widzi formularz do za³o¿enia nowego konta na stronie lub w przypadku gdy ju¿ posiada konto mo¿e siê zalogowaæ poprzez formularz dostêpny, w przypadku  urz¹dzenia mobilnego, po klikniêciu w przycisk umieszczony w prawym górnym rogu ekranu. W przypadku urz¹dzeñ z wiêksz¹ rozdzielczoœci¹ ekranu pola formularza potrzebne do zalogowania s¹ widoczne w tym miejscu(rys. \ref{fig:appRegistration}).
+Po zamkniêciu okna u¿ytkownik widzi formularz do za³o¿enia nowego konta na stronie lub w przypadku gdy ju¿ posiada konto mo¿e siê zalogowaæ poprzez formularz dostêpny, w przypadku  urz¹dzenia mobilnego, po klikniêciu w przycisk umieszczony w prawym górnym rogu ekranu. W przypadku urz¹dzeñ z wiêksz¹ rozdzielczoœci¹ ekranu pola formularza potrzebne do zalogowania s¹ widoczne w tym miejscu (rys. \ref{fig:appRegistration}).
 
 \begin{figure}
   \centering
@@ -870,7 +915,9 @@ Po zamkniêciu okna u¿ytkownik widzi formularz do za³o¿enia nowego konta na stron
 \end{figure}
 
 
-Gdy wype³nimy pola formularza rejestracji i nie otrzymamy komunikatu o b³êdzie informuj¹cym o zajêtej nazwie u¿ytkownika lub niezgodnoœci wprowadzonych hase³, zostaniemy automatycznie zalogowani na nowo utworzone konto. Domyœlnym ekranem startowym jest lista grup faktów do nauki na obecny dzieñ(rys. \ref{fig:screenStudyList}). W przypadku gdy nie ma nic do powtarzania na dany dzieñ u¿ytkownikowi wyœwietla siê komunikat z odpowiedni¹ informacj¹ oraz wskazówka, by klikn¹³ odnoœnik "Decks" aby dodaæ nowe grupy do nauki i karty. Po klikniêciu na nazwê danej grupy przechodzimy do trybu powtarzania zawartych w niej faktów. Gdy algorytm dojdzie do miejsca, w którym nie ma ju¿ faktów do nauki przechodzimy z powrotem do listy.
+Gdy wype³nimy pola formularza rejestracji i nie otrzymamy komunikatu o b³êdzie informuj¹cym o zajêtej nazwie u¿ytkownika lub niezgodnoœci wprowadzonych hase³, zostaniemy automatycznie zalogowani na nowo utworzone konto. Domyœlnym ekranem startowym jest lista grup faktów do nauki na obecny dzieñ (rys. \ref{fig:screenStudyList}). W przypadku gdy nie ma nic do powtarzania na dany dzieñ u¿ytkownikowi wyœwietla siê komunikat z odpowiedni¹ informacj¹ oraz wskazówka, by klikn¹³ odnoœnik "Decks" aby dodaæ nowe grupy do nauki i karty. Po klikniêciu na nazwê danej grupy przechodzimy do trybu powtarzania zawartych w niej faktów. Gdy algorytm dojdzie do miejsca, w którym nie ma ju¿ faktów do nauki przechodzimy z powrotem do listy.
+
+Jeœli u¿ytkownik chce dodaæ nowe fakty do swojej bazy wiedzy powinien przejœæ do pozycji "Decks" w menu. Tam wyœwietli siê lista z ju¿ istniej¹cymi grupami lub informacja jak dodaæ nowe. Po klikniêciu w nazwê grupy dodajemy do niej nowe karty, aby to zrobiæ nale¿y uzupe³niæ pola front - przednia czêœæ karty i back - tylnia czêœæ. Front to pytanie, back - odpowiedŸ na nie. Jeœli chcemy jednoczeœnie dodaæ dwie karty, jedn¹  z pytaniem w polu front oraz odpowiedzi¹ w back i drug¹ z pytaniem w polu back oraz odpowiedzi¹ w polu front, nale¿y zaznaczyæ opcjê o nazwie "reverse".
 
 \begin{figure}
   \centering
@@ -880,14 +927,11 @@ Gdy wype³nimy pola formularza rejestracji i nie otrzymamy komunikatu o b³êdzie i
   \zrodlo{Opracowanie w³asne}
 \end{figure}
 
-Jeœli u¿ytkownik chce dodaæ nowe fakty do swojej bazy wiedzy powinien przejœæ do pozycji "Decks" w menu. Tam wyœwietli siê lista z ju¿ istniej¹cymi grupami lub informacja jak dodaæ nowe. Po klikniêciu w nazwê grupy dodajemy do niej nowe karty, aby to zrobiæ nale¿y uzupe³niæ pola front - przednia czêœæ karty i back - tylnia czêœæ. Front to pytanie, back - odpowiedŸ na nie. Jeœli chcemy jednoczeœnie dodaæ dwie karty, jedn¹  z pytaniem w polu front oraz odpowiedzi¹ w back i drug¹ z pytaniem w polu back oraz odpowiedzi¹ w polu front, nale¿y zaznaczyæ opcjê o nazwie "reverse".
-
-
 Ostatnim ekranem, na którym u¿ytkownik spêdzi najwiêcej czasu i który jest g³ówn¹ funkcjonalnoœci¹ aplikacji jest formularz powtarzania wiedzy. Schemat powtarzania wygl¹da nastêpuj¹co:
 \begin{itemize}
 \item Wyœwietlone zostaje pytanie.
 \item U¿ytkownik zastanawia siê nad odpowiedzi¹.
-\item Gdy przypomina sobie odpowiedŸ lub dochodzi do wniosku, ¿e nie jest w stanie sobie przypomnieæ wybiera przycisk z napisem "Show answer" - "Poka¿ odpowiedŸ". Nastêpnie ma za zadanie oceniæ jakoœæ udzielonej odpowiedzi lub jej brak. Robi to przez klikniêcie odpowiedniego przycisku(rys. \ref{fig:screenReview}).
+\item Gdy przypomina sobie odpowiedŸ lub dochodzi do wniosku, ¿e nie jest w stanie sobie przypomnieæ wybiera przycisk z napisem "Show answer" - "Poka¿ odpowiedŸ". Nastêpnie ma za zadanie oceniæ jakoœæ udzielonej odpowiedzi lub jej brak. Robi to przez klikniêcie odpowiedniego przycisku (rys. \ref{fig:screenReview}).
 \end{itemize}
 
 \begin{figure}
@@ -931,7 +975,7 @@ openRequest.onsuccess = function (e) {
 \end{lstlisting}
 
 
-Przed u¿yciem bazy IndexedDB nale¿y najpierw otworzyæ bazê. W lini 1 wywo³ujemy asynchronicznie metodê open z argumentem "mmdb" - nazwa bazy danych oraz 2 - wersja. Argumentem jest obiekt typu IDBRequest. W przypadku gdy na dysku u¿ytkownika nie ma jeszcze bazy lub jest w ni¿ej wersji wywo³ana zostanie metoda "onupgradeneeded". Po jej wykonaniu utworzone zostan¹ dwie tabele w bazie o nazwie "cards" oraz "decks". W obu przypadkach definiujemy indeks id, w którym wy³¹czamy automatyczne podnoszenie o jeden wartoœci, gdy¿ wartoœci id nadajemy na poziome bazy danych po stronie serwera. W przypadku gdy powiedzie siê zaktualizowanie lub utworzenie bazy oraz otworzenie bazy wywo³ana zostaje funkcja przypisana do pole onsuccess obiektu IDBRequest. Ustawiamy w niej obiekt potrzebny do dalszych operacji na bazie IndexedDB podczas trwania korzystania z aplikacji. Ustawiamy równie¿ domyœln¹ akcjê, która wykona siê przy wyst¹pieniu b³êdu zapisu lub pobrania danych. W takim przypadku wyœwietlamy kod b³êdu na konsoli programisty JavaScript.
+Przed u¿yciem bazy IndexedDB nale¿y najpierw otworzyæ bazê. W lini 1 wywo³ujemy asynchronicznie metodê open z argumentem "mmdb" - nazwa bazy danych oraz 2 - wersja. Argumentem jest obiekt typu IDBRequest. W przypadku gdy na dysku u¿ytkownika nie ma jeszcze bazy lub jest w ni¿szej wersji wywo³ana zostanie metoda "onupgradeneeded". Po jej wykonaniu utworzone zostan¹ dwie tabele w bazie o nazwie "cards" oraz "decks". W obu przypadkach definiujemy indeks id, w którym wy³¹czamy automatyczne podnoszenie o jeden wartoœci, gdy¿ wartoœci id nadajemy na poziome bazy danych po stronie serwera. W przypadku gdy powiedzie siê zaktualizowanie lub utworzenie bazy oraz otworzenie bazy wywo³ana zostaje funkcja przypisana do pola onsuccess obiektu IDBRequest. Ustawiamy w niej obiekt potrzebny do dalszych operacji na bazie IndexedDB podczas trwania korzystania z aplikacji. Ustawiamy równie¿ domyœln¹ akcjê, która wykona siê przy wyst¹pieniu b³êdu zapisu lub pobrania danych. W takim przypadku wyœwietlamy kod b³êdu na konsoli programisty JavaScript.
 
 
 \begin{lstlisting}
@@ -956,7 +1000,7 @@ self.getDecks = function (callback) {
 }
 \end{lstlisting}
 
-"getDecks" jest jedn¹ z metod s³u¿¹c¹ jedynie do pobrania danych. Jako argument przyjmuje funkcjê, która wykona siê po poprawnym pobraniu danych i przyjmuje jako argument pobrane dane.  W ten sposób mo¿emy wykonaæ kolejno po sobie akcje: akcja u¿ytkownika, pobranie danych, przetworzenie danych(np. wyœwietlenie na liœcie) mimo asynchronicznego wykonania kodu. Aby wykonaæ sam¹ operacjê pobierania najpierw potrzebny nam obiekt IDBTransaction z parametrem nazwy transakcji. Domyœlnie transakcja ma prawa czytania, które w tym przypadku s¹ wystarczaj¹ce, poniewa¿ nie modyfikujemy danych. Nastêpnie pobieramy obiekt dziêki któremu mamy dostêp do kursora znanego z tradycyjnych systemów zarz¹dzania relacyjnymi bazami danych jak np. Microsoft SQL Server. Otwieraj¹c kursor implikujemy kolejne wykonania metody "onsuccess". Mo¿emy z niego odczytaæ obiekt, wczeœniej zapisany do naszej bazy. Dodajemy go do tablicy "items". Gdy wszystkie obiekty zostan¹ w niej zapisane, zostaje wywo³ana funkcja "oncomplete". W niej powracamy do fragmentu kodu, do którego dzia³ania niezbêdne s¹ pobrane dane.
+"getDecks" jest jedn¹ z metod s³u¿¹c¹ jedynie do pobrania danych. Jako argument przyjmuje funkcjê, która wykona siê po poprawnym pobraniu danych i przyjmuje jako argument pobrane dane.  W ten sposób mo¿emy wykonaæ kolejno po sobie akcje: akcja u¿ytkownika, pobranie danych, przetworzenie danych(np. wyœwietlenie na liœcie) mimo asynchronicznego wykonania kodu. Aby wykonaæ sam¹ operacjê pobierania najpierw potrzebny jest obiekt IDBTransaction z parametrem nazwy transakcji. Domyœlnie transakcja ma prawa czytania, które w tym przypadku s¹ wystarczaj¹ce, poniewa¿ nie modyfikujemy danych. Nastêpnie pobieramy obiekt dziêki któremu mamy dostêp do kursora znanego z tradycyjnych systemów zarz¹dzania relacyjnymi bazami danych jak np. Microsoft SQL Server. Otwieraj¹c kursor implikujemy kolejne wykonania metody "onsuccess". Mo¿emy z niego odczytaæ obiekt, wczeœniej zapisany do naszej bazy. Dodajemy go do tablicy "items". Gdy wszystkie obiekty zostan¹ w niej zapisane, zostaje wywo³ana funkcja "oncomplete". W niej powracamy do fragmentu kodu, do którego dzia³ania niezbêdne s¹ pobrane dane.
 
 
 \begin{lstlisting}
@@ -978,10 +1022,10 @@ self.addDeck = function (deck) {
 
 Drugim typem metod wystêpuj¹cy w obiekcie "repository" s¹ funkcje modyfikuj¹ce lub dodaj¹ce nowe obiekty do bazy. W "addDeck", tak jak w przypadku "getDecks" potrzebujemy obiektu transakcji. Dodatkowo musimy zaznaczyæ, ¿e chcemy modyfikowaæ dane poprzez argument "readwrite".  W argumencie funkcji przekazujemy obiekt, który chcemy zapisaæ. Po nadaniu id oraz daty ostatniej modyfikacji rozpoczynamy zapis. Jeœli siê powiedzie wykona siê metoda "onsuccess". W niej wywo³ujemy metodê obiektu "synchronizer", który jest odpowiedzialny za synchronizacjê danych z serwerem.
 
-Koniecznym elementem niezbêdnym dla aplikacji webowej dzia³aj¹cej w trybie offline jest mechanizm zapewniaj¹cym synchronizacj¹ danych z baz¹ danych po stronie serwera. S³u¿y do tego klasa "Synchronizer". Jej metoda "setNetworkStatus" jest wywo³ywana co 1500 milisekund i sprawdza status po³¹czenia z internetem poprzez odwo³anie siê do w³aœciwoœci onLine obiektu navigator. W przypadku gdy jest ona ustawiona na wartoœæ "false" mo¿emy z pewnoœci¹ za³o¿yæ brak dostêpu do internetu. W przypadku wartoœci "true" nie mamy tej gwaracji od wszystkich twórców przegl¹darek internetowych. W zwi¹zku z tym nale¿y upewniæ siê poprzez testowe odwo³anie siê do dowolnego serwera. W przypadku powodzenia komunikujemy u¿ytkownikowi, i¿ znajduje siê w trybie online. W przypadku b³êdu lub przekroczenia maksymalnego czasu po³¹czenia sygnalizujemy tryb offline.
+Koniecznym elementem niezbêdnym dla aplikacji webowej dzia³aj¹cej w trybie offline jest mechanizm zapewniaj¹cy synchronizacjê danych z baz¹ danych po stronie serwera. S³u¿y do tego klasa "Synchronizer". Jej metoda "setNetworkStatus" jest wywo³ywana co 1500 milisekund i sprawdza status po³¹czenia z Internetem poprzez odwo³anie siê do w³aœciwoœci onLine obiektu navigator. W przypadku gdy jest ona ustawiona na wartoœæ "false" mo¿emy z pewnoœci¹ za³o¿yæ brak dostêpu do Internetu. W przypadku wartoœci "true" nie mamy tej gwarancji od wszystkich twórców przegl¹darek internetowych. W zwi¹zku z tym nale¿y upewniæ siê poprzez testowe odwo³anie siê do dowolnego serwera. W przypadku powodzenia komunikujemy u¿ytkownikowi, i¿ znajduje siê w trybie online. W przypadku b³êdu lub przekroczenia maksymalnego czasu po³¹czenia sygnalizujemy tryb offline.
 
 
-Ustawienie wartoœci odpowiadaj¹cej stanowi po³¹czenia internetowego klienta nie s³u¿y jedynie do celów infromacyjnych. Wartoœæ ta jest niezbêdna przy sprawdzeniu czy mo¿na rozpocz¹æ proces synchronizacji danych wczeœniej umieszczonych w bazie po stronie klienta. Jeœli klient ma dostêp do internetu wywo³ywane s¹ funkcjê, jak np. "synchronizeDecks".
+Ustawienie wartoœci odpowiadaj¹cej stanowi po³¹czenia internetowego klienta nie s³u¿y jedynie do celów informacyjnych. Wartoœæ ta jest niezbêdna przy sprawdzeniu czy mo¿na rozpocz¹æ proces synchronizacji danych wczeœniej umieszczonych w bazie po stronie klienta. Jeœli klient ma dostêp do internetu wywo³ywane s¹ funkcjê, jak np. "synchronizeDecks".
 
 \begin{lstlisting}
 self.synchronizeDecks = function (successCallback) {
@@ -1022,9 +1066,9 @@ function LocalStorageArray(id) {
 };
 \end{lstlisting}
 
-W linii 2 nastêpuje pobranie danych wczeœniej zapisanych do bazy IndexedDB, ale nie zsynchronizowanych z baz¹ po stronie serwerowej. Tego typu dane postanowiono zapisaæ za pomoc¹ klasy opakowuj¹cej(ang. wrapper) funkcjonalnoœæ LocalStorage o nazwie LocalStorageArray. Dziêki tej klasie mo¿emy korzystaæ z danych zapisanych w LocalStorage w sposób bardzo podobny do zwyk³ej tablicy w jêzyku JavaScript. Zalet¹ takiego rozwi¹zania jest zachowanie danych pomiêdzy kolejnymi odwiedzeniami strony, podobnie jak w przypadku IndexedDB. Jest to niezbêdne, poniewa¿ nie ma pewnoœci czy klient po³¹czy siê z internetem przed wy³¹czniem przegl¹darki internetowej po skoñczonej nauce. Dane w obiekcie LocalStorageArray o nazwie "decks" s¹ ustawione przez obiekt "repository" w momencie zapisu do IndexedDB, a wiêc dane znajduj¹ siê jednoczeœnie w LocalStorage i IndexedDB do czasu synchronizacji. Po synchronizacji s¹ LocalStorageArray jest czyszczone.
+W linii 2 nastêpuje pobranie danych wczeœniej zapisanych do bazy IndexedDB, ale nie zsynchronizowanych z baz¹ po stronie serwerowej. Tego typu dane postanowiono zapisaæ za pomoc¹ klasy opakowuj¹cej (ang. wrapper) funkcjonalnoœæ LocalStorage o nazwie LocalStorageArray. Dziêki tej klasie mo¿emy korzystaæ z danych zapisanych w LocalStorage w sposób bardzo podobny do zwyk³ej tablicy w jêzyku JavaScript. Zalet¹ takiego rozwi¹zania jest zachowanie danych pomiêdzy kolejnymi odwiedzeniami strony, podobnie jak w przypadku IndexedDB. Jest to niezbêdne, poniewa¿ nie ma pewnoœci czy klient po³¹czy siê z Internetem przed wy³¹czniem przegl¹darki internetowej po skoñczonej nauce. Dane w obiekcie LocalStorageArray o nazwie "decks" s¹ ustawione przez obiekt "repository" w momencie zapisu do IndexedDB, a wiêc dane znajduj¹ siê jednoczeœnie w LocalStorage i IndexedDB do czasu synchronizacji. Po synchronizacji LocalStorageArray jest czyszczone.
 
-W zmiennej "url" w lini 4 znajduje siê adres do metody kontrolera ASP.NET. Metoda ta przyjmuje dane w formacie JSON(ang. JavaScript Object Notation), które nale¿y dodaæ lub uaktualniæ w bazie serwerowej i wygl¹da nastêpuj¹co:
+W zmiennej "url" w lini 4 znajduje siê adres do metody kontrolera ASP.NET. Metoda ta przyjmuje dane w formacie JSON (ang. JavaScript Object Notation), które nale¿y dodaæ lub uaktualniæ w bazie serwerowej i wygl¹da nastêpuj¹co:
 
 
 \begin{lstlisting}
@@ -1068,14 +1112,32 @@ public JsonResult SynchronizeDecks(FormCollection formCollection)
 \end{lstlisting}
 
 
-W linii 4 i 5 pobieramy z kolekcji wartoœci wys³anego formularza dane do synchronizacji i dekodujemy je. Nastêpnie z formatu JSON wykonujemy deserializacjê, czyli przekszta³cenie danych z postaci tekstowej do struktury listy w jêzyku C\#. Nastêpnie iterujemy po elementach tej listy. W lini 13 za pomoc¹ zapytania LINQ(ang. Language INtegrated Query) odwo³ujemy siê do bazy. Zapytanie to jest zamienione na jêzyk SQL dziêki technologii EF(ang. Entity Framework). Próbujemy pobieramy w nim rekord przepisany do danego u¿ytkownika i o danym id w bazie po stronie klienta. W ten sposób w dalszej czêœci kodu mo¿emy okreœliæ czy dane nale¿y dodaæ - brak rekordu w bazie czy uaktualiniæ - rekord znajduje siê ju¿ w bazie. W linii 29 zapisujemy zmiany. Ca³oœæ wykonuje siê w bloku try-catch. W przypadku niepowodzenia zwracamy obiekt w notacji JSON z flag¹ sygnalizuj¹c¹ niepowodzenie.
+W linii 4 i 5 pobieramy z kolekcji wartoœci wys³anego formularza dane do synchronizacji i dekodujemy je. Nastêpnie z formatu JSON wykonujemy deserializacjê, czyli przekszta³cenie danych z postaci tekstowej do struktury listy w jêzyku C\#. Nastêpnie iterujemy po elementach tej listy. W lini 13 za pomoc¹ zapytania LINQ (ang. Language INtegrated Query) odwo³ujemy siê do bazy. Zapytanie to jest zamienione na jêzyk SQL dziêki technologii EF (ang. Entity Framework). Próbujemy pobieraæ w nim rekord przepisany do danego u¿ytkownika i o danym id w bazie po stronie klienta. W ten sposób w dalszej czêœci kodu mo¿emy okreœliæ czy dane nale¿y dodaæ - brak rekordu w bazie czy uaktualiniæ - rekord znajduje siê ju¿ w bazie. W linii 29 zapisujemy zmiany. Ca³oœæ wykonuje siê w bloku try-catch. W przypadku niepowodzenia zwracamy obiekt w notacji JSON z flag¹ sygnalizuj¹c¹ niepowodzenie.
+
+Projektuj¹c mechanizm synchronizacji obs³u¿ono na ka¿dym etapie sytuacjê braku dostêpu do Internetu.  By rozwi¹zaæ problem niespójnoœci danych rekordy w bazie po stronie klienta (rys. \ref{fig:clientDbDiagram}) oraz po stronie serwerowej (rys. \ref{fig:dbDiagram}) zawieraj¹ pole "LastUpdateDate". Zapisana jest w nim informacji o dacie ostatniej aktualizacji danego rekordu. Data zapisana po stronie klienta to czas dodania rekordu, aktualizacji lub synchronizacji z serwerem. Data zapisana po stronie serwerowej to czas synchronizacji z baz¹ IndexedDb. Na tej podstawie jest wnioskowane, które dane nale¿y uaktualniæ w bazie serwerowej z bazy po stronie przegl¹darkowej oraz jakie dane nale¿y zsynchronizowaæ z bazy serwerowej po stronie klienta. Zastosowano schemat, w którym dane po stronie klienta nie s¹ oznaczane jako zsynchronizowane a¿ do momentu otrzymania od serwera flagi oznaczaj¹cej sukces zapisania danych do serwerowej bazy danych. Jeœli nie nadejdzie informacja od serwera (np. w przypadku braku dostêpu do Internatu) lub serwer zwróci flagê niepowodzenia, oznacza to, ¿e ¿aden rekord nie zosta³ zaktualizowany. Gwarantuje to transakcja bazodanowa.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{rys/ClientDbDiagram.png}
+  \caption{Baza danych IndexedDb, po stronie przegl¹darki}
+  \label{fig:clientDbDiagram}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{rys/DbDiagram.png}
+  \caption{Diagram tabel z danymi zsynchronizowanymi z serwerem}
+  \label{fig:dbDiagram}
+  \zrodlo{Opracowanie w³asne}
+\end{figure}
 
 \section{Generowanie manifestu AppCache}
 
-By mo¿liwa by³a praca aplikacji w trybie bez dostêpu do internetu nale¿y utworzyæ plik, która zawiera w sobie wszystkie pliki na serwerze, z których sk³ada siê aplikacja. S¹ to pliki o rozszerzeniach html, js, css oraz obrazki, stanowi¹ce szablon graficzny.
+By mo¿liwa by³a praca aplikacji w trybie bez dostêpu do Internetu nale¿y utworzyæ plik, która zawiera w sobie wszystkie pliki na serwerze, z których sk³ada siê aplikacja. S¹ to pliki o rozszerzeniach html, js, css oraz obrazki, stanowi¹ce szablon graficzny.
 
 
-Nazwy plików o rozszerzeniu html, css i js s¹ ³¹czone automatycznie dla oszczêdzenia liczby ¿¹dañ do serwera. Dodawany jest równie¿ ContentHash z powodów opisanych w rozdziale "Visual Studio i ASP.NET jako œrodowisko pracy". W tej sytuacji ka¿da zmiana treœci pliku zmusza programistê do zmiany manifestu AppCache. Dla celów automatyzacji tej czynnoœci u¿yto technologii ASP.NET - "ASHX Handler", dziêki niej pod adresem "/Handlers/Manifest.ashx" przegl¹darka internetowa pobierze manifest mimo, ¿e nie jest on fizycznie dostêpny na dysku serwera. Treœæ zawarta w manifeœcie jest wygenerowana dynamicznie, a nastêpnie zapisana, dla zwiêkszenia wydajnoœci w pamiêci cache.
+Nazwy plików o rozszerzeniu html, css i js s¹ ³¹czone automatycznie dla oszczêdzenia liczby ¿¹dañ do serwera. Dodawany jest równie¿ ContentHash z powodów opisanych w rozdziale "Visual Studio i ASP.NET jako œrodowisko pracy". W tej sytuacji ka¿da zmiana treœci pliku zmusza programistê do zmiany manifestu AppCache. W celu automatyzacji tej czynnoœci u¿yto technologii ASP.NET - "ASHX Handler", dziêki niej pod adresem "/Handlers/Manifest.ashx" przegl¹darka internetowa pobierze manifest mimo, ¿e nie jest on fizycznie dostêpny na dysku serwera. Treœæ zawarta w manifeœcie jest wygenerowana dynamicznie, a nastêpnie zapisana, dla zwiêkszenia wydajnoœci w pamiêci cache.
 
 
 \section{Testy}

@@ -1,25 +1,25 @@
 \contentsline {chapter}{Streszczenie (Summary)}{3}
 \contentsline {chapter}{Wst\k ep}{4}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 1\relax .\kern .5em Cel i zakres pracy}{5}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{6}
-\contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{6}
-\contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{7}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 1\relax .\kern .5em Cel i zakres pracy}{6}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 2\relax .\kern .5em Mobilne aplikacje webowe}{7}
+\contentsline {section}{\numberline {2.1\relax .\kern .5em }Historia specyfikacji HTML5}{7}
+\contentsline {section}{\numberline {2.2\relax .\kern .5em }R\'o\.znice w stosunku do HTML4}{8}
 \contentsline {section}{\numberline {2.3\relax .\kern .5em }RWD (Responsywny wygl\k ad)}{10}
-\contentsline {section}{\numberline {2.4\relax .\kern .5em }Visual Studio i ASP.NET jako \'srodowisko pracy}{10}
-\contentsline {section}{\numberline {2.5\relax .\kern .5em }HTML5 jako platforma mobilna}{12}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{15}
-\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{15}
-\contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{15}
-\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{17}
-\contentsline {section}{\numberline {3.4\relax .\kern .5em }Programy wykorzystuj\k ace metod\k e SuperMemo}{19}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{20}
-\contentsline {section}{\numberline {4.1\relax .\kern .5em }Za\IeC {\l }o\.zenia}{20}
-\contentsline {section}{\numberline {4.2\relax .\kern .5em }Wymagania}{20}
-\contentsline {section}{\numberline {4.3\relax .\kern .5em }Instrukcja dla u\.zytkownika}{21}
-\contentsline {section}{\numberline {4.4\relax .\kern .5em }Zapis i synchronizacja danych}{23}
-\contentsline {section}{\numberline {4.5\relax .\kern .5em }Generowanie manifestu AppCache}{29}
-\contentsline {section}{\numberline {4.6\relax .\kern .5em }Testy}{30}
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 5\relax .\kern .5em Podsumowanie}{32}
-\contentsline {chapter}{Bibliografia}{33}
-\contentsline {chapter}{Spis rysunk\'ow}{34}
-\contentsline {chapter}{Za\IeC {\l }\k aczniki}{35}
+\contentsline {section}{\numberline {2.4\relax .\kern .5em }Visual Studio i ASP.NET jako \'srodowisko pracy}{12}
+\contentsline {section}{\numberline {2.5\relax .\kern .5em }HTML5 jako platforma mobilna}{14}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 3\relax .\kern .5em Algorytm SuperMemo}{16}
+\contentsline {section}{\numberline {3.1\relax .\kern .5em }Krzywa zapominania}{16}
+\contentsline {section}{\numberline {3.2\relax .\kern .5em }Opis}{16}
+\contentsline {section}{\numberline {3.3\relax .\kern .5em }Algorytm SuperMemo w wersji drugiej}{18}
+\contentsline {section}{\numberline {3.4\relax .\kern .5em }Programy wykorzystuj\k ace metod\k e SuperMemo}{20}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 4\relax .\kern .5em Projekt aplikacji wspomagaj\k acej zapami\k etywanie}{21}
+\contentsline {section}{\numberline {4.1\relax .\kern .5em }Za\IeC {\l }o\.zenia}{21}
+\contentsline {section}{\numberline {4.2\relax .\kern .5em }Wymagania}{21}
+\contentsline {section}{\numberline {4.3\relax .\kern .5em }Instrukcja dla u\.zytkownika}{22}
+\contentsline {section}{\numberline {4.4\relax .\kern .5em }Zapis i synchronizacja danych}{26}
+\contentsline {section}{\numberline {4.5\relax .\kern .5em }Generowanie manifestu AppCache}{31}
+\contentsline {section}{\numberline {4.6\relax .\kern .5em }Testy}{33}
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\ 5\relax .\kern .5em Podsumowanie}{35}
+\contentsline {chapter}{Bibliografia}{37}
+\contentsline {chapter}{Spis rysunk\'ow}{38}
+\contentsline {chapter}{Za\IeC {\l }\k aczniki}{39}
